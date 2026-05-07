@@ -1,0 +1,52 @@
+/* ── Account Favorites ── */
+.kombos-account-favorites {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kombos-account-favorites__title {
+  display: block;
+  color: var(--kombos-gray-900);
+}
+
+.kombos-account-favorites__empty {
+  color: var(--kombos-gray-500);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.kombos-account-favorites__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+.kombos-account-favorites__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.kombos-account-favorites__card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Tablet (768px+) ── */
+@media (min-width: 768px) {
+  .kombos-account-favorites__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+  .kombos-account-favorites__grid {
+    gap: 1.5rem;
+  }
+}

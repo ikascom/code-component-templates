@@ -1,0 +1,19 @@
+.kombos-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.kombos-feature-item__icon {
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.kombos-feature-item__text {
+  color: var(--kombos-gray-900);
+  text-align: center;
+}

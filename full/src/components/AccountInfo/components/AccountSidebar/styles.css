@@ -1,0 +1,144 @@
+/* ===== AccountSidebar ===== */
+
+/* --- Shared icon --- */
+.kombos-account-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* --- Desktop sidebar --- */
+.kombos-account-sidebar {
+  display: none;
+  flex-shrink: 0;
+}
+
+.kombos-account-sidebar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kombos-account-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--kombos-gray-600);
+  transition: color 0.15s;
+}
+
+.kombos-account-sidebar__item svg {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.kombos-account-sidebar__item:hover {
+  color: var(--kombos-gray-700);
+}
+
+.kombos-account-sidebar__item--active {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-account-sidebar__item.kombos-account-sidebar__item--logout,
+.kombos-account-sidebar__item.kombos-account-sidebar__item--logout:hover {
+  color: var(--kombos-error);
+}
+
+/* --- Mobile dropdown --- */
+.kombos-account-dropdown {
+  display: block;
+}
+
+.kombos-account-dropdown__box {
+  border: 1px solid var(--kombos-gray-100);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.kombos-account-dropdown__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: none;
+  background: var(--kombos-white);
+  cursor: pointer;
+  color: var(--kombos-gray-900);
+}
+
+.kombos-account-dropdown__trigger--open {
+  border-bottom: 1px solid var(--kombos-gray-200);
+}
+
+.kombos-account-dropdown__trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kombos-account-dropdown__caret {
+  transition: transform 0.2s;
+}
+
+.kombos-account-dropdown__caret--open {
+  transform: rotate(180deg);
+}
+
+.kombos-account-dropdown__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--kombos-white);
+}
+
+.kombos-account-dropdown__menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--kombos-gray-900);
+  transition: background-color 0.15s;
+}
+
+.kombos-account-dropdown__menu-item:hover {
+  background-color: var(--kombos-gray-50);
+}
+
+.kombos-account-dropdown__menu-item--active {
+  background: var(--kombos-gray-50);
+}
+
+.kombos-account-dropdown__menu-item--logout {
+  color: var(--kombos-error);
+}
+
+.kombos-account-dropdown__menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- Responsive --- */
+@media (min-width: 1024px) {
+  .kombos-account-sidebar {
+    display: block;
+    width: fit-content;
+  }
+
+  .kombos-account-dropdown {
+    display: none;
+  }
+}

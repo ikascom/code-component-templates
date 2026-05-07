@@ -1,0 +1,5009 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "version": "1.0.0",
+  "projectId": "{{PROJECT_ID}}",
+  "globalStyles": "./src/global.css",
+  "components": [
+    {
+      "id": "{{PROJECT_ID}}-header",
+      "name": "Header",
+      "entry": "./src/components/Header/index.tsx",
+      "styles": "./src/components/Header/styles.css",
+      "type": "section",
+      "isHeader": true,
+      "props": [
+        {
+          "name": "components",
+          "displayName": "Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-navbar",
+            "{{PROJECT_ID}}-announcements",
+            "{{PROJECT_ID}}-cookie-bar"
+          ]
+        }
+      ],
+      "propGroups": []
+    },
+    {
+      "id": "{{PROJECT_ID}}-hero-slider",
+      "name": "HeroSlider",
+      "entry": "./src/components/HeroSlider/index.tsx",
+      "styles": "./src/components/HeroSlider/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "backgroundColor",
+          "displayName": "Background Color",
+          "type": "COLOR",
+          "required": false,
+          "defaultValue": "#ffffff",
+          "groupId": "appearance"
+        },
+        {
+          "name": "autoplay",
+          "displayName": "Autoplay",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "settings"
+        },
+        {
+          "name": "autoplayDelay",
+          "displayName": "Autoplay Interval (ms)",
+          "type": "NUMBER",
+          "required": false,
+          "defaultValue": 5000,
+          "groupId": "settings"
+        },
+        {
+          "name": "fullWidth",
+          "displayName": "Full Width",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "settings"
+        },
+        {
+          "name": "showArrows",
+          "displayName": "Show Arrows",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "settings"
+        },
+        {
+          "name": "components",
+          "displayName": "Slides",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-hero-slide"
+          ]
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Background color and style settings"
+        },
+        {
+          "id": "settings",
+          "name": "Settings",
+          "description": "Autoplay, width, and navigation settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-category-images",
+      "name": "CategoryImages",
+      "entry": "./src/components/CategoryImages/index.tsx",
+      "styles": "./src/components/CategoryImages/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Section Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Categories",
+          "groupId": "content"
+        },
+        {
+          "name": "titleColor",
+          "displayName": "Title Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "content"
+        },
+        {
+          "name": "backgroundColor",
+          "displayName": "Background Color",
+          "type": "COLOR",
+          "required": false,
+          "defaultValue": "#ffffff",
+          "groupId": "appearance"
+        },
+        {
+          "name": "desktopColumns",
+          "displayName": "Desktop Column Count",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "appearance",
+          "enumTypeId": "Tkt3wfuJ5F"
+        },
+        {
+          "name": "mobileColumns",
+          "displayName": "Mobile Column Count",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "appearance",
+          "enumTypeId": "Tkt3wfuJ5F"
+        },
+        {
+          "name": "components",
+          "displayName": "Categories",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-category-image-item"
+          ]
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Section title and color settings"
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Background, column count, and image settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-footer",
+      "name": "Footer",
+      "entry": "./src/components/Footer/index.tsx",
+      "styles": "./src/components/Footer/styles.css",
+      "type": "section",
+      "isFooter": true,
+      "props": [
+        {
+          "name": "logo",
+          "displayName": "Logo",
+          "type": "IMAGE",
+          "required": false,
+          "groupId": "content"
+        },
+        {
+          "name": "description",
+          "displayName": "Description",
+          "type": "RICH_TEXT",
+          "required": false,
+          "groupId": "content"
+        },
+        {
+          "name": "copyrightText",
+          "displayName": "Copyright Text",
+          "type": "RICH_TEXT",
+          "defaultValue": "<p>© 2026 ikas Store. All Rights Reserved.</p>",
+          "required": false,
+          "groupId": "content"
+        },
+        {
+          "name": "footerLinks",
+          "displayName": "Footer Links",
+          "type": "LIST_OF_LINK",
+          "required": false,
+          "groupId": "links"
+        },
+        {
+          "name": "linkColor",
+          "displayName": "Link Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "appearance"
+        },
+        {
+          "name": "linkHoverColor",
+          "displayName": "Link Hover Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "appearance"
+        },
+        {
+          "name": "contactTitle",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "contact",
+          "defaultValue": "Contact Information"
+        },
+        {
+          "name": "contactEmail",
+          "displayName": "Email",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "contact"
+        },
+        {
+          "name": "contactPhone",
+          "displayName": "Phone",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "contact"
+        },
+        {
+          "name": "socialMediaIcons",
+          "displayName": "Social Media Icons",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-social-media-icon"
+          ]
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "links",
+          "name": "Navigation",
+          "description": "Site links and contact information",
+          "children": [
+            {
+              "id": "contact",
+              "name": "Contact",
+              "description": "Contact title, email, and phone information"
+            }
+          ]
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Link colors"
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Logo, description, and copyright text"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-login",
+      "name": "Login",
+      "entry": "./src/components/Login/index.tsx",
+      "styles": "./src/components/Login/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "content",
+          "defaultValue": "Sign In"
+        },
+        {
+          "name": "subtitle",
+          "displayName": "Subtitle",
+          "type": "RICH_TEXT",
+          "required": false,
+          "groupId": "content",
+          "defaultValue": "<p>Sign in to your account to track your orders and continue shopping.</p>"
+        },
+        {
+          "name": "emailLabel",
+          "displayName": "Email Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "email",
+          "defaultValue": "Email"
+        },
+        {
+          "name": "emailPlaceholder",
+          "displayName": "Email Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "email",
+          "defaultValue": "example@email.com"
+        },
+        {
+          "name": "passwordLabel",
+          "displayName": "Password Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "password",
+          "defaultValue": "Password"
+        },
+        {
+          "name": "passwordPlaceholder",
+          "displayName": "Password Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "password",
+          "defaultValue": "Enter your password"
+        },
+        {
+          "name": "submitButtonText",
+          "displayName": "Login Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "buttons",
+          "defaultValue": "Sign In"
+        },
+        {
+          "name": "submittingButtonText",
+          "displayName": "Signing In Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "buttons",
+          "defaultValue": "Signing in..."
+        },
+        {
+          "name": "forgotPasswordText",
+          "displayName": "Forgot Password Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "buttons",
+          "defaultValue": "Forgot my password"
+        },
+        {
+          "name": "createAccountText",
+          "displayName": "Create Account Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "buttons",
+          "defaultValue": "Create new account"
+        },
+        {
+          "name": "showGoogleLogin",
+          "displayName": "Google Login",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "google"
+        },
+        {
+          "name": "googleButtonText",
+          "displayName": "Google Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "google",
+          "defaultValue": "Sign in with Google"
+        },
+        {
+          "name": "showFacebookLogin",
+          "displayName": "Facebook Login",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "facebook"
+        },
+        {
+          "name": "facebookButtonText",
+          "displayName": "Facebook Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "facebook",
+          "defaultValue": "Sign in with Facebook"
+        },
+        {
+          "name": "dividerText",
+          "displayName": "Divider Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "socialLogin",
+          "defaultValue": "or"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Page title and description"
+        },
+        {
+          "id": "formFields",
+          "name": "Form Fields",
+          "description": "Login form label and placeholder texts",
+          "children": [
+            {
+              "id": "email",
+              "name": "Email"
+            },
+            {
+              "id": "password",
+              "name": "Password"
+            }
+          ]
+        },
+        {
+          "id": "buttons",
+          "name": "Buttons",
+          "description": "Button and link texts"
+        },
+        {
+          "id": "socialLogin",
+          "name": "Social Login",
+          "description": "Google and Facebook login settings",
+          "children": [
+            {
+              "id": "google",
+              "name": "Google"
+            },
+            {
+              "id": "facebook",
+              "name": "Facebook"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-register",
+      "name": "Register",
+      "entry": "./src/components/Register/index.tsx",
+      "styles": "./src/components/Register/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "content",
+          "defaultValue": "Create Account"
+        },
+        {
+          "name": "subtitle",
+          "displayName": "Subtitle",
+          "type": "RICH_TEXT",
+          "required": false,
+          "groupId": "content",
+          "defaultValue": "<p>Create your free account and start shopping.</p>"
+        },
+        {
+          "name": "firstNameLabel",
+          "displayName": "First Name Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "firstName",
+          "defaultValue": "First Name"
+        },
+        {
+          "name": "firstNamePlaceholder",
+          "displayName": "First Name Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "firstName",
+          "defaultValue": "First Name"
+        },
+        {
+          "name": "lastNameLabel",
+          "displayName": "Last Name Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "lastName",
+          "defaultValue": "Last Name"
+        },
+        {
+          "name": "lastNamePlaceholder",
+          "displayName": "Last Name Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "lastName",
+          "defaultValue": "Last Name"
+        },
+        {
+          "name": "emailLabel",
+          "displayName": "Email Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "email",
+          "defaultValue": "Email"
+        },
+        {
+          "name": "emailPlaceholder",
+          "displayName": "Email Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "email",
+          "defaultValue": "example@email.com"
+        },
+        {
+          "name": "passwordLabel",
+          "displayName": "Password Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "password",
+          "defaultValue": "Password"
+        },
+        {
+          "name": "passwordPlaceholder",
+          "displayName": "Password Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "password",
+          "defaultValue": "Enter your password"
+        },
+        {
+          "name": "submitButtonText",
+          "displayName": "Register Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "buttons",
+          "defaultValue": "Sign Up"
+        },
+        {
+          "name": "submittingButtonText",
+          "displayName": "Registering Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "buttons",
+          "defaultValue": "Signing up..."
+        },
+        {
+          "name": "loginLinkText",
+          "displayName": "Sign In Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "buttons",
+          "defaultValue": "Already have an account? Sign in"
+        },
+        {
+          "name": "marketingConsentText",
+          "displayName": "Marketing Consent Text",
+          "type": "RICH_TEXT",
+          "required": false,
+          "groupId": "marketing-consent"
+        },
+        {
+          "name": "marketingConsentLink",
+          "displayName": "Marketing Consent Link",
+          "type": "LINK",
+          "required": false,
+          "groupId": "marketing-consent"
+        },
+        {
+          "name": "agreementConsentText",
+          "displayName": "Membership Agreement Text",
+          "type": "RICH_TEXT",
+          "required": false,
+          "groupId": "agreement-consent"
+        },
+        {
+          "name": "agreementConsentLink",
+          "displayName": "Membership Agreement Link",
+          "type": "LINK",
+          "required": false,
+          "groupId": "agreement-consent"
+        },
+        {
+          "name": "showGoogleLogin",
+          "displayName": "Google Login",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "google"
+        },
+        {
+          "name": "googleButtonText",
+          "displayName": "Google Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "google",
+          "defaultValue": "Sign up with Google"
+        },
+        {
+          "name": "showFacebookLogin",
+          "displayName": "Facebook Login",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "facebook"
+        },
+        {
+          "name": "facebookButtonText",
+          "displayName": "Facebook Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "facebook",
+          "defaultValue": "Sign up with Facebook"
+        },
+        {
+          "name": "dividerText",
+          "displayName": "Divider Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "socialLogin",
+          "defaultValue": "or"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Page title and description"
+        },
+        {
+          "id": "formFields",
+          "name": "Form Fields",
+          "description": "Registration form label and placeholder texts",
+          "children": [
+            {
+              "id": "firstName",
+              "name": "First Name"
+            },
+            {
+              "id": "lastName",
+              "name": "Last Name"
+            },
+            {
+              "id": "email",
+              "name": "Email"
+            },
+            {
+              "id": "password",
+              "name": "Password"
+            }
+          ]
+        },
+        {
+          "id": "buttons",
+          "name": "Buttons",
+          "description": "Button and link texts"
+        },
+        {
+          "id": "consents",
+          "name": "Consent Texts",
+          "description": "Marketing consent and membership agreement",
+          "children": [
+            {
+              "id": "marketing-consent",
+              "name": "Marketing Consent"
+            },
+            {
+              "id": "agreement-consent",
+              "name": "Membership Agreement"
+            }
+          ]
+        },
+        {
+          "id": "socialLogin",
+          "name": "Social Login",
+          "description": "Google and Facebook login settings",
+          "children": [
+            {
+              "id": "google",
+              "name": "Google"
+            },
+            {
+              "id": "facebook",
+              "name": "Facebook"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-forgot-password",
+      "name": "ForgotPassword",
+      "entry": "./src/components/ForgotPassword/index.tsx",
+      "styles": "./src/components/ForgotPassword/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Forgot Password",
+          "groupId": "content"
+        },
+        {
+          "name": "subtitle",
+          "displayName": "Description",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "We'll send you an email to reset your password",
+          "groupId": "content"
+        },
+        {
+          "name": "emailLabel",
+          "displayName": "Email Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Email",
+          "groupId": "email"
+        },
+        {
+          "name": "emailPlaceholder",
+          "displayName": "Email Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "example@email.com",
+          "groupId": "email"
+        },
+        {
+          "name": "submitButtonText",
+          "displayName": "Send Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Send",
+          "groupId": "buttons"
+        },
+        {
+          "name": "submittingButtonText",
+          "displayName": "Sending Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Sending...",
+          "groupId": "buttons"
+        },
+        {
+          "name": "backToLoginText",
+          "displayName": "Back to Login Link",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Back to Login",
+          "groupId": "buttons"
+        },
+        {
+          "name": "successTitle",
+          "displayName": "Success Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "success",
+          "defaultValue": "Forgot Password"
+        },
+        {
+          "name": "successMessage",
+          "displayName": "Success Message",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "success",
+          "defaultValue": "We've sent you an email."
+        },
+        {
+          "name": "successButtonText",
+          "displayName": "Success Button",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "success",
+          "defaultValue": "Start Shopping"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "success",
+          "name": "Success Screen",
+          "description": "Success messages shown after email is sent"
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Page title and description text"
+        },
+        {
+          "id": "formFields",
+          "name": "Form Fields",
+          "description": "Email field label and placeholder texts",
+          "children": [
+            {
+              "id": "email",
+              "name": "Email"
+            }
+          ]
+        },
+        {
+          "id": "buttons",
+          "name": "Buttons",
+          "description": "Button and link texts"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-recover-password",
+      "name": "RecoverPassword",
+      "entry": "./src/components/RecoverPassword/index.tsx",
+      "styles": "./src/components/RecoverPassword/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Change Password",
+          "groupId": "form-title"
+        },
+        {
+          "name": "subtitle",
+          "displayName": "Description",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Please set your new password.",
+          "groupId": "form-title"
+        },
+        {
+          "name": "passwordLabel",
+          "displayName": "Password Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "New Password",
+          "groupId": "form-fields"
+        },
+        {
+          "name": "passwordPlaceholder",
+          "displayName": "Password Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Password",
+          "groupId": "form-fields"
+        },
+        {
+          "name": "passwordAgainLabel",
+          "displayName": "Confirm Password Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Confirm New Password",
+          "groupId": "form-fields"
+        },
+        {
+          "name": "passwordAgainPlaceholder",
+          "displayName": "Confirm Password Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Password",
+          "groupId": "form-fields"
+        },
+        {
+          "name": "submitButtonText",
+          "displayName": "Change Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Change",
+          "groupId": "button-texts"
+        },
+        {
+          "name": "submittingButtonText",
+          "displayName": "Changing Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Changing...",
+          "groupId": "button-texts"
+        },
+        {
+          "name": "successMessage",
+          "displayName": "Success Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Your password has been successfully changed.",
+          "groupId": "success-screen"
+        },
+        {
+          "name": "loginLinkText",
+          "displayName": "Back to Login Link",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Sign In",
+          "groupId": "success-screen"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "form-title",
+          "name": "Form Title",
+          "description": "Title and description texts shown at the top of the form"
+        },
+        {
+          "id": "form-fields",
+          "name": "Form Fields",
+          "description": "Password field label and placeholder texts"
+        },
+        {
+          "id": "button-texts",
+          "name": "Button Texts",
+          "description": "Submit button and loading state texts"
+        },
+        {
+          "id": "success-screen",
+          "name": "Success Screen",
+          "description": "Messages and links shown after password is successfully changed"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-slider",
+      "name": "ProductSlider",
+      "entry": "./src/components/ProductSlider/index.tsx",
+      "styles": "./src/components/ProductSlider/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "productList",
+          "displayName": "Products",
+          "type": "PRODUCT_LIST",
+          "required": true,
+          "groupId": "content"
+        },
+        {
+          "name": "title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "New Arrivals",
+          "groupId": "content",
+          "displayName": "Section Title"
+        },
+        {
+          "name": "addToCartText",
+          "displayName": "Add to Cart Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Add to Cart",
+          "groupId": "texts"
+        },
+        {
+          "name": "addedToCartText",
+          "displayName": "Added Notification",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Added to Cart",
+          "groupId": "texts"
+        },
+        {
+          "name": "outOfStockText",
+          "displayName": "Out of Stock Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Sold Out",
+          "groupId": "texts"
+        },
+        {
+          "name": "goToProductText",
+          "displayName": "View Product Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "View Product",
+          "groupId": "texts"
+        },
+        {
+          "name": "desktopColumns",
+          "displayName": "Column Count",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "Tkt3wfuJ5F",
+          "groupId": "appearance"
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "s3OODUmZpJ",
+          "groupId": "appearance"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "GrylMqHxui",
+          "groupId": "appearance"
+        },
+        {
+          "name": "hideAddToCartButton",
+          "displayName": "Hide Add to Cart Button",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "appearance"
+        },
+        {
+          "name": "components",
+          "displayName": "Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "privateVarMap": {
+            "product": {
+              "id": "pvm_1772803530689_1",
+              "typeId": "@ikas/bp-storefront-models-IkasProduct"
+            }
+          },
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-card-product-price",
+            "{{PROJECT_ID}}-card-product-variants",
+            "{{PROJECT_ID}}-card-product-name"
+          ]
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Product list and section title for the slider"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Button and status texts on product cards"
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Column count, image settings, and card view preferences"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-account-info",
+      "name": "AccountInfo",
+      "entry": "./src/components/AccountInfo/index.tsx",
+      "styles": "./src/components/AccountInfo/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "accountInfoLabel",
+          "displayName": "Account Info",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "sidebar",
+          "defaultValue": "My Account"
+        },
+        {
+          "name": "ordersLabel",
+          "displayName": "Orders",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "sidebar",
+          "defaultValue": "My Orders"
+        },
+        {
+          "name": "addressesLabel",
+          "displayName": "Addresses",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "sidebar",
+          "defaultValue": "My Addresses"
+        },
+        {
+          "name": "favoritesLabel",
+          "displayName": "Favorites",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "sidebar",
+          "defaultValue": "My Favorites"
+        },
+        {
+          "name": "logoutLabel",
+          "displayName": "Sign Out",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "sidebar",
+          "defaultValue": "Sign Out"
+        },
+        {
+          "name": "components",
+          "displayName": "Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-account-info-content",
+            "{{PROJECT_ID}}-account-orders",
+            "{{PROJECT_ID}}-account-addresses",
+            "{{PROJECT_ID}}-account-favorites",
+            "{{PROJECT_ID}}-account-order-detail"
+          ]
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "sidebar",
+          "name": "Sidebar Menu",
+          "description": "Tab labels in the sidebar menu"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-list",
+      "name": "CategoryList",
+      "entry": "./src/components/CategoryList/index.tsx",
+      "styles": "./src/components/CategoryList/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "productList",
+          "displayName": "Product List",
+          "type": "PRODUCT_LIST",
+          "required": true,
+          "groupId": "data"
+        },
+        {
+          "name": "pageTitle",
+          "displayName": "Page Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts"
+        },
+        {
+          "name": "productCountText",
+          "displayName": "Product Count Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "product"
+        },
+        {
+          "name": "emptyMessage",
+          "displayName": "Empty State Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "No products found.",
+          "groupId": "texts"
+        },
+        {
+          "name": "searchPlaceholder",
+          "displayName": "Search Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Search",
+          "groupId": "texts"
+        },
+        {
+          "name": "clearFiltersText",
+          "displayName": "Clear Filters Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Clear Filters",
+          "groupId": "texts"
+        },
+        {
+          "name": "addToCartText",
+          "displayName": "Add to Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Add to Cart",
+          "groupId": "texts"
+        },
+        {
+          "name": "addedToCartText",
+          "displayName": "Added to Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Added",
+          "groupId": "texts"
+        },
+        {
+          "name": "outOfStockText",
+          "displayName": "Sold Out Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Sold Out",
+          "groupId": "texts"
+        },
+        {
+          "name": "showProductsText",
+          "displayName": "View Product Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "VIEW PRODUCT",
+          "groupId": "texts"
+        },
+        {
+          "name": "filtersText",
+          "displayName": "Filters Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Filters",
+          "groupId": "texts"
+        },
+        {
+          "name": "homepageText",
+          "displayName": "Home Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Home",
+          "groupId": "texts"
+        },
+        {
+          "name": "badgeText",
+          "displayName": "Badge Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts"
+        },
+        {
+          "name": "showFilters",
+          "displayName": "Show Filters",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "filters"
+        },
+        {
+          "name": "showSearch",
+          "displayName": "Show Search",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "filters"
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Image Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "s3OODUmZpJ",
+          "groupId": "image-settings"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "GrylMqHxui",
+          "groupId": "image-settings"
+        },
+        {
+          "name": "isInfinity",
+          "displayName": "Infinite Scroll",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "pagination"
+        },
+        {
+          "name": "columnText",
+          "displayName": "Column Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Column"
+        },
+        {
+          "name": "loadPrevPageText",
+          "displayName": "Load Previous Page Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Load previous page",
+          "groupId": "texts"
+        },
+        {
+          "name": "hideAddToCartButton",
+          "displayName": "Hide Add to Cart Button",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "card-settings"
+        },
+        {
+          "name": "components",
+          "displayName": "Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "privateVarMap": {
+            "product": {
+              "id": "pvm_1772808304776_3",
+              "typeId": "@ikas/bp-storefront-models-IkasProduct"
+            }
+          },
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-card-product-price",
+            "{{PROJECT_ID}}-card-product-variants",
+            "{{PROJECT_ID}}-card-product-name"
+          ]
+        },
+        {
+          "name": "hideBreadcrumb",
+          "displayName": "Hide Breadcrumb",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "appearance"
+        },
+        {
+          "name": "isBrandPage",
+          "displayName": "Is This a Brand Page?",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "data"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "data",
+          "name": "Data",
+          "description": "Product list data source"
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Background color, product card image ratio, and overlay settings",
+          "children": [
+            {
+              "id": "image-settings",
+              "name": "Image Settings",
+              "description": "Product card image ratio and fit settings"
+            },
+            {
+              "id": "card-settings",
+              "name": "Product Card Settings",
+              "description": "Product card view settings"
+            }
+          ]
+        },
+        {
+          "id": "filters",
+          "name": "Filters",
+          "description": "Toggle product filtering and search features"
+        },
+        {
+          "id": "pagination",
+          "name": "Pagination",
+          "description": "Classic pagination or infinite scroll behavior"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Button labels, empty state messages, and UI texts"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail",
+      "name": "ProductDetail",
+      "entry": "./src/components/ProductDetail/index.tsx",
+      "styles": "./src/components/ProductDetail/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "image-settings",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "image-settings",
+          "enumTypeId": "GrylMqHxui"
+        },
+        {
+          "name": "components",
+          "displayName": "Info Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-product-detail-name-favorite",
+            "{{PROJECT_ID}}-product-detail-sku",
+            "{{PROJECT_ID}}-product-detail-prices",
+            "{{PROJECT_ID}}-product-detail-product-group",
+            "{{PROJECT_ID}}-product-detail-variant",
+            "{{PROJECT_ID}}-product-detail-add-to-cart",
+            "{{PROJECT_ID}}-product-detail-features",
+            "{{PROJECT_ID}}-product-detail-description",
+            "{{PROJECT_ID}}-product-detail-bundle-product",
+            "{{PROJECT_ID}}-product-detail-option-set",
+            "{{PROJECT_ID}}-product-detail-offer"
+          ]
+        },
+        {
+          "name": "bottomComponents",
+          "displayName": "Sub Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-product-detail-bundle-furniture",
+            "{{PROJECT_ID}}-product-detail-offer"
+          ]
+        },
+        {
+          "name": "homepageText",
+          "displayName": "Home Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Home",
+          "groupId": "texts"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "image-settings",
+          "name": "Image Settings",
+          "description": "Product image aspect ratio and fit mode"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Breadcrumb and page texts"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-account-info-content",
+      "name": "AccountInfoContent",
+      "entry": "./src/components/AccountInfoContent/index.tsx",
+      "styles": "./src/components/AccountInfoContent/styles.css",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "My Account",
+          "groupId": "texts"
+        },
+        {
+          "name": "successMessage",
+          "displayName": "Success Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Your information has been updated.",
+          "groupId": "messages"
+        },
+        {
+          "name": "submitButtonText",
+          "displayName": "Save Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Save",
+          "groupId": "buttons"
+        },
+        {
+          "name": "submittingButtonText",
+          "displayName": "Saving Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Saving...",
+          "groupId": "buttons"
+        },
+        {
+          "name": "emailLabel",
+          "displayName": "Email",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Email",
+          "groupId": "texts"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Page title and form labels"
+        },
+        {
+          "id": "buttons",
+          "name": "Buttons",
+          "description": "Save button texts"
+        },
+        {
+          "id": "messages",
+          "name": "Messages",
+          "description": "Success and error feedback messages"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-account-orders",
+      "name": "AccountOrders",
+      "entry": "./src/components/AccountOrders/index.tsx",
+      "styles": "./src/components/AccountOrders/styles.css",
+      "props": [
+        {
+          "name": "ordersLabel",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "My Orders",
+          "groupId": "texts"
+        },
+        {
+          "name": "emptyText",
+          "displayName": "Empty State Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "You don't have any orders yet."
+        },
+        {
+          "name": "detailButtonText",
+          "displayName": "Detail Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "cardTexts",
+          "defaultValue": "View Details"
+        },
+        {
+          "name": "orderNoText",
+          "displayName": "Order No Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "cardTexts",
+          "defaultValue": "Order No:"
+        },
+        {
+          "name": "itemsText",
+          "displayName": "Product Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "cardTexts",
+          "defaultValue": "Product"
+        },
+        {
+          "name": "shopButtonText",
+          "displayName": "Shopping Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Start Shopping"
+        },
+        {
+          "name": "errorText",
+          "displayName": "Error Message",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "An error occurred while loading orders."
+        },
+        {
+          "name": "retryButtonText",
+          "displayName": "Try Again Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Try Again"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "texts",
+          "name": "General Texts",
+          "description": "Page title, loading, and empty state messages"
+        },
+        {
+          "id": "cardTexts",
+          "name": "Order Card Texts",
+          "description": "Label and button texts on each order card"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-account-favorites",
+      "name": "AccountFavorites",
+      "entry": "./src/components/AccountFavorites/index.tsx",
+      "styles": "./src/components/AccountFavorites/styles.css",
+      "props": [
+        {
+          "name": "favoritesLabel",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "My Favorites",
+          "groupId": "texts"
+        },
+        {
+          "name": "emptyFavoritesText",
+          "displayName": "Empty List Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "You haven't added any favorites yet.",
+          "groupId": "texts"
+        },
+        {
+          "name": "addToCartText",
+          "displayName": "Add to Cart Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Add to Cart",
+          "groupId": "texts"
+        },
+        {
+          "name": "components",
+          "displayName": "Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "privateVarMap": {
+            "product": {
+              "id": "pvm_1772803530689_1",
+              "typeId": "@ikas/bp-storefront-models-IkasProduct"
+            }
+          },
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-card-product-price",
+            "{{PROJECT_ID}}-card-product-variants",
+            "{{PROJECT_ID}}-card-product-name"
+          ]
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "All texts shown in the component"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-announcements",
+      "name": "Announcements",
+      "entry": "./src/components/Announcements/index.tsx",
+      "styles": "./src/components/Announcements/styles.css",
+      "props": [
+        {
+          "name": "bgColor",
+          "displayName": "Background Color",
+          "type": "COLOR",
+          "required": false,
+          "defaultValue": "#14141a",
+          "groupId": "appearance"
+        },
+        {
+          "name": "textColor",
+          "displayName": "Text Color",
+          "type": "COLOR",
+          "required": false,
+          "defaultValue": "#ffffff",
+          "groupId": "appearance"
+        },
+        {
+          "name": "items",
+          "displayName": "Announcements",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-announcement"
+          ]
+        },
+        {
+          "name": "autoPlay",
+          "displayName": "Autoplay",
+          "type": "BOOLEAN",
+          "required": false,
+          "defaultValue": true,
+          "groupId": "slider"
+        },
+        {
+          "name": "autoPlayInterval",
+          "displayName": "Autoplay Interval (ms)",
+          "type": "NUMBER",
+          "required": false,
+          "groupId": "slider",
+          "defaultValue": 5000
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Background and text color settings"
+        },
+        {
+          "id": "slider",
+          "name": "Slider Settings",
+          "description": "Autoplay and timing settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-announcement",
+      "name": "Announcement",
+      "entry": "./src/components/Announcement/index.tsx",
+      "styles": "./src/components/Announcement/styles.css",
+      "props": [
+        {
+          "name": "text",
+          "displayName": "Announcement Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Announcement Text"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-navbar",
+      "name": "Navbar",
+      "entry": "./src/components/Navbar/index.tsx",
+      "styles": "./src/components/Navbar/styles.css",
+      "props": [
+        {
+          "name": "logo",
+          "displayName": "Logo",
+          "type": "IMAGE",
+          "required": false,
+          "groupId": "logo-settings"
+        },
+        {
+          "name": "logoSizeDesktop",
+          "displayName": "Desktop Logo Size",
+          "type": "TYPE",
+          "required": false,
+          "typeId": "@ikas/bp-storefront-models-HeightStyleType",
+          "groupId": "logo-settings"
+        },
+        {
+          "name": "logoSizeMobile",
+          "displayName": "Mobile Logo Size",
+          "type": "TYPE",
+          "required": false,
+          "typeId": "@ikas/bp-storefront-models-HeightStyleType",
+          "groupId": "logo-settings"
+        },
+        {
+          "name": "navigationLinks",
+          "displayName": "Navigation Links",
+          "type": "LIST_OF_LINK",
+          "required": false,
+          "groupId": "navigation"
+        },
+        {
+          "name": "navigationLinkColor",
+          "displayName": "Link Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "navigation"
+        },
+        {
+          "name": "coloredLinks",
+          "displayName": "Links",
+          "type": "LIST_OF_LINK",
+          "required": false,
+          "groupId": "colored-links"
+        },
+        {
+          "name": "coloredLinkColor",
+          "displayName": "Link Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "colored-links"
+        },
+        {
+          "name": "cartTitle",
+          "displayName": "Cart Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "cart-sidebar",
+          "defaultValue": "My Cart"
+        },
+        {
+          "name": "emptyCartText",
+          "displayName": "Empty Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Your cart is empty",
+          "groupId": "cart-sidebar"
+        },
+        {
+          "name": "checkoutButtonText",
+          "displayName": "Checkout Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Proceed to Checkout",
+          "groupId": "cart-sidebar"
+        },
+        {
+          "name": "totalText",
+          "displayName": "Total Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Total",
+          "groupId": "cart-sidebar"
+        },
+        {
+          "name": "freeShippingText",
+          "displayName": "Free Shipping Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "cart-sidebar",
+          "defaultValue": "Free shipping on orders over $150"
+        },
+        {
+          "name": "emptyCartButtonText",
+          "displayName": "Empty Cart Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "cart-sidebar",
+          "defaultValue": "Start Shopping"
+        },
+        {
+          "name": "registerButtonText",
+          "displayName": "Sign Up Button",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "mobile-menu",
+          "defaultValue": "Sign Up"
+        },
+        {
+          "name": "loginButtonText",
+          "displayName": "Sign In Button",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "mobile-menu",
+          "defaultValue": "Sign In"
+        },
+        {
+          "name": "logoutButtonText",
+          "displayName": "Sign Out Button",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "mobile-menu",
+          "defaultValue": "Sign Out"
+        },
+        {
+          "name": "searchProductList",
+          "displayName": "Search Product List",
+          "type": "PRODUCT_LIST",
+          "required": false,
+          "groupId": "search"
+        },
+        {
+          "name": "hideAddToCartButton",
+          "displayName": "Hide Add to Cart Button",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "search-card-settings"
+        },
+        {
+          "name": "searchPlaceholder",
+          "displayName": "Search Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "What are you looking for?"
+        },
+        {
+          "name": "searchingText",
+          "displayName": "Searching Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "Searching..."
+        },
+        {
+          "name": "noResultsText",
+          "displayName": "No Results Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "No products found"
+        },
+        {
+          "name": "resultCountText",
+          "displayName": "Result Count Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "Result"
+        },
+        {
+          "name": "addToCartText",
+          "displayName": "Add to Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "Add to Cart"
+        },
+        {
+          "name": "addedToCartText",
+          "displayName": "Added to Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "Added to Cart"
+        },
+        {
+          "name": "outOfStockText",
+          "displayName": "Sold Out Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "Sold Out"
+        },
+        {
+          "name": "goToProductText",
+          "displayName": "View Product Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "View Product"
+        },
+        {
+          "name": "viewAllText",
+          "displayName": "View All Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "search-texts",
+          "defaultValue": "View All"
+        },
+        {
+          "name": "components",
+          "displayName": "Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "privateVarMap": {
+            "product": {
+              "id": "pvm_1772803767210_2",
+              "typeId": "@ikas/bp-storefront-models-IkasProduct"
+            }
+          },
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-card-product-price",
+            "{{PROJECT_ID}}-card-product-variants",
+            "{{PROJECT_ID}}-card-product-name"
+          ]
+        },
+        {
+          "name": "imageAspectRatio",
+          "displayName": "Image Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "search-image",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "imageObjectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "search-image",
+          "enumTypeId": "GrylMqHxui"
+        },
+        {
+          "name": "viewCartButtonText",
+          "displayName": "View Cart Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "View Cart"
+        },
+        {
+          "name": "stickyEnabled",
+          "displayName": "Enable Sticky",
+          "type": "BOOLEAN",
+          "required": false,
+          "description": "When enabled, the navbar stays fixed at the top of the page and remains visible while scrolling",
+          "groupId": "settings"
+        },
+        {
+          "name": "backgroundColor",
+          "displayName": "Background Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "appearance",
+          "defaultValue": "#ffffff"
+        },
+        {
+          "name": "borderColor",
+          "displayName": "Border Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "appearance",
+          "defaultValue": "#ececed"
+        },
+        {
+          "name": "searchEmptyStateText",
+          "displayName": "Search Empty State Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Search for products...",
+          "groupId": "texts"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "logo-settings",
+          "name": "Logo",
+          "description": "Image and size settings"
+        },
+        {
+          "id": "navigation",
+          "name": "Navigation",
+          "description": "Links and colors"
+        },
+        {
+          "id": "colored-links",
+          "name": "Featured Links",
+          "description": "Featured links"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Cart and mobile menu texts",
+          "children": [
+            {
+              "id": "cart-sidebar",
+              "name": "Cart",
+              "description": "Cart sidebar texts"
+            },
+            {
+              "id": "mobile-menu",
+              "name": "Mobile Menu",
+              "description": "Login, register, and logout buttons"
+            }
+          ]
+        },
+        {
+          "id": "search",
+          "name": "Search",
+          "description": "Search modal settings",
+          "children": [
+            {
+              "id": "search-card-settings",
+              "name": "Product Card Settings",
+              "description": "Product card view settings in search results"
+            },
+            {
+              "id": "search-texts",
+              "name": "Texts",
+              "description": "Search modal text settings"
+            }
+          ]
+        },
+        {
+          "id": "search-image",
+          "name": "Product Image Settings",
+          "description": "Product image ratio and fit settings"
+        },
+        {
+          "id": "settings",
+          "name": "Settings",
+          "description": "General navbar behavior settings"
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Background and border colors"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-hero-slide",
+      "name": "HeroSliderItem",
+      "entry": "./src/components/HeroSliderItem/index.tsx",
+      "styles": "./src/components/HeroSliderItem/styles.css",
+      "props": [
+        {
+          "name": "image",
+          "displayName": "Image",
+          "type": "IMAGE",
+          "required": false,
+          "groupId": "desktop"
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "desktop",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "desktop",
+          "enumTypeId": "GrylMqHxui"
+        },
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "RICH_TEXT",
+          "required": false,
+          "groupId": "desktop"
+        },
+        {
+          "name": "titleAlignment",
+          "displayName": "Title Alignment",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "desktop",
+          "enumTypeId": "08UWYbbs0P"
+        },
+        {
+          "name": "textColor",
+          "displayName": "Text Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "desktop"
+        },
+        {
+          "name": "overlay",
+          "displayName": "Overlay",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "desktop"
+        },
+        {
+          "name": "roundedCorners",
+          "displayName": "Rounded Corners",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "desktop"
+        },
+        {
+          "name": "mobileImage",
+          "displayName": "Image",
+          "type": "IMAGE",
+          "required": false,
+          "groupId": "mobile"
+        },
+        {
+          "name": "mobileAspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "mobile",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "mobileObjectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "mobile",
+          "enumTypeId": "GrylMqHxui"
+        },
+        {
+          "name": "mobileTitle",
+          "displayName": "Title",
+          "type": "RICH_TEXT",
+          "required": false,
+          "groupId": "mobile"
+        },
+        {
+          "name": "mobileTitleAlignment",
+          "displayName": "Title Alignment",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "mobile",
+          "enumTypeId": "08UWYbbs0P"
+        },
+        {
+          "name": "mobileTextColor",
+          "displayName": "Text Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "mobile"
+        },
+        {
+          "name": "mobileOverlay",
+          "displayName": "Overlay",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "mobile"
+        },
+        {
+          "name": "mobileRoundedCorners",
+          "displayName": "Rounded Corners",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "mobile"
+        },
+        {
+          "name": "link",
+          "displayName": "Link",
+          "type": "LINK",
+          "required": false,
+          "groupId": "desktopButton"
+        },
+        {
+          "name": "buttonFontSize",
+          "displayName": "Font Size",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktopButton",
+          "typeId": "@ikas/bp-storefront-models-FontSizeStyleType"
+        },
+        {
+          "name": "buttonColor",
+          "displayName": "Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "desktopButton"
+        },
+        {
+          "name": "buttonBgColor",
+          "displayName": "Background Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "desktopButton"
+        },
+        {
+          "name": "buttonHoverColor",
+          "displayName": "Color (Hover)",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "desktopButton"
+        },
+        {
+          "name": "buttonHoverBgColor",
+          "displayName": "Background Color (Hover)",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "desktopButton"
+        },
+        {
+          "name": "mobileLink",
+          "displayName": "Link",
+          "type": "LINK",
+          "required": false,
+          "groupId": "mobileButton"
+        },
+        {
+          "name": "mobileButtonFontSize",
+          "displayName": "Font Size",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobileButton",
+          "typeId": "@ikas/bp-storefront-models-FontSizeStyleType"
+        },
+        {
+          "name": "mobileButtonColor",
+          "displayName": "Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "mobileButton"
+        },
+        {
+          "name": "mobileButtonBgColor",
+          "displayName": "Background Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "mobileButton"
+        },
+        {
+          "name": "mobileButtonHoverColor",
+          "displayName": "Color (Hover)",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "mobileButton"
+        },
+        {
+          "name": "mobileButtonHoverBgColor",
+          "displayName": "Background Color (Hover)",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "mobileButton"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "desktop",
+          "name": "Desktop Settings",
+          "children": [
+            {
+              "id": "desktopButton",
+              "name": "Button Settings",
+              "description": "Button link, color, and hover settings for desktop view"
+            }
+          ],
+          "description": "Image, title, and style settings for desktop devices"
+        },
+        {
+          "id": "mobile",
+          "name": "Mobile Settings",
+          "children": [
+            {
+              "id": "mobileButton",
+              "name": "Button Settings",
+              "description": "Button link, color, and hover settings for mobile view"
+            }
+          ],
+          "description": "Image, title, and style settings for mobile devices"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-category-image-item",
+      "name": "CategoryImageItem",
+      "entry": "./src/components/CategoryImageItem/index.tsx",
+      "styles": "./src/components/CategoryImageItem/styles.css",
+      "props": [
+        {
+          "name": "image",
+          "displayName": "Image",
+          "type": "IMAGE",
+          "required": false,
+          "groupId": "desktop"
+        },
+        {
+          "name": "link",
+          "displayName": "Link",
+          "type": "LINK",
+          "required": false,
+          "groupId": "desktop"
+        },
+        {
+          "name": "overlay",
+          "displayName": "Dark Overlay",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "desktop"
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "desktop",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "desktop",
+          "enumTypeId": "GrylMqHxui"
+        },
+        {
+          "name": "mobileImage",
+          "displayName": "Image",
+          "type": "IMAGE",
+          "required": false,
+          "groupId": "mobile"
+        },
+        {
+          "name": "mobileLink",
+          "displayName": "Link",
+          "type": "LINK",
+          "required": false,
+          "groupId": "mobile"
+        },
+        {
+          "name": "mobileOverlay",
+          "displayName": "Dark Overlay",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "mobile"
+        },
+        {
+          "name": "mobileAspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "mobile",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "mobileObjectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "mobile",
+          "enumTypeId": "GrylMqHxui"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "desktop",
+          "name": "Desktop Settings"
+        },
+        {
+          "id": "mobile",
+          "name": "Mobile Settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-social-media-icon",
+      "name": "SocialMediaIcon",
+      "entry": "./src/components/SocialMediaIcon/index.tsx",
+      "styles": "./src/components/SocialMediaIcon/styles.css",
+      "props": [
+        {
+          "name": "icon",
+          "displayName": "Icon",
+          "type": "IMAGE",
+          "required": false
+        },
+        {
+          "name": "link",
+          "displayName": "Link",
+          "type": "LINK",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-feature-item",
+      "name": "FeatureItem",
+      "entry": "./src/components/FeatureItem/index.tsx",
+      "styles": "./src/components/FeatureItem/styles.css",
+      "props": [
+        {
+          "name": "image",
+          "displayName": "Image",
+          "type": "IMAGE",
+          "required": false
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "type": "RICH_TEXT",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-features",
+      "name": "Features",
+      "entry": "./src/components/Features/index.tsx",
+      "styles": "./src/components/Features/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "backgroundColor",
+          "displayName": "Background Color",
+          "type": "COLOR",
+          "required": false,
+          "defaultValue": "#fafafa"
+        },
+        {
+          "name": "components",
+          "displayName": "Specifications",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-feature-item"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-card-product-name",
+      "name": "CardProductName",
+      "entry": "./src/components/CardProductName/index.tsx",
+      "styles": "./src/components/CardProductName/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "singleLineName",
+          "displayName": "Single Row First Name",
+          "type": "BOOLEAN",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-card-product-variants",
+      "name": "CardProductVariants",
+      "entry": "./src/components/CardProductVariants/index.tsx",
+      "styles": "./src/components/CardProductVariants/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-card-product-price",
+      "name": "CardProductPrice",
+      "entry": "./src/components/CardProductPrice/index.tsx",
+      "styles": "./src/components/CardProductPrice/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-name-favorite",
+      "name": "ProductDetailNameFavorite",
+      "entry": "./src/components/ProductDetailNameFavorite/index.tsx",
+      "styles": "./src/components/ProductDetailNameFavorite/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "hideFavoriteButton",
+          "displayName": "Hide Favorite Button",
+          "type": "BOOLEAN",
+          "required": false
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-sku",
+      "name": "ProductDetailSku",
+      "entry": "./src/components/ProductDetailSku/index.tsx",
+      "styles": "./src/components/ProductDetailSku/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "productCodeLabel",
+          "displayName": "Product Code Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Product Code:",
+          "groupId": "texts"
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Text settings displayed in the component"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-prices",
+      "name": "ProductDetailPrices",
+      "entry": "./src/components/ProductDetailPrices/index.tsx",
+      "styles": "./src/components/ProductDetailPrices/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-product-group",
+      "name": "ProductDetailProductGroup",
+      "entry": "./src/components/ProductDetailProductGroup/index.tsx",
+      "styles": "./src/components/ProductDetailProductGroup/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-variant",
+      "name": "ProductDetailVariant",
+      "entry": "./src/components/ProductDetailVariant/index.tsx",
+      "styles": "./src/components/ProductDetailVariant/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "useVariantImages",
+          "displayName": "Image Variant",
+          "type": "BOOLEAN",
+          "required": false,
+          "description": "Use product images for color variant."
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-add-to-cart",
+      "name": "ProductDetailAddToCart",
+      "entry": "./src/components/ProductDetailAddToCart/index.tsx",
+      "styles": "./src/components/ProductDetailAddToCart/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "addToCartButtonText",
+          "displayName": "Add to Cart Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Add to Cart",
+          "groupId": "texts"
+        },
+        {
+          "name": "addingToCartText",
+          "displayName": "Adding to Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Adding...",
+          "groupId": "texts"
+        },
+        {
+          "name": "outOfStockText",
+          "displayName": "Sold Out Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Sold Out",
+          "groupId": "texts"
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "hideQuantityInput",
+          "displayName": "Hide Quantity Selector",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "settings"
+        },
+        {
+          "name": "errorMessage",
+          "displayName": "Error Message",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Failed to add product to cart"
+        },
+        {
+          "name": "optionSetErrorMessage",
+          "displayName": "Option Set Error Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Please fill in the required options",
+          "groupId": "texts"
+        },
+        {
+          "name": "updateCartButtonText",
+          "displayName": "Update Cart Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Update",
+          "groupId": "texts"
+        },
+        {
+          "name": "updatingCartText",
+          "displayName": "Updating Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Updating...",
+          "groupId": "texts"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Button and status texts"
+        },
+        {
+          "id": "settings",
+          "name": "Settings",
+          "description": "Settings that control component behavior"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-features",
+      "name": "ProductDetailFeatures",
+      "entry": "./src/components/ProductDetailFeatures/index.tsx",
+      "styles": "./src/components/ProductDetailFeatures/styles.css",
+      "props": [
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "components",
+          "displayName": "Specifications",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-product-detail-feature-item"
+          ]
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-description",
+      "name": "ProductDetailDescription",
+      "entry": "./src/components/ProductDetailDescription/index.tsx",
+      "styles": "./src/components/ProductDetailDescription/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Product Details",
+          "groupId": "texts"
+        },
+        {
+          "name": "defaultOpen",
+          "displayName": "Description Open by Default",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "settings"
+        },
+        {
+          "name": "components",
+          "displayName": "Components",
+          "type": "COMPONENT_LIST",
+          "required": false,
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-collapsible-content"
+          ]
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Text settings displayed in the component"
+        },
+        {
+          "id": "settings",
+          "name": "Settings",
+          "description": "Component behavior settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-bundle-product",
+      "name": "ProductDetailBundleProduct",
+      "entry": "./src/components/ProductDetailBundleProduct/index.tsx",
+      "styles": "./src/components/ProductDetailBundleProduct/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "isBundleFurniture",
+          "displayName": "Furniture Bundle Mode",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "settings"
+        },
+        {
+          "name": "bundleProductWithoutLink",
+          "displayName": "Disable Product Link",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "settings"
+        },
+        {
+          "name": "quantityLabel",
+          "displayName": "Quantity Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Quantity"
+        },
+        {
+          "name": "outOfStockText",
+          "displayName": "Out of Stock Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Out of Stock"
+        },
+        {
+          "name": "productContentTitle",
+          "displayName": "Set Contents Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Set Contents"
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "appearance",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "appearance",
+          "enumTypeId": "GrylMqHxui"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        },
+        {
+          "id": "settings",
+          "name": "Settings",
+          "description": "Settings that control bundle behavior"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Text labels displayed in the component"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-bundle-furniture",
+      "name": "ProductDetailBundleFurniture",
+      "entry": "./src/components/ProductDetailBundleFurniture/index.tsx",
+      "styles": "./src/components/ProductDetailBundleFurniture/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "productContentTitle",
+          "displayName": "Product Contents Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Product Contents"
+        },
+        {
+          "name": "partsLabel",
+          "displayName": "Parts Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Parts"
+        },
+        {
+          "name": "unitPriceLabel",
+          "displayName": "Unit Price Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Unit Price"
+        },
+        {
+          "name": "quantityLabel",
+          "displayName": "Quantity Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Quantity"
+        },
+        {
+          "name": "featuresLabel",
+          "displayName": "Specifications Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Specifications"
+        },
+        {
+          "name": "totalPriceLabel",
+          "displayName": "Total Price Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Total Price"
+        },
+        {
+          "name": "outOfStockText",
+          "displayName": "Out of Stock Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Out of Stock"
+        },
+        {
+          "name": "addProductItemText",
+          "displayName": "Add Product Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Add Product"
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "appearance",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "appearance",
+          "enumTypeId": "GrylMqHxui"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Text labels displayed in the component"
+        },
+        {
+          "id": "margins",
+          "name": "Margins",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop margin settings"
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Image ratio and fit settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-option-set",
+      "name": "ProductDetailOptionSet",
+      "entry": "./src/components/ProductDetailOptionSet/index.tsx",
+      "styles": "./src/components/ProductDetailOptionSet/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "selectPlaceholderText",
+          "displayName": "Select Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Select",
+          "groupId": "texts"
+        },
+        {
+          "name": "fileDropText",
+          "displayName": "File Drop Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Choose a file or drag it here",
+          "groupId": "texts"
+        },
+        {
+          "name": "uploadingText",
+          "displayName": "Uploading Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Uploading...",
+          "groupId": "texts"
+        },
+        {
+          "name": "uploadFailedText",
+          "displayName": "Upload Failed Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Upload failed",
+          "groupId": "texts"
+        },
+        {
+          "name": "fileSizeErrorText",
+          "displayName": "File Size Error",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "{fileName}: max {maxSize}MB",
+          "groupId": "texts"
+        },
+        {
+          "name": "fileTypeErrorText",
+          "displayName": "File Type Error",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "{fileName}: {ext} file type not allowed",
+          "groupId": "texts"
+        },
+        {
+          "name": "maxFilesErrorText",
+          "displayName": "Max Files Error",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Maximum {max} files can be uploaded",
+          "groupId": "texts"
+        },
+        {
+          "name": "requiredFieldErrorText",
+          "displayName": "Required Field Error",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "This field is required"
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "minLabelText",
+          "displayName": "Min Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Min: "
+        },
+        {
+          "name": "maxLabelText",
+          "displayName": "Max Label",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Max: "
+        },
+        {
+          "name": "fileFallbackNameText",
+          "displayName": "Default File Name",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "File"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Text settings displayed in the component"
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ],
+          "description": "Component mobile and desktop view settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-cart-page",
+      "name": "CartPage",
+      "entry": "./src/components/CartPage/index.tsx",
+      "styles": "./src/components/CartPage/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Cart",
+          "groupId": "page"
+        },
+        {
+          "name": "emptyCartText",
+          "displayName": "Empty Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Your cart is empty",
+          "groupId": "page"
+        },
+        {
+          "name": "subtotalLabel",
+          "displayName": "Subtotal Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Subtotal",
+          "groupId": "summary"
+        },
+        {
+          "name": "totalLabel",
+          "displayName": "Total Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Total",
+          "groupId": "summary"
+        },
+        {
+          "name": "checkoutButtonText",
+          "displayName": "Checkout Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Complete Order",
+          "groupId": "summary"
+        },
+        {
+          "name": "itemsText",
+          "displayName": "Product Count Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "product",
+          "groupId": "page"
+        },
+        {
+          "name": "couponPlaceholder",
+          "displayName": "Coupon Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Enter coupon code",
+          "groupId": "coupon"
+        },
+        {
+          "name": "couponApplyText",
+          "displayName": "Coupon Apply Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Apply",
+          "groupId": "coupon"
+        },
+        {
+          "name": "couponRemoveText",
+          "displayName": "Coupon Remove Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Remove",
+          "groupId": "coupon"
+        },
+        {
+          "name": "couponApplyingText",
+          "displayName": "Coupon Applying Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Applying...",
+          "groupId": "coupon"
+        },
+        {
+          "name": "orderSummaryTitle",
+          "displayName": "Order Summary Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Order Summary",
+          "groupId": "summary"
+        },
+        {
+          "name": "couponToggleText",
+          "displayName": "Coupon Toggle Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Use Gift Code!",
+          "groupId": "coupon"
+        },
+        {
+          "name": "continueShoppingText",
+          "displayName": "Continue Shopping Button Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "page",
+          "defaultValue": "Start Shopping"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "page",
+          "name": "Page",
+          "description": "Page title, loading, and empty cart texts"
+        },
+        {
+          "id": "summary",
+          "name": "Order Summary",
+          "description": "Order summary title, price labels, and checkout button"
+        },
+        {
+          "id": "coupon",
+          "name": "Coupon Code",
+          "description": "Coupon code toggle, input field, and button texts"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-offer",
+      "name": "ProductDetailOffer",
+      "entry": "./src/components/ProductDetailOffer/index.tsx",
+      "styles": "./src/components/ProductDetailOffer/styles.css",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "preselectOffers",
+          "displayName": "Auto Select Offers",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "layout"
+        },
+        {
+          "name": "addToCartTogetherText",
+          "displayName": "Add Together to Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Add Together to Cart",
+          "groupId": "texts"
+        },
+        {
+          "name": "addingToCartText",
+          "displayName": "Adding Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Adding...",
+          "groupId": "texts"
+        },
+        {
+          "name": "offerInfoText",
+          "displayName": "Offer Info Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Add selected products together to your cart and enjoy the discount.",
+          "groupId": "texts"
+        },
+        {
+          "name": "totalText",
+          "displayName": "Total Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Total",
+          "groupId": "texts"
+        },
+        {
+          "name": "advantageousTotalText",
+          "displayName": "Discounted Total Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Discounted Total",
+          "groupId": "texts"
+        },
+        {
+          "name": "outOfStockText",
+          "displayName": "Sold Out Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Sold Out",
+          "groupId": "texts"
+        },
+        {
+          "name": "imageAspectRatio",
+          "displayName": "Image Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "s3OODUmZpJ",
+          "groupId": "image"
+        },
+        {
+          "name": "imageObjectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "GrylMqHxui",
+          "groupId": "image"
+        },
+        {
+          "name": "addedToCartBannerText",
+          "displayName": "Added to Cart Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Added to cart",
+          "groupId": "texts"
+        },
+        {
+          "name": "compactView",
+          "displayName": "Compact View",
+          "type": "BOOLEAN",
+          "required": false,
+          "groupId": "layout"
+        },
+        {
+          "name": "mobileMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "mobileMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "mobile",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "desktopMarginTop",
+          "displayName": "Top Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+        },
+        {
+          "name": "desktopMarginBottom",
+          "displayName": "Bottom Spacing",
+          "type": "TYPE",
+          "required": false,
+          "groupId": "desktop",
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+        },
+        {
+          "name": "errorMessage",
+          "displayName": "Error Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Failed to add product to cart",
+          "groupId": "texts"
+        },
+        {
+          "name": "optionSetErrorMessage",
+          "displayName": "Option Set Error Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Please fill in the required options",
+          "groupId": "texts"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "All text content visible to the user"
+        },
+        {
+          "id": "layout",
+          "name": "Layout",
+          "description": "Component layout and behavior settings"
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "description": "Image size and fit settings"
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance Settings",
+          "description": "Component mobile and desktop view settings",
+          "children": [
+            {
+              "id": "mobile",
+              "name": "Mobile View",
+              "description": "Margin settings for mobile devices"
+            },
+            {
+              "id": "desktop",
+              "name": "Desktop View",
+              "description": "Margin settings for desktop devices"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-feature-item",
+      "name": "ProductDetailFeatureItem",
+      "entry": "./src/components/ProductDetailFeatureItem/index.tsx",
+      "styles": "./src/components/ProductDetailFeatureItem/styles.css",
+      "props": [
+        {
+          "name": "image",
+          "displayName": "Image",
+          "type": "IMAGE",
+          "required": false
+        },
+        {
+          "name": "text",
+          "displayName": "Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Free shipping"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-account-order-detail",
+      "name": "AccountOrderDetail",
+      "entry": "./src/components/AccountOrderDetail/index.tsx",
+      "styles": "./src/components/AccountOrderDetail/styles.css",
+      "props": [
+        {
+          "name": "breadcrumbOrdersLabel",
+          "displayName": "Breadcrumb Orders Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "My Orders",
+          "groupId": "navigation"
+        },
+        {
+          "name": "breadcrumbOrderLabel",
+          "displayName": "Breadcrumb Order Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Order",
+          "groupId": "navigation"
+        },
+        {
+          "name": "orderNoLabel",
+          "displayName": "Order No Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Order No:",
+          "groupId": "orderInfo"
+        },
+        {
+          "name": "orderStatusLabel",
+          "displayName": "Order Status Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Order Status:",
+          "groupId": "orderInfo"
+        },
+        {
+          "name": "orderDateLabel",
+          "displayName": "Order Date Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Order Date:",
+          "groupId": "orderInfo"
+        },
+        {
+          "name": "returnButtonText",
+          "displayName": "Return Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Return",
+          "groupId": "returnRequest"
+        },
+        {
+          "name": "returningButtonText",
+          "displayName": "Returning Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Submitting return request...",
+          "groupId": "returnRequest"
+        },
+        {
+          "name": "returnRequestTitle",
+          "displayName": "Return Request Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Return Request",
+          "groupId": "returnRequest"
+        },
+        {
+          "name": "returnSubmitText",
+          "displayName": "Return Submit Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Return",
+          "groupId": "returnRequest"
+        },
+        {
+          "name": "deliveryAddressLabel",
+          "displayName": "Delivery Address Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Delivery Address",
+          "groupId": "addressPayment"
+        },
+        {
+          "name": "billingAddressLabel",
+          "displayName": "Billing Address Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Billing Address",
+          "groupId": "addressPayment"
+        },
+        {
+          "name": "paymentInfoLabel",
+          "displayName": "Payment Info Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Payment Information",
+          "groupId": "addressPayment"
+        },
+        {
+          "name": "summaryLabel",
+          "displayName": "Summary Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Summary",
+          "groupId": "summary"
+        },
+        {
+          "name": "subtotalLabel",
+          "displayName": "Subtotal Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Subtotal",
+          "groupId": "summary"
+        },
+        {
+          "name": "shippingLabel",
+          "displayName": "Shipping Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Shipping",
+          "groupId": "summary"
+        },
+        {
+          "name": "totalLabel",
+          "displayName": "Total Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Total",
+          "groupId": "summary"
+        },
+        {
+          "name": "taxIncludedText",
+          "displayName": "Tax Included Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "*taxes included",
+          "groupId": "summary"
+        },
+        {
+          "name": "cargoCompanyLabel",
+          "displayName": "Shipping Company Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Shipping Company:",
+          "groupId": "shipping"
+        },
+        {
+          "name": "trackingNumberLabel",
+          "displayName": "Tracking Number Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Tracking Number:",
+          "groupId": "shipping"
+        },
+        {
+          "name": "quantityLabel",
+          "displayName": "Quantity Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "items",
+          "groupId": "orderInfo"
+        },
+        {
+          "name": "errorText",
+          "displayName": "Error Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Order not found.",
+          "groupId": "states"
+        },
+        {
+          "name": "backToOrdersText",
+          "displayName": "Back to Orders Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Back to Orders",
+          "groupId": "navigation"
+        },
+        {
+          "name": "returnSuccessText",
+          "displayName": "Return Success Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Your return request has been successfully created.",
+          "groupId": "returnRequest"
+        },
+        {
+          "name": "returnErrorText",
+          "displayName": "Return Error Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "An error occurred while creating the return request.",
+          "groupId": "returnRequest"
+        },
+        {
+          "name": "copiedText",
+          "displayName": "Copied Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "shipping",
+          "defaultValue": "Copied!"
+        },
+        {
+          "name": "installmentText",
+          "displayName": "Installment Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "addressPayment",
+          "defaultValue": "Installment"
+        },
+        {
+          "name": "singlePaymentText",
+          "displayName": "Single Payment Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "addressPayment",
+          "defaultValue": "Single Payment"
+        },
+        {
+          "name": "downloadSectionTitle",
+          "displayName": "Downloadable Files Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Downloadable Files",
+          "groupId": "downloads"
+        },
+        {
+          "name": "downloadButtonText",
+          "displayName": "Download Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Download",
+          "groupId": "downloads"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "orderInfo",
+          "name": "Order Information",
+          "description": "Labels shown in order detail header (order no, status, date)"
+        },
+        {
+          "id": "navigation",
+          "name": "Navigation",
+          "description": "Breadcrumb and back button texts"
+        },
+        {
+          "id": "addressPayment",
+          "name": "Address & Payment",
+          "description": "Delivery address, billing address, and payment information titles"
+        },
+        {
+          "id": "summary",
+          "name": "Order Summary",
+          "description": "Summary row labels such as subtotal, shipping, and total"
+        },
+        {
+          "id": "shipping",
+          "name": "Shipping Details",
+          "description": "Package shipping company, tracking number, and copy feedback"
+        },
+        {
+          "id": "returnRequest",
+          "name": "Return Request",
+          "description": "Title, button, and notification texts on the return screen"
+        },
+        {
+          "id": "states",
+          "name": "Status Messages",
+          "description": "Texts shown during loading and error states"
+        },
+        {
+          "id": "downloads",
+          "name": "Downloadable Files",
+          "description": "Title and button texts in the digital product download section"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-account-addresses",
+      "name": "AccountAddresses",
+      "entry": "./src/components/AccountAddresses/index.tsx",
+      "styles": "./src/components/AccountAddresses/styles.css",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "My Addresses",
+          "groupId": "general"
+        },
+        {
+          "name": "emptyMessage",
+          "displayName": "Empty State Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "No addresses added yet.",
+          "groupId": "general"
+        },
+        {
+          "name": "addButtonText",
+          "displayName": "Add Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Add Address",
+          "groupId": "general"
+        },
+        {
+          "name": "editButtonText",
+          "displayName": "Edit Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Edit",
+          "groupId": "general"
+        },
+        {
+          "name": "modalTitleAdd",
+          "displayName": "Modal Title (Add)",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Add Address",
+          "groupId": "addressModal"
+        },
+        {
+          "name": "modalTitleEdit",
+          "displayName": "Modal Title (Edit)",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Edit Address",
+          "groupId": "addressModal"
+        },
+        {
+          "name": "saveButtonText",
+          "displayName": "Save Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Save",
+          "groupId": "addressModal"
+        },
+        {
+          "name": "savingButtonText",
+          "displayName": "Saving Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Saving...",
+          "groupId": "addressModal"
+        },
+        {
+          "name": "cancelButtonText",
+          "displayName": "Cancel Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Cancel",
+          "groupId": "addressModal"
+        },
+        {
+          "name": "deleteConfirmTitle",
+          "displayName": "Delete Confirmation Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "deleteModal",
+          "defaultValue": "Delete Address"
+        },
+        {
+          "name": "deleteConfirmMessage",
+          "displayName": "Delete Confirmation Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Are you sure you want to delete this address?",
+          "groupId": "deleteModal"
+        },
+        {
+          "name": "deleteButtonText",
+          "displayName": "Delete Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Delete",
+          "groupId": "deleteModal"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "general",
+          "name": "General",
+          "description": "Page title, empty state message, and button texts"
+        },
+        {
+          "id": "addressModal",
+          "name": "Address Form Modal",
+          "description": "Title and button texts in the address add and edit modal"
+        },
+        {
+          "id": "deleteModal",
+          "name": "Delete Confirmation Modal",
+          "description": "Title, message, and button texts in the address delete confirmation modal"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-collapsible-content",
+      "name": "CollapsibleContent",
+      "entry": "./src/components/CollapsibleContent/index.tsx",
+      "styles": "./src/components/CollapsibleContent/styles.css",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Title"
+        },
+        {
+          "name": "description",
+          "displayName": "Description",
+          "type": "RICH_TEXT",
+          "required": false
+        },
+        {
+          "name": "defaultOpen",
+          "displayName": "Open by Default",
+          "type": "BOOLEAN",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-blog-post",
+      "name": "BlogPost",
+      "entry": "./src/components/BlogPost/index.tsx",
+      "styles": "./src/components/BlogPost/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "blogPost",
+          "displayName": "Blog Post",
+          "type": "BLOG",
+          "required": true,
+          "groupId": "content"
+        },
+        {
+          "name": "homeText",
+          "displayName": "Home Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Home"
+        },
+        {
+          "name": "blogText",
+          "displayName": "Blog Text",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Blog Posts"
+        },
+        {
+          "name": "tagsTitle",
+          "displayName": "Tags Title",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "texts",
+          "defaultValue": "Tags"
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "s3OODUmZpJ",
+          "groupId": "appearance"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "enumTypeId": "GrylMqHxui",
+          "groupId": "appearance"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Blog post data source"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Text labels used across the section",
+          "children": []
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "children": [],
+          "description": "Image and style settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-blog-home",
+      "name": "BlogHome",
+      "entry": "./src/components/BlogHome/index.tsx",
+      "styles": "./src/components/BlogHome/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "blogList",
+          "displayName": "Blog Posts",
+          "type": "BLOG_LIST",
+          "required": true,
+          "groupId": "content"
+        },
+        {
+          "name": "blogCategoryList",
+          "displayName": "Blog Categories",
+          "type": "BLOG_CATEGORY_LIST",
+          "required": false,
+          "groupId": "content"
+        },
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Blog",
+          "groupId": "content"
+        },
+        {
+          "name": "allCategoriesText",
+          "displayName": "View All Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "View All",
+          "groupId": "texts"
+        },
+        {
+          "name": "readMoreText",
+          "displayName": "Read More Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Read More",
+          "groupId": "texts"
+        },
+        {
+          "name": "emptyMessage",
+          "displayName": "Empty State Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "No blog posts found yet.",
+          "groupId": "texts"
+        },
+        {
+          "name": "aspectRatio",
+          "displayName": "Aspect Ratio",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "image-settings",
+          "enumTypeId": "s3OODUmZpJ"
+        },
+        {
+          "name": "objectFit",
+          "displayName": "Image Fit",
+          "type": "ENUM",
+          "required": false,
+          "groupId": "image-settings",
+          "enumTypeId": "GrylMqHxui"
+        },
+        {
+          "name": "description",
+          "displayName": "Description",
+          "type": "TEXT",
+          "required": false,
+          "groupId": "content"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Blog posts, categories, and page title"
+        },
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Button, label, and empty state texts"
+        },
+        {
+          "id": "image-settings",
+          "name": "Image Settings",
+          "description": "Aspect ratio and fit for blog card images"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-customer-email-verification",
+      "name": "CustomerEmailVerification",
+      "entry": "./src/components/CustomerEmailVerification/index.tsx",
+      "styles": "./src/components/CustomerEmailVerification/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Account Activation",
+          "groupId": "loading"
+        },
+        {
+          "name": "successTitle",
+          "displayName": "Success Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Your Account Has Been Activated!",
+          "groupId": "success"
+        },
+        {
+          "name": "successMessage",
+          "displayName": "Success Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Your account has been successfully activated. You can sign in and start shopping.",
+          "groupId": "success"
+        },
+        {
+          "name": "errorTitle",
+          "displayName": "Error Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Activation Failed",
+          "groupId": "error"
+        },
+        {
+          "name": "errorMessage",
+          "displayName": "Error Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Your activation link may be invalid or expired.",
+          "groupId": "error"
+        },
+        {
+          "name": "loadingMessage",
+          "displayName": "Loading Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Activating your account...",
+          "groupId": "loading"
+        },
+        {
+          "name": "loginButtonText",
+          "displayName": "Login Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Sign In",
+          "groupId": "success"
+        },
+        {
+          "name": "resendTitle",
+          "displayName": "Resend Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Resend Activation Email",
+          "groupId": "resend"
+        },
+        {
+          "name": "emailLabel",
+          "displayName": "Email Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Email",
+          "groupId": "resend"
+        },
+        {
+          "name": "emailPlaceholder",
+          "displayName": "Email Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "example@email.com",
+          "groupId": "resend"
+        },
+        {
+          "name": "resendButtonText",
+          "displayName": "Resend Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Resend",
+          "groupId": "resend"
+        },
+        {
+          "name": "resendingButtonText",
+          "displayName": "Sending Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Sending...",
+          "groupId": "resend"
+        },
+        {
+          "name": "resendSuccessMessage",
+          "displayName": "Resend Success Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Activation email has been resent. Please check your inbox.",
+          "groupId": "resend"
+        },
+        {
+          "name": "resendErrorMessage",
+          "displayName": "Resend Error Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Failed to send email. Please try again.",
+          "groupId": "resend"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "loading",
+          "name": "Loading",
+          "description": "Title and message texts shown during email verification process"
+        },
+        {
+          "id": "success",
+          "name": "Success",
+          "description": "Title, message, and login button texts shown when verification is successful"
+        },
+        {
+          "id": "error",
+          "name": "Error",
+          "description": "Title and error message texts shown when verification fails"
+        },
+        {
+          "id": "resend",
+          "name": "Resend",
+          "description": "Form field, button, and status message texts for resending the verification email"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-rich-text",
+      "name": "RichText",
+      "entry": "./src/components/RichText/index.tsx",
+      "styles": "./src/components/RichText/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Title"
+        },
+        {
+          "name": "content",
+          "displayName": "Content",
+          "type": "RICH_TEXT",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-product-detail-reviews",
+      "name": "ProductDetailReviews",
+      "entry": "./src/components/ProductDetailReviews/index.tsx",
+      "styles": "./src/components/ProductDetailReviews/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "product",
+          "displayName": "Product",
+          "type": "PRODUCT",
+          "required": false
+        },
+        {
+          "name": "reviewsPerPage",
+          "displayName": "Reviews Per Page",
+          "type": "NUMBER",
+          "required": false,
+          "defaultValue": 5,
+          "groupId": "settings"
+        },
+        {
+          "name": "sectionTitle",
+          "displayName": "Section Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Customer Reviews",
+          "groupId": "texts"
+        },
+        {
+          "name": "writeReviewButtonText",
+          "displayName": "Write Review Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Write a Review",
+          "groupId": "texts"
+        },
+        {
+          "name": "emptyStateText",
+          "displayName": "Empty State Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "No reviews yet. Be the first to review this product!",
+          "groupId": "texts"
+        },
+        {
+          "name": "reviewCountText",
+          "displayName": "Review Count Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Based on {count} reviews",
+          "groupId": "texts"
+        },
+        {
+          "name": "submitButtonText",
+          "displayName": "Submit Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Submit Review",
+          "groupId": "form"
+        },
+        {
+          "name": "submittingButtonText",
+          "displayName": "Submitting Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Submitting...",
+          "groupId": "form"
+        },
+        {
+          "name": "titlePlaceholder",
+          "displayName": "Title Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Review title",
+          "groupId": "form"
+        },
+        {
+          "name": "commentPlaceholder",
+          "displayName": "Comment Placeholder",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Write your review...",
+          "groupId": "form"
+        },
+        {
+          "name": "merchantReplyLabel",
+          "displayName": "Merchant Reply Label",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Store Reply",
+          "groupId": "texts"
+        },
+        {
+          "name": "starRequiredError",
+          "displayName": "Star Required Error",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Please select a rating",
+          "groupId": "form"
+        },
+        {
+          "name": "cancelButtonText",
+          "displayName": "Cancel Button",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Cancel",
+          "groupId": "form"
+        },
+        {
+          "name": "errorMessage",
+          "displayName": "Error Message",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Something went wrong. Please try again.",
+          "groupId": "form"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "texts",
+          "name": "Texts",
+          "description": "Section title, empty state, and review count texts"
+        },
+        {
+          "id": "form",
+          "name": "Form Texts",
+          "description": "Field and button texts in the review form"
+        },
+        {
+          "id": "settings",
+          "name": "Settings",
+          "description": "Pagination and display settings"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-not-found",
+      "name": "NotFound",
+      "entry": "./src/components/NotFound/index.tsx",
+      "styles": "./src/components/NotFound/styles.css",
+      "type": "section",
+      "props": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Page Not Found",
+          "groupId": "content"
+        },
+        {
+          "name": "description",
+          "displayName": "Description",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "The page you're looking for doesn't exist or may have been moved.",
+          "groupId": "content"
+        },
+        {
+          "name": "button",
+          "displayName": "Button",
+          "type": "LINK",
+          "required": false,
+          "groupId": "action"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Page title and description text settings"
+        },
+        {
+          "id": "action",
+          "name": "Redirect",
+          "description": "Button settings that redirect the user"
+        }
+      ]
+    },
+    {
+      "id": "{{PROJECT_ID}}-cookie-bar",
+      "name": "CookieBar",
+      "entry": "./src/components/CookieBar/index.tsx",
+      "styles": "./src/components/CookieBar/styles.css",
+      "props": [
+        {
+          "name": "cookieContent",
+          "displayName": "Cookie Content",
+          "type": "RICH_TEXT",
+          "defaultValue": "<p>We use cookies on this site. For more information, you can read our <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"editor-link\" tabindex=\"-1\" href=\"https://www.ikas.com\">privacy policy</a>.</p>",
+          "required": true,
+          "groupId": "content"
+        },
+        {
+          "name": "buttonText",
+          "displayName": "Button Text",
+          "type": "TEXT",
+          "required": false,
+          "defaultValue": "Accept",
+          "groupId": "content"
+        },
+        {
+          "name": "position",
+          "displayName": "Position Left",
+          "type": "BOOLEAN",
+          "required": false,
+          "defaultValue": false,
+          "groupId": "layout"
+        },
+        {
+          "name": "showCloseIcon",
+          "displayName": "Hide Close Icon",
+          "type": "BOOLEAN",
+          "required": false,
+          "defaultValue": false,
+          "groupId": "layout"
+        },
+        {
+          "name": "backgroundColor",
+          "displayName": "Background Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "appearance"
+        },
+        {
+          "name": "textColor",
+          "displayName": "Text Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "appearance"
+        },
+        {
+          "name": "buttonTextColor",
+          "displayName": "Button Text Color",
+          "type": "COLOR",
+          "required": false,
+          "groupId": "appearance"
+        }
+      ],
+      "propGroups": [
+        {
+          "id": "content",
+          "name": "Content",
+          "description": "Cookie bar text and button content"
+        },
+        {
+          "id": "layout",
+          "name": "Layout",
+          "description": "Cookie bar position and close button settings"
+        },
+        {
+          "id": "appearance",
+          "name": "Appearance",
+          "description": "Cookie bar color customizations"
+        }
+      ]
+    }
+  ],
+  "customTypes": [
+    {
+      "id": "Tkt3wfuJ5F",
+      "name": "Number of Columns",
+      "type": "enum",
+      "enumOptions": {
+        "One": "One",
+        "Two": "Two",
+        "Three": "Three",
+        "Four": "Four",
+        "Five": "Five"
+      },
+      "isDynamic": false
+    },
+    {
+      "id": "s3OODUmZpJ",
+      "name": "Aspect Ratio",
+      "type": "enum",
+      "enumOptions": {
+        "Square": "Square",
+        "Portrait": "Portrait",
+        "Landscape": "Landscape",
+        "Video": "Video"
+      },
+      "isDynamic": false,
+      "updatedAt": 1774250782040
+    },
+    {
+      "id": "GrylMqHxui",
+      "name": "Object Fit",
+      "type": "enum",
+      "enumOptions": {
+        "Fill": "Fill",
+        "Cover": "Cover",
+        "Contain": "Contain"
+      },
+      "isDynamic": false
+    },
+    {
+      "id": "08UWYbbs0P",
+      "name": "Vertical Alignment",
+      "type": "enum",
+      "enumOptions": {
+        "Top": "Top",
+        "Middle": "Middle",
+        "Bottom": "Bottom"
+      },
+      "isDynamic": false
+    }
+  ]
+}

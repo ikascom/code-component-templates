@@ -1,0 +1,89 @@
+/* ===== Range Slider ===== */
+
+.kombos-range-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem 0.625rem;
+}
+
+/* Value labels row */
+.kombos-range-slider__values {
+  position: relative;
+  height: 1rem;
+}
+
+.kombos-range-slider__value-label {
+  position: absolute;
+  transform: translateX(-50%);
+  color: var(--kombos-gray-900);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Track */
+.kombos-range-slider__track {
+  position: relative;
+  height: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.kombos-range-slider__track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0.25rem;
+  border-radius: 2px;
+  background: var(--kombos-gray-200);
+}
+
+/* Filled area between handles */
+.kombos-range-slider__fill {
+  position: absolute;
+  height: 0.25rem;
+  border-radius: 2px;
+  background: var(--kombos-gray-900);
+  pointer-events: none;
+}
+
+/* Drag handles */
+.kombos-range-slider__handle {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--kombos-gray-900);
+  border: 2px solid var(--kombos-white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  cursor: grab;
+  touch-action: none;
+  z-index: 1;
+  outline: none;
+}
+
+.kombos-range-slider__handle:active {
+  cursor: grabbing;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.kombos-range-slider__handle:focus-visible {
+  box-shadow: 0 0 0 3px rgba(20, 20, 26, 0.15);
+}
+
+/* Min/Max bound labels */
+.kombos-range-slider__bounds {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% + 1rem);
+  margin-left: -0.5rem;
+}
+
+.kombos-range-slider__bound {
+  color: var(--kombos-gray-500);
+  user-select: none;
+}

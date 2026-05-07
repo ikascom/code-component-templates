@@ -1,0 +1,7 @@
+// This file is auto-generated — do not edit manually.
+export interface Props {
+  favoritesLabel?: string;
+  emptyFavoritesText?: string;
+  addToCartText?: string;
+  components?: any;
+}

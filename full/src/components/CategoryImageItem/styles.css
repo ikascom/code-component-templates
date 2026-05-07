@@ -1,0 +1,10 @@
+.kombos-category-image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  height: 100%;
+}
+
+.kombos-category-image-item:hover .kombos-category-image-item__img {
+  transform: scale(1.15);
+}

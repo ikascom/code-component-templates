@@ -1,0 +1,17 @@
+/* ===== ProductDetailFeatures ===== */
+
+.kombos-pd-features {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 1), 1fr);
+  gap: 1rem;
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-pd-features {
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+}

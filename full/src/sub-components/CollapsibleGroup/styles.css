@@ -1,0 +1,51 @@
+/* ===== Collapsible Group ===== */
+.kombos-collapsible-group {
+  border-bottom: 1px solid var(--kombos-gray-200);
+  padding: 1rem 0;
+}
+
+.kombos-collapsible-group__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.kombos-collapsible-group__title {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-collapsible-group__toggle-icon {
+  font-size: 1rem;
+  color: var(--kombos-gray-500);
+  display: flex;
+  align-items: center;
+  transition: transform 0.25s ease;
+  margin-left: auto;
+}
+
+.kombos-collapsible-group__toggle-icon--collapsed {
+  transform: rotate(90deg);
+}
+
+/* Animated body — grid-template-rows trick */
+.kombos-collapsible-group__body {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.25s ease, padding-top 0.25s ease;
+  padding-top: 0.75rem;
+}
+
+.kombos-collapsible-group__body--collapsed {
+  grid-template-rows: 0fr;
+  padding-top: 0;
+}
+
+.kombos-collapsible-group__content {
+  overflow: hidden;
+  min-height: 0;
+}

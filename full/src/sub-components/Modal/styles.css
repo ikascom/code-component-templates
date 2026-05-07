@@ -1,0 +1,70 @@
+/* ── Modal ── */
+.kombos-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--kombos-z-overlay);
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 1rem;
+}
+
+.kombos-modal--open {
+  opacity: 1;
+}
+
+.kombos-modal__panel {
+  background: var(--kombos-white);
+  border-radius: 6px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(1rem);
+  transition: transform 0.3s;
+}
+
+.kombos-modal--open .kombos-modal__panel {
+  transform: translateY(0);
+}
+
+.kombos-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--kombos-white);
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--kombos-gray-200);
+  border-radius: 6px 6px 0 0;
+}
+
+.kombos-modal__title {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-modal__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--kombos-gray-700);
+  font-size: 1.25rem;
+}
+
+.kombos-modal__body {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.kombos-modal__footer {
+  background: var(--kombos-white);
+  padding: 1.5rem;
+  border-top: 1px solid var(--kombos-gray-200);
+  border-radius: 0 0 6px 6px;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}

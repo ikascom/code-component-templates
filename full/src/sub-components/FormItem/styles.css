@@ -1,0 +1,38 @@
+/* ===== FormItem Sub-Component ===== */
+
+.kombos-form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+/* Label */
+.kombos-form-item__label {
+  width: fit-content;
+  color: var(--kombos-gray-700);
+}
+
+/* Description */
+.kombos-form-item__description {
+  width: fit-content;
+  margin-top: -0.25rem;
+  color: var(--kombos-gray-500);
+}
+
+
+/* Helper text */
+.kombos-form-item__helper {
+  color: var(--kombos-gray-500);
+}
+
+/* === Error state === */
+[data-state="error"] .kombos-form-item__label,
+[data-state="error"] .kombos-form-item__helper {
+  color: var(--kombos-error);
+}
+
+/* === Success state === */
+[data-state="success"] .kombos-form-item__helper {
+  color: var(--kombos-success);
+}

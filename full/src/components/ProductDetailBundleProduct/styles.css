@@ -1,0 +1,20 @@
+/* ===== ProductDetailBundleProduct ===== */
+.kombos-bundle {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+.kombos-bundle__list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .kombos-bundle {
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+}

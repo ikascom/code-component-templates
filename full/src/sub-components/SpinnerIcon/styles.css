@@ -1,0 +1,8 @@
+.kombos-spinner {
+  animation: kombos-spin 1s linear infinite;
+}
+
+@keyframes kombos-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

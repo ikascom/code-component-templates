@@ -1,0 +1,86 @@
+.kombos-review-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--kombos-gray-200);
+}
+
+@media (min-width: 768px) {
+  .kombos-review-summary {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.kombos-review-summary__overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 8rem;
+}
+
+.kombos-review-summary__average {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-review-summary__count {
+  color: var(--kombos-gray-500);
+  white-space: nowrap;
+}
+
+.kombos-review-summary__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  width: 100%;
+}
+
+.kombos-review-summary__bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kombos-review-summary__bar-label {
+  color: var(--kombos-gray-700);
+  min-width: 0.75rem;
+  text-align: center;
+}
+
+.kombos-review-summary__bar-track {
+  flex: 1;
+  height: 0.5rem;
+  background: var(--kombos-gray-100);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.kombos-review-summary__bar-fill {
+  height: 100%;
+  background: var(--kombos-gray-900);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.kombos-review-summary__bar-count {
+  color: var(--kombos-gray-500);
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+.kombos-review-summary__action {
+  display: flex;
+  align-items: flex-start;
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .kombos-review-summary__action {
+    width: 100%;
+    justify-content: center;
+  }
+}

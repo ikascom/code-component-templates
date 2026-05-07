@@ -1,0 +1,99 @@
+/* ===== CategoryListControls ===== */
+
+.kombos-category-list-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+.kombos-category-list-controls__title {
+  color: var(--kombos-gray-900);
+  margin: 0 0 0.75rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.kombos-category-list-controls__count {
+  color: var(--kombos-gray-500);
+  margin-left: 0.5rem;
+  margin-top: 0.375rem;
+}
+
+/* Desktop sort — hidden on mobile */
+.kombos-category-list-controls__sort-wrap {
+  display: none;
+}
+
+/* Column toggle — hidden on mobile */
+.kombos-category-list-controls__col-btn {
+  display: none;
+}
+
+/* Mobile controls */
+.kombos-category-list-controls__mobile-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.kombos-category-list-controls__mobile-sort-wrap {
+}
+
+.kombos-category-list-controls__mobile-sort-select {
+  width: 100%;
+}
+
+.kombos-category-list-controls__filter-btn {
+  flex: 1;
+}
+
+.kombos-category-list-controls__filter-btn .kombos-icon {
+  font-size: 1rem;
+}
+
+/* Mobile search — visible on mobile, hidden on desktop */
+.kombos-category-list-controls__mobile-search {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+/* ===== Desktop (>= 1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-category-list-controls {
+    padding-top: 1.5rem;
+  }
+
+  /* Title inline on the left */
+  .kombos-category-list-controls__title {
+    width: auto;
+    margin: 0;
+    margin-right: auto;
+  }
+
+  /* Show desktop sort, hide mobile controls */
+  .kombos-category-list-controls__sort-wrap {
+    display: block;
+  }
+
+  .kombos-category-list-controls__mobile-controls {
+    display: none;
+  }
+
+  .kombos-category-list-controls__mobile-search {
+    display: none;
+  }
+
+  /* Column toggle button */
+  .kombos-category-list-controls__col-btn {
+    display: flex;
+    margin-left: 0.5rem;
+  }
+
+  .kombos-category-list-controls__col-btn .kombos-icon {
+    font-size: 1.25rem;
+  }
+}

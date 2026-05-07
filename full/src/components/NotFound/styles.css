@@ -1,0 +1,46 @@
+.not-found {
+  width: 100%;
+}
+
+.not-found__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.not-found__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  max-width: 29rem;
+  text-wrap-style: pretty;
+}
+
+.not-found__title {
+  color: var(--kombos-gray-900);
+  margin: 0;
+}
+
+.not-found__description {
+  color: var(--kombos-gray-500);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .not-found__wrapper {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .not-found__wrapper {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}

@@ -1,0 +1,30 @@
+/* ===== Tag ===== */
+.kombos-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* Discounted */
+.kombos-tag--discounted {
+  background: var(--kombos-discount-bg);
+  color: var(--kombos-white);
+}
+
+/* New */
+.kombos-tag--new {
+  background: var(--kombos-white);
+  border: 1px solid var(--kombos-gray-200);
+  color: var(--kombos-gray-900);
+}
+
+/* Dark */
+.kombos-tag--dark {
+  padding: 0.125rem 0.5rem;
+  border-radius: 4px;
+  background: var(--kombos-gray-900);
+  color: var(--kombos-white);
+}

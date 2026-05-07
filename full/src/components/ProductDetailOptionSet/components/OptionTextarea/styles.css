@@ -1,0 +1,10 @@
+.kombos-option-textarea__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.kombos-option-textarea__counter {
+  color: var(--kombos-gray-400);
+  margin-left: auto;
+}

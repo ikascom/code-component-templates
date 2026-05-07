@@ -1,0 +1,22 @@
+/* ===== Filter List Values ===== */
+
+.kombos-filter-list-values {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.kombos-filter-list-values__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.kombos-filter-list-values__label {
+  color: var(--kombos-gray-700);
+}
+
+.kombos-filter-list-values__count {
+  color: var(--kombos-gray-400);
+}

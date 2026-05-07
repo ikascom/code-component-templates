@@ -1,0 +1,16 @@
+.kombos-order-detail-item {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--kombos-gray-100);
+}
+
+.kombos-order-detail-item__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.kombos-order-detail-item__qty {
+  color: var(--kombos-gray-900);
+  white-space: nowrap;
+}

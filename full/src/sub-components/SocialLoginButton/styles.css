@@ -1,0 +1,19 @@
+.kombos-social-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  background: var(--kombos-white);
+  color: var(--kombos-gray-900);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+  font-size: 1.125rem;
+}
+
+.kombos-social-login-btn:hover {
+  border-color: var(--kombos-gray-300);
+}

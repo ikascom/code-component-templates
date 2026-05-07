@@ -1,0 +1,93 @@
+.recover-password {
+  width: 100%;
+}
+
+.recover-password__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.recover-password__container {
+  width: 100%;
+  max-width: 29rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recover-password__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.recover-password__title {
+  color: var(--kombos-gray-900);
+  margin: 0;
+}
+
+.recover-password__subtitle {
+  color: var(--kombos-gray-700);
+  margin: 0;
+}
+
+.recover-password__success-banner {
+  padding: 0.75rem 1rem;
+  background: rgba(18, 183, 106, 0.08);
+  border: 1px solid var(--kombos-success);
+  border-radius: 6px;
+  color: var(--kombos-success);
+}
+
+.recover-password__error-banner {
+  padding: 0.75rem 1rem;
+  background: rgba(255, 60, 72, 0.08);
+  border: 1px solid var(--kombos-error);
+  border-radius: 6px;
+  color: var(--kombos-error);
+}
+
+.recover-password__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recover-password__submit-btn {
+  width: 100%;
+}
+
+.recover-password__footer {
+  text-align: center;
+}
+
+.recover-password__login-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--kombos-gray-700);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.recover-password__login-link:hover {
+  color: var(--kombos-gray-900);
+}
+
+@media (min-width: 768px) {
+  .recover-password__wrapper {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recover-password__wrapper {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}

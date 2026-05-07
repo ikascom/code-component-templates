@@ -1,0 +1,36 @@
+/* ── Account Orders ── */
+
+.kombos-account-orders {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kombos-account-orders__title {
+  color: var(--kombos-gray-900);
+}
+
+/* ── Empty / Error State ── */
+
+.kombos-account-orders__empty,
+.kombos-account-orders__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 0;
+}
+
+.kombos-account-orders__empty-text,
+.kombos-account-orders__error-text {
+  color: var(--kombos-gray-500);
+  text-align: center;
+}
+
+/* ── Order List ── */
+
+.kombos-account-orders__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

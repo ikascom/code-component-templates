@@ -1,0 +1,125 @@
+/* AccountOrderDetail — Root (component, not section) */
+.kombos-order-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Empty / Error */
+.kombos-order-detail__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 0;
+}
+
+.kombos-order-detail__empty-text {
+  color: var(--kombos-gray-500);
+}
+
+/* Content */
+.kombos-order-detail__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header row (order info + return button) */
+.kombos-order-detail__header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kombos-order-detail__return-btn {
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .kombos-order-detail__header-row {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .kombos-order-detail__header-row .kombos-order-detail-header {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .kombos-order-detail__return-btn {
+    align-self: auto;
+    flex-shrink: 0;
+  }
+}
+
+/* Body (packages + sidebar) */
+.kombos-order-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.kombos-order-detail__packages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+/* Digital Downloads */
+.kombos-order-detail__downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+}
+
+.kombos-order-detail__downloads-title {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-order-detail__downloads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kombos-order-detail__download-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--kombos-gray-100);
+}
+
+.kombos-order-detail__download-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.kombos-order-detail__download-name {
+  color: var(--kombos-gray-700);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kombos-order-detail__download-btn {
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .kombos-order-detail__body {
+    flex-direction: row;
+    gap: 6rem;
+  }
+}

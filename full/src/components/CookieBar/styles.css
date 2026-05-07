@@ -1,0 +1,111 @@
+/* ===== CookieBar Component ===== */
+
+.kombos-cookie-bar {
+  position: fixed;
+  bottom: 1.5rem;
+  z-index: var(--kombos-z-overlay);
+  width: calc(100% - 2rem);
+  max-width: 22rem;
+  color: var(--cookie-text-color, var(--kombos-white));
+}
+
+/* Position variants */
+.kombos-cookie-bar--right {
+  right: 1rem;
+}
+
+.kombos-cookie-bar--left {
+  left: 1rem;
+}
+
+/* Wrapper */
+.kombos-cookie-bar__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--cookie-bg-color, rgba(0, 0, 0, 0.7));
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  word-break: break-word;
+}
+
+/* Top section (content + close) */
+.kombos-cookie-bar__top {
+  position: relative;
+}
+
+.kombos-cookie-bar__top--has-close {
+  padding-right: 1.5rem;
+}
+
+/* Rich text content */
+.kombos-cookie-bar__content {
+  line-height: 1.5;
+}
+
+.kombos-cookie-bar__content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Close button */
+.kombos-cookie-bar__close {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  font-size: 1rem;
+  color: var(--cookie-button-text-color, var(--cookie-text-color, var(--kombos-white)));
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+}
+
+.kombos-cookie-bar__close:hover {
+  opacity: 1;
+}
+
+/* Accept button */
+.kombos-cookie-bar__accept {
+  align-self: flex-end;
+  padding: 0;
+  color: var(--cookie-button-text-color, var(--cookie-text-color, var(--kombos-white)));
+  background: none;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+}
+
+.kombos-cookie-bar__accept:hover {
+  opacity: 1;
+}
+
+/* ===== Responsive ===== */
+
+@media (min-width: 768px) {
+  .kombos-cookie-bar {
+    bottom: 2rem;
+    max-width: 24rem;
+  }
+
+  .kombos-cookie-bar--right {
+    right: 2rem;
+  }
+
+  .kombos-cookie-bar--left {
+    left: 2rem;
+  }
+
+  .kombos-cookie-bar__wrapper {
+    padding: 1.5rem;
+  }
+}

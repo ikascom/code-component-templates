@@ -1,0 +1,12 @@
+/* ===== ProductDetailBundleFurniture ===== */
+.kombos-bundle-furniture-wrapper {
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+@media (min-width: 1024px) {
+  .kombos-bundle-furniture-wrapper {
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+}

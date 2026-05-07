@@ -1,0 +1,11 @@
+.kombos-review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kombos-review-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

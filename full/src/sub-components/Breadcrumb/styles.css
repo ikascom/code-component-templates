@@ -1,0 +1,49 @@
+/* ===== Breadcrumb Sub-Component ===== */
+.kombos-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.kombos-breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.kombos-breadcrumb__link {
+  color: var(--kombos-gray-500);
+  text-decoration: none;
+}
+
+.kombos-breadcrumb__link:hover {
+  text-decoration: underline;
+}
+
+.kombos-breadcrumb__link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.kombos-breadcrumb__link--active {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-breadcrumb__current {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-breadcrumb__sep {
+  font-size: 0.75rem;
+  color: var(--kombos-gray-400);
+  display: inline-flex;
+  align-items: center;
+}
+
+.kombos-breadcrumb__sep--xs {
+  font-size: 0.625rem;
+  color: var(--kombos-gray-300);
+}

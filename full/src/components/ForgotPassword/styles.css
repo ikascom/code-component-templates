@@ -1,0 +1,85 @@
+.forgot-password {
+  width: 100%;
+}
+
+.forgot-password__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.forgot-password__container {
+  width: 100%;
+  max-width: 29rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.forgot-password__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.forgot-password__title {
+  color: var(--kombos-gray-900);
+  margin: 0;
+}
+
+.forgot-password__subtitle {
+  color: var(--kombos-gray-700);
+  margin: 0;
+}
+
+.forgot-password__error-banner {
+  padding: 0.75rem 1rem;
+  background: rgba(255, 60, 72, 0.08);
+  border: 1px solid var(--kombos-error);
+  border-radius: 6px;
+  color: var(--kombos-error);
+}
+
+.forgot-password__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.forgot-password__submit-btn {
+  width: 100%;
+}
+
+.forgot-password__footer {
+  text-align: center;
+}
+
+.forgot-password__back-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--kombos-gray-700);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.forgot-password__back-link:hover {
+  color: var(--kombos-gray-900);
+}
+
+@media (min-width: 768px) {
+  .forgot-password__wrapper {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .forgot-password__wrapper {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}

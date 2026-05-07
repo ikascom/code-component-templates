@@ -1,0 +1,598 @@
+/*
+ * Global styles for your ikas code components project.
+ *
+ * Scoping: at build time every rule here is wrapped in a per-project scope
+ * (`:where([data-cc-scope~="<projectId>"])`) so styles from one project cannot
+ * leak into another project's components or the host page.
+ *
+ * What works:
+ *   - Class / tag / attribute selectors on elements you render (`.card`, `img`, `[data-x]`).
+ *   - `:root { --var: value }` — variables are rewritten onto the component wrapper
+ *     and inherit down its subtree. Use this for design tokens.
+ *   - `@media`, `@supports`, `@container`, `@layer` — walked recursively.
+ *   - `@keyframes`, `@font-face` — left untouched.
+ *
+ * What does NOT work (code components only style elements they own):
+ *   - Top-level `body { ... }` / `html { ... }` rules — dropped.
+ *   - Descendant selectors starting with `body` / `html` (e.g. `body .x`, `html.dark .y`) —
+ *     emitted but never match, because the component wrapper is INSIDE body, not
+ *     the other way around. Use a class on your own wrapper instead
+ *     (e.g. add `dark` via JS and write `.dark .x`).
+ *   - Document-wide resets, scrollbar tweaks, page backgrounds — belong to the theme.
+ *
+ * Loading order (all scoped to this project):
+ *   1. Global CSS (this file) — lowest specificity
+ *   2. Shared chunk CSS — multi-scope (.cc_a .sel, .cc_b .sel)
+ *   3. Component CSS — single scope (.cc_id .sel) — highest specificity
+ *
+ * Component-scoped styles naturally override these globals.
+ */
+
+/* ===== Colors — Kombos Design System ===== */
+
+:root {
+  /* Z-Index */
+  --kombos-z-dropdown: 50;
+  --kombos-z-header: 100;
+  --kombos-z-overlay: 200;
+
+  /* Base */
+  --kombos-white: #ffffff;
+
+  /* Semantic */
+  --kombos-error: #d4323b;
+  --kombos-success: #0a8a4f;
+  --kombos-warning: #b87514;
+  --kombos-info: #2563eb;
+  --kombos-badge-bg: #ff0000;
+  --kombos-discount-bg: #c8102e;
+  --kombos-success-bg: #ceffb3;
+  --kombos-error-hover: #c82f37;
+
+  /* Gray */
+  --kombos-gray-50: #fafafa;
+  --kombos-gray-100: #f6f6f6;
+  --kombos-gray-200: #ececed;
+  --kombos-gray-300: #c4c4c6;
+  --kombos-gray-400: #9c9c9f;
+  --kombos-gray-500: #727276;
+  --kombos-gray-600: #4a4a4f;
+  --kombos-gray-700: #2e2e33;
+  --kombos-gray-800: #202025;
+  --kombos-gray-900: #14141a;
+
+  /* Layout */
+  --kombos-max-width: 93.75rem;
+
+}
+
+/* ===== Typography — Kombos Design System ===== */
+/* Font: Montserrat | Weights: Regular 400, Medium 500, Semibold 600 */
+
+/* --- Display --- */
+
+.display-xxl-regular   { font-weight: 400; font-size: 4.5rem; line-height: 5.625rem; }
+.display-xxl-medium    { font-weight: 500; font-size: 4.5rem; line-height: 5.625rem; }
+.display-xxl-semibold  { font-weight: 600; font-size: 4.5rem; line-height: 5.625rem; }
+
+.display-xl-regular    { font-weight: 400; font-size: 3.75rem; line-height: 4.5rem; }
+.display-xl-medium     { font-weight: 500; font-size: 3.75rem; line-height: 4.5rem; }
+.display-xl-semibold   { font-weight: 600; font-size: 3.75rem; line-height: 4.5rem; }
+
+.display-lg-regular    { font-weight: 400; font-size: 3rem; line-height: 3.75rem; }
+.display-lg-medium     { font-weight: 500; font-size: 3rem; line-height: 3.75rem; }
+.display-lg-semibold   { font-weight: 600; font-size: 3rem; line-height: 3.75rem; }
+
+.display-md-regular    { font-weight: 400; font-size: 2.25rem; line-height: 2.75rem; }
+.display-md-medium     { font-weight: 500; font-size: 2.25rem; line-height: 2.75rem; }
+.display-md-semibold   { font-weight: 600; font-size: 2.25rem; line-height: 2.75rem; }
+
+.display-sm-regular    { font-weight: 400; font-size: 1.875rem; line-height: 2.375rem; }
+.display-sm-medium     { font-weight: 500; font-size: 1.875rem; line-height: 2.375rem; }
+.display-sm-semibold   { font-weight: 600; font-size: 1.875rem; line-height: 2.375rem; }
+
+.display-xs-regular    { font-weight: 400; font-size: 1.5rem; line-height: 2rem; }
+.display-xs-medium     { font-weight: 500; font-size: 1.5rem; line-height: 2rem; }
+.display-xs-semibold   { font-weight: 600; font-size: 1.5rem; line-height: 2rem; }
+
+/* --- Text --- */
+
+.text-xl-regular       { font-weight: 400; font-size: 1.25rem; line-height: 1.875rem; }
+.text-xl-medium        { font-weight: 500; font-size: 1.25rem; line-height: 1.875rem; }
+.text-xl-semibold      { font-weight: 600; font-size: 1.25rem; line-height: 1.875rem; }
+
+.text-lg-regular       { font-weight: 400; font-size: 1.125rem; line-height: 1.75rem; }
+.text-lg-medium        { font-weight: 500; font-size: 1.125rem; line-height: 1.75rem; }
+.text-lg-semibold      { font-weight: 600; font-size: 1.125rem; line-height: 1.75rem; }
+
+.text-md-regular       { font-weight: 400; font-size: 1rem; line-height: 1.5rem; }
+.text-md-medium        { font-weight: 500; font-size: 1rem; line-height: 1.5rem; }
+.text-md-semibold      { font-weight: 600; font-size: 1rem; line-height: 1.5rem; }
+
+.text-sm-regular       { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; }
+.text-sm-medium        { font-weight: 500; font-size: 0.875rem; line-height: 1.25rem; }
+.text-sm-semibold      { font-weight: 600; font-size: 0.875rem; line-height: 1.25rem; }
+
+.text-xs-regular       { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; }
+.text-xs-medium        { font-weight: 500; font-size: 0.75rem; line-height: 1.125rem; }
+.text-xs-semibold      { font-weight: 600; font-size: 0.75rem; line-height: 1.125rem; }
+
+/* --- Strikethrough variants --- */
+
+.text-xl-medium-strike  { font-weight: 500; font-size: 1.25rem; line-height: 1.875rem; text-decoration: line-through; }
+.text-md-regular-strike { font-weight: 400; font-size: 1rem; line-height: 1.5rem; text-decoration: line-through; }
+.text-sm-regular-strike { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; text-decoration: line-through; }
+.text-xs-regular-strike { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; text-decoration: line-through; }
+
+/* --- Underline variants --- */
+
+.display-xxl-underline { font-weight: 400; font-size: 4.5rem; line-height: 5.625rem; text-decoration: underline; }
+.display-xl-underline  { font-weight: 400; font-size: 3.75rem; line-height: 4.5rem; text-decoration: underline; }
+.display-lg-underline  { font-weight: 400; font-size: 3rem; line-height: 3.75rem; text-decoration: underline; }
+.display-md-underline  { font-weight: 400; font-size: 2.25rem; line-height: 2.75rem; text-decoration: underline; }
+.display-sm-underline  { font-weight: 400; font-size: 1.875rem; line-height: 2.375rem; text-decoration: underline; }
+.display-xs-underline  { font-weight: 400; font-size: 1.5rem; line-height: 2rem; text-decoration: underline; }
+.text-xl-underline     { font-weight: 400; font-size: 1.25rem; line-height: 1.875rem; text-decoration: underline; }
+.text-lg-underline     { font-weight: 400; font-size: 1.125rem; line-height: 1.75rem; text-decoration: underline; }
+.text-md-underline     { font-weight: 400; font-size: 1rem; line-height: 1.5rem; text-decoration: underline; }
+.text-sm-underline     { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; text-decoration: underline; }
+.text-xs-underline     { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; text-decoration: underline; }
+
+/* --- Responsive: sm (640px+) — Tailwind-style prefix --- */
+
+@media (min-width: 640px) {
+  /* Display */
+  .sm\:display-xxl-regular   { font-weight: 400; font-size: 4.5rem; line-height: 5.625rem; }
+  .sm\:display-xxl-medium    { font-weight: 500; font-size: 4.5rem; line-height: 5.625rem; }
+  .sm\:display-xxl-semibold  { font-weight: 600; font-size: 4.5rem; line-height: 5.625rem; }
+
+  .sm\:display-xl-regular    { font-weight: 400; font-size: 3.75rem; line-height: 4.5rem; }
+  .sm\:display-xl-medium     { font-weight: 500; font-size: 3.75rem; line-height: 4.5rem; }
+  .sm\:display-xl-semibold   { font-weight: 600; font-size: 3.75rem; line-height: 4.5rem; }
+
+  .sm\:display-lg-regular    { font-weight: 400; font-size: 3rem; line-height: 3.75rem; }
+  .sm\:display-lg-medium     { font-weight: 500; font-size: 3rem; line-height: 3.75rem; }
+  .sm\:display-lg-semibold   { font-weight: 600; font-size: 3rem; line-height: 3.75rem; }
+
+  .sm\:display-md-regular    { font-weight: 400; font-size: 2.25rem; line-height: 2.75rem; }
+  .sm\:display-md-medium     { font-weight: 500; font-size: 2.25rem; line-height: 2.75rem; }
+  .sm\:display-md-semibold   { font-weight: 600; font-size: 2.25rem; line-height: 2.75rem; }
+
+  .sm\:display-sm-regular    { font-weight: 400; font-size: 1.875rem; line-height: 2.375rem; }
+  .sm\:display-sm-medium     { font-weight: 500; font-size: 1.875rem; line-height: 2.375rem; }
+  .sm\:display-sm-semibold   { font-weight: 600; font-size: 1.875rem; line-height: 2.375rem; }
+
+  .sm\:display-xs-regular    { font-weight: 400; font-size: 1.5rem; line-height: 2rem; }
+  .sm\:display-xs-medium     { font-weight: 500; font-size: 1.5rem; line-height: 2rem; }
+  .sm\:display-xs-semibold   { font-weight: 600; font-size: 1.5rem; line-height: 2rem; }
+
+  /* Text */
+  .sm\:text-xl-regular       { font-weight: 400; font-size: 1.25rem; line-height: 1.875rem; }
+  .sm\:text-xl-medium        { font-weight: 500; font-size: 1.25rem; line-height: 1.875rem; }
+  .sm\:text-xl-semibold      { font-weight: 600; font-size: 1.25rem; line-height: 1.875rem; }
+
+  .sm\:text-lg-regular       { font-weight: 400; font-size: 1.125rem; line-height: 1.75rem; }
+  .sm\:text-lg-medium        { font-weight: 500; font-size: 1.125rem; line-height: 1.75rem; }
+  .sm\:text-lg-semibold      { font-weight: 600; font-size: 1.125rem; line-height: 1.75rem; }
+
+  .sm\:text-md-regular       { font-weight: 400; font-size: 1rem; line-height: 1.5rem; }
+  .sm\:text-md-medium        { font-weight: 500; font-size: 1rem; line-height: 1.5rem; }
+  .sm\:text-md-semibold      { font-weight: 600; font-size: 1rem; line-height: 1.5rem; }
+
+  .sm\:text-sm-regular       { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; }
+  .sm\:text-sm-medium        { font-weight: 500; font-size: 0.875rem; line-height: 1.25rem; }
+  .sm\:text-sm-semibold      { font-weight: 600; font-size: 0.875rem; line-height: 1.25rem; }
+
+  .sm\:text-xs-regular       { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; }
+  .sm\:text-xs-medium        { font-weight: 500; font-size: 0.75rem; line-height: 1.125rem; }
+  .sm\:text-xs-semibold      { font-weight: 600; font-size: 0.75rem; line-height: 1.125rem; }
+
+  /* Strikethrough */
+  .sm\:text-xl-medium-strike  { font-weight: 500; font-size: 1.25rem; line-height: 1.875rem; text-decoration: line-through; }
+  .sm\:text-md-regular-strike { font-weight: 400; font-size: 1rem; line-height: 1.5rem; text-decoration: line-through; }
+  .sm\:text-sm-regular-strike { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; text-decoration: line-through; }
+  .sm\:text-xs-regular-strike { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; text-decoration: line-through; }
+
+  /* Underline — Display */
+  .sm\:display-xxl-underline { font-weight: 400; font-size: 4.5rem; line-height: 5.625rem; text-decoration: underline; }
+  .sm\:display-xl-underline  { font-weight: 400; font-size: 3.75rem; line-height: 4.5rem; text-decoration: underline; }
+  .sm\:display-lg-underline  { font-weight: 400; font-size: 3rem; line-height: 3.75rem; text-decoration: underline; }
+  .sm\:display-md-underline  { font-weight: 400; font-size: 2.25rem; line-height: 2.75rem; text-decoration: underline; }
+  .sm\:display-sm-underline  { font-weight: 400; font-size: 1.875rem; line-height: 2.375rem; text-decoration: underline; }
+  .sm\:display-xs-underline  { font-weight: 400; font-size: 1.5rem; line-height: 2rem; text-decoration: underline; }
+
+  /* Underline — Text */
+  .sm\:text-xl-underline     { font-weight: 400; font-size: 1.25rem; line-height: 1.875rem; text-decoration: underline; }
+  .sm\:text-lg-underline     { font-weight: 400; font-size: 1.125rem; line-height: 1.75rem; text-decoration: underline; }
+  .sm\:text-md-underline     { font-weight: 400; font-size: 1rem; line-height: 1.5rem; text-decoration: underline; }
+  .sm\:text-sm-underline     { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; text-decoration: underline; }
+  .sm\:text-xs-underline     { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; text-decoration: underline; }
+}
+
+/* --- Responsive: md (768px+) — Tailwind-style prefix --- */
+
+@media (min-width: 768px) {
+  /* Display */
+  .md\:display-xxl-regular   { font-weight: 400; font-size: 4.5rem; line-height: 5.625rem; }
+  .md\:display-xxl-medium    { font-weight: 500; font-size: 4.5rem; line-height: 5.625rem; }
+  .md\:display-xxl-semibold  { font-weight: 600; font-size: 4.5rem; line-height: 5.625rem; }
+
+  .md\:display-xl-regular    { font-weight: 400; font-size: 3.75rem; line-height: 4.5rem; }
+  .md\:display-xl-medium     { font-weight: 500; font-size: 3.75rem; line-height: 4.5rem; }
+  .md\:display-xl-semibold   { font-weight: 600; font-size: 3.75rem; line-height: 4.5rem; }
+
+  .md\:display-lg-regular    { font-weight: 400; font-size: 3rem; line-height: 3.75rem; }
+  .md\:display-lg-medium     { font-weight: 500; font-size: 3rem; line-height: 3.75rem; }
+  .md\:display-lg-semibold   { font-weight: 600; font-size: 3rem; line-height: 3.75rem; }
+
+  .md\:display-md-regular    { font-weight: 400; font-size: 2.25rem; line-height: 2.75rem; }
+  .md\:display-md-medium     { font-weight: 500; font-size: 2.25rem; line-height: 2.75rem; }
+  .md\:display-md-semibold   { font-weight: 600; font-size: 2.25rem; line-height: 2.75rem; }
+
+  .md\:display-sm-regular    { font-weight: 400; font-size: 1.875rem; line-height: 2.375rem; }
+  .md\:display-sm-medium     { font-weight: 500; font-size: 1.875rem; line-height: 2.375rem; }
+  .md\:display-sm-semibold   { font-weight: 600; font-size: 1.875rem; line-height: 2.375rem; }
+
+  .md\:display-xs-regular    { font-weight: 400; font-size: 1.5rem; line-height: 2rem; }
+  .md\:display-xs-medium     { font-weight: 500; font-size: 1.5rem; line-height: 2rem; }
+  .md\:display-xs-semibold   { font-weight: 600; font-size: 1.5rem; line-height: 2rem; }
+
+  /* Text */
+  .md\:text-xl-regular       { font-weight: 400; font-size: 1.25rem; line-height: 1.875rem; }
+  .md\:text-xl-medium        { font-weight: 500; font-size: 1.25rem; line-height: 1.875rem; }
+  .md\:text-xl-semibold      { font-weight: 600; font-size: 1.25rem; line-height: 1.875rem; }
+
+  .md\:text-lg-regular       { font-weight: 400; font-size: 1.125rem; line-height: 1.75rem; }
+  .md\:text-lg-medium        { font-weight: 500; font-size: 1.125rem; line-height: 1.75rem; }
+  .md\:text-lg-semibold      { font-weight: 600; font-size: 1.125rem; line-height: 1.75rem; }
+
+  .md\:text-md-regular       { font-weight: 400; font-size: 1rem; line-height: 1.5rem; }
+  .md\:text-md-medium        { font-weight: 500; font-size: 1rem; line-height: 1.5rem; }
+  .md\:text-md-semibold      { font-weight: 600; font-size: 1rem; line-height: 1.5rem; }
+
+  .md\:text-sm-regular       { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; }
+  .md\:text-sm-medium        { font-weight: 500; font-size: 0.875rem; line-height: 1.25rem; }
+  .md\:text-sm-semibold      { font-weight: 600; font-size: 0.875rem; line-height: 1.25rem; }
+
+  .md\:text-xs-regular       { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; }
+  .md\:text-xs-medium        { font-weight: 500; font-size: 0.75rem; line-height: 1.125rem; }
+  .md\:text-xs-semibold      { font-weight: 600; font-size: 0.75rem; line-height: 1.125rem; }
+
+  /* Strikethrough */
+  .md\:text-xl-medium-strike  { font-weight: 500; font-size: 1.25rem; line-height: 1.875rem; text-decoration: line-through; }
+  .md\:text-md-regular-strike { font-weight: 400; font-size: 1rem; line-height: 1.5rem; text-decoration: line-through; }
+  .md\:text-sm-regular-strike { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; text-decoration: line-through; }
+  .md\:text-xs-regular-strike { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; text-decoration: line-through; }
+
+  /* Underline — Display */
+  .md\:display-xxl-underline { font-weight: 400; font-size: 4.5rem; line-height: 5.625rem; text-decoration: underline; }
+  .md\:display-xl-underline  { font-weight: 400; font-size: 3.75rem; line-height: 4.5rem; text-decoration: underline; }
+  .md\:display-lg-underline  { font-weight: 400; font-size: 3rem; line-height: 3.75rem; text-decoration: underline; }
+  .md\:display-md-underline  { font-weight: 400; font-size: 2.25rem; line-height: 2.75rem; text-decoration: underline; }
+  .md\:display-sm-underline  { font-weight: 400; font-size: 1.875rem; line-height: 2.375rem; text-decoration: underline; }
+  .md\:display-xs-underline  { font-weight: 400; font-size: 1.5rem; line-height: 2rem; text-decoration: underline; }
+
+  /* Underline — Text */
+  .md\:text-xl-underline     { font-weight: 400; font-size: 1.25rem; line-height: 1.875rem; text-decoration: underline; }
+  .md\:text-lg-underline     { font-weight: 400; font-size: 1.125rem; line-height: 1.75rem; text-decoration: underline; }
+  .md\:text-md-underline     { font-weight: 400; font-size: 1rem; line-height: 1.5rem; text-decoration: underline; }
+  .md\:text-sm-underline     { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; text-decoration: underline; }
+  .md\:text-xs-underline     { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; text-decoration: underline; }
+}
+
+/* --- Responsive: lg (1024px+) — Tailwind-style prefix --- */
+
+@media (min-width: 1024px) {
+  /* Display */
+  .lg\:display-xxl-regular   { font-weight: 400; font-size: 4.5rem; line-height: 5.625rem; }
+  .lg\:display-xxl-medium    { font-weight: 500; font-size: 4.5rem; line-height: 5.625rem; }
+  .lg\:display-xxl-semibold  { font-weight: 600; font-size: 4.5rem; line-height: 5.625rem; }
+
+  .lg\:display-xl-regular    { font-weight: 400; font-size: 3.75rem; line-height: 4.5rem; }
+  .lg\:display-xl-medium     { font-weight: 500; font-size: 3.75rem; line-height: 4.5rem; }
+  .lg\:display-xl-semibold   { font-weight: 600; font-size: 3.75rem; line-height: 4.5rem; }
+
+  .lg\:display-lg-regular    { font-weight: 400; font-size: 3rem; line-height: 3.75rem; }
+  .lg\:display-lg-medium     { font-weight: 500; font-size: 3rem; line-height: 3.75rem; }
+  .lg\:display-lg-semibold   { font-weight: 600; font-size: 3rem; line-height: 3.75rem; }
+
+  .lg\:display-md-regular    { font-weight: 400; font-size: 2.25rem; line-height: 2.75rem; }
+  .lg\:display-md-medium     { font-weight: 500; font-size: 2.25rem; line-height: 2.75rem; }
+  .lg\:display-md-semibold   { font-weight: 600; font-size: 2.25rem; line-height: 2.75rem; }
+
+  .lg\:display-sm-regular    { font-weight: 400; font-size: 1.875rem; line-height: 2.375rem; }
+  .lg\:display-sm-medium     { font-weight: 500; font-size: 1.875rem; line-height: 2.375rem; }
+  .lg\:display-sm-semibold   { font-weight: 600; font-size: 1.875rem; line-height: 2.375rem; }
+
+  .lg\:display-xs-regular    { font-weight: 400; font-size: 1.5rem; line-height: 2rem; }
+  .lg\:display-xs-medium     { font-weight: 500; font-size: 1.5rem; line-height: 2rem; }
+  .lg\:display-xs-semibold   { font-weight: 600; font-size: 1.5rem; line-height: 2rem; }
+
+  /* Text */
+  .lg\:text-xl-regular       { font-weight: 400; font-size: 1.25rem; line-height: 1.875rem; }
+  .lg\:text-xl-medium        { font-weight: 500; font-size: 1.25rem; line-height: 1.875rem; }
+  .lg\:text-xl-semibold      { font-weight: 600; font-size: 1.25rem; line-height: 1.875rem; }
+
+  .lg\:text-lg-regular       { font-weight: 400; font-size: 1.125rem; line-height: 1.75rem; }
+  .lg\:text-lg-medium        { font-weight: 500; font-size: 1.125rem; line-height: 1.75rem; }
+  .lg\:text-lg-semibold      { font-weight: 600; font-size: 1.125rem; line-height: 1.75rem; }
+
+  .lg\:text-md-regular       { font-weight: 400; font-size: 1rem; line-height: 1.5rem; }
+  .lg\:text-md-medium        { font-weight: 500; font-size: 1rem; line-height: 1.5rem; }
+  .lg\:text-md-semibold      { font-weight: 600; font-size: 1rem; line-height: 1.5rem; }
+
+  .lg\:text-sm-regular       { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; }
+  .lg\:text-sm-medium        { font-weight: 500; font-size: 0.875rem; line-height: 1.25rem; }
+  .lg\:text-sm-semibold      { font-weight: 600; font-size: 0.875rem; line-height: 1.25rem; }
+
+  .lg\:text-xs-regular       { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; }
+  .lg\:text-xs-medium        { font-weight: 500; font-size: 0.75rem; line-height: 1.125rem; }
+  .lg\:text-xs-semibold      { font-weight: 600; font-size: 0.75rem; line-height: 1.125rem; }
+
+  /* Strikethrough */
+  .lg\:text-xl-medium-strike  { font-weight: 500; font-size: 1.25rem; line-height: 1.875rem; text-decoration: line-through; }
+  .lg\:text-md-regular-strike { font-weight: 400; font-size: 1rem; line-height: 1.5rem; text-decoration: line-through; }
+  .lg\:text-sm-regular-strike { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; text-decoration: line-through; }
+
+  /* Underline — Display */
+  .lg\:display-xxl-underline { font-weight: 400; font-size: 4.5rem; line-height: 5.625rem; text-decoration: underline; }
+  .lg\:display-xl-underline  { font-weight: 400; font-size: 3.75rem; line-height: 4.5rem; text-decoration: underline; }
+  .lg\:display-lg-underline  { font-weight: 400; font-size: 3rem; line-height: 3.75rem; text-decoration: underline; }
+  .lg\:display-md-underline  { font-weight: 400; font-size: 2.25rem; line-height: 2.75rem; text-decoration: underline; }
+  .lg\:display-sm-underline  { font-weight: 400; font-size: 1.875rem; line-height: 2.375rem; text-decoration: underline; }
+  .lg\:display-xs-underline  { font-weight: 400; font-size: 1.5rem; line-height: 2rem; text-decoration: underline; }
+
+  /* Underline — Text */
+  .lg\:text-xl-underline     { font-weight: 400; font-size: 1.25rem; line-height: 1.875rem; text-decoration: underline; }
+  .lg\:text-lg-underline     { font-weight: 400; font-size: 1.125rem; line-height: 1.75rem; text-decoration: underline; }
+  .lg\:text-md-underline     { font-weight: 400; font-size: 1rem; line-height: 1.5rem; text-decoration: underline; }
+  .lg\:text-sm-underline     { font-weight: 400; font-size: 0.875rem; line-height: 1.25rem; text-decoration: underline; }
+  .lg\:text-xs-underline     { font-weight: 400; font-size: 0.75rem; line-height: 1.125rem; text-decoration: underline; }
+}
+
+/* --- Icons --- */
+
+svg.kombos-icon {
+  fill: none;
+  font-size: inherit;
+  height: 1em;
+}
+
+svg.kombos-icon path {
+  color: currentColor;
+}
+
+/* ===== Container — Max-Width Wrapper ===== */
+
+.kombos-container {
+  max-width: var(--kombos-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .kombos-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .kombos-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ===== Base Reset ===== */
+
+* {
+  word-break: break-word;
+}
+
+/* ===== Richtext ===== */
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.kombos-richtext {
+  color: var(--kombos-gray-900);
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.kombos-richtext th {
+  font-weight: bolder;
+  text-align: left;
+}
+
+.kombos-richtext caption {
+  text-align: left;
+}
+
+.kombos-richtext h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.kombos-richtext h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.kombos-richtext h3 {
+  font-size: 1.17em;
+  margin: 0;
+}
+
+.kombos-richtext h4,
+.kombos-richtext p,
+.kombos-richtext blockquote,
+.kombos-richtext ul,
+.kombos-richtext fieldset,
+.kombos-richtext form,
+.kombos-richtext ol,
+.kombos-richtext dl,
+.kombos-richtext dir,
+.kombos-richtext menu {
+  margin: 0;
+}
+
+.kombos-richtext h5 {
+  font-size: 0.83em;
+  margin: 0;
+}
+
+.kombos-richtext h6 {
+  font-size: 0.75em;
+  margin: 0;
+}
+
+.kombos-richtext h1,
+.kombos-richtext h2,
+.kombos-richtext h3,
+.kombos-richtext h4,
+.kombos-richtext h5,
+.kombos-richtext h6,
+.kombos-richtext b,
+.kombos-richtext strong {
+  font-weight: bolder;
+}
+
+.kombos-richtext blockquote {
+  margin-top: 0.625rem !important;
+  margin-bottom: 0.625rem !important;
+}
+
+.kombos-richtext i,
+.kombos-richtext cite,
+.kombos-richtext em,
+.kombos-richtext var,
+.kombos-richtext address {
+  font-style: italic;
+}
+
+.kombos-richtext pre,
+.kombos-richtext tt,
+.kombos-richtext code,
+.kombos-richtext kbd,
+.kombos-richtext samp {
+  font-family: monospace;
+}
+
+.kombos-richtext pre {
+  white-space: pre;
+}
+
+.kombos-richtext big {
+  font-size: 1.17em;
+}
+
+.kombos-richtext small,
+.kombos-richtext sub,
+.kombos-richtext sup {
+  font-size: 0.83em;
+}
+
+.kombos-richtext sub {
+  vertical-align: sub;
+}
+
+.kombos-richtext sup {
+  vertical-align: super;
+}
+
+.kombos-richtext table {
+  border-spacing: 2px;
+  border-collapse: collapse;
+}
+
+.kombos-richtext thead,
+.kombos-richtext tbody,
+.kombos-richtext tfoot {
+  vertical-align: middle;
+}
+
+.kombos-richtext td,
+.kombos-richtext th,
+.kombos-richtext tr {
+  vertical-align: inherit;
+}
+
+.kombos-richtext s,
+.kombos-richtext strike,
+.kombos-richtext del {
+  text-decoration: line-through;
+}
+
+.kombos-richtext hr {
+  border: 1px inset;
+}
+
+.kombos-richtext ol,
+.kombos-richtext ul,
+.kombos-richtext dir,
+.kombos-richtext menu,
+.kombos-richtext dd {
+  margin-left: 2.5rem;
+}
+
+.kombos-richtext ol {
+  list-style-type: decimal;
+}
+
+.kombos-richtext ul {
+  list-style-type: disc;
+}
+
+.kombos-richtext ol ul,
+.kombos-richtext ul ol,
+.kombos-richtext ul ul,
+.kombos-richtext ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.kombos-richtext {
+  line-height: 1.2;
+}
+
+/* HTML5 */
+
+.kombos-richtext figure {
+  margin: 1em 40px;
+}
+
+.centered-images img {
+  margin: 0 auto;
+}
+
+/* ===== Reduced Motion ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== Shimmer Animation ===== */
+
+@keyframes kombos-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

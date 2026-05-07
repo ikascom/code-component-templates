@@ -1,0 +1,129 @@
+.kombos-hero-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.kombos-hero-slider__viewport {
+  position: relative;
+  width: 100%;
+}
+
+.kombos-hero-slider__viewport--contained {
+  max-width: var(--kombos-max-width);
+  margin: 0 auto;
+}
+
+@media (max-width: 1499px) {
+  .kombos-hero-slider__viewport--contained {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.kombos-hero-slider__viewport-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.kombos-hero-slider__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+/* IkasComponentRenderer renders a display:contents wrapper,
+   so the actual flex children are the grandchild ikas wrapper divs */
+.kombos-hero-slider__track > * > * > * {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+/* Navigation arrows — positioned over the slider */
+.kombos-hero-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.125rem;
+}
+
+.kombos-hero-slider__arrow--prev {
+  left: 0.75rem;
+}
+
+.kombos-hero-slider__arrow--next {
+  right: 0.75rem;
+}
+
+/* Dot pagination */
+.kombos-hero-slider__dots {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+
+.kombos-hero-slider__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  padding: 1rem;
+  box-sizing: content-box;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
+  background-clip: content-box;
+  transition: background 0.2s ease;
+}
+
+.kombos-hero-slider__dot--active {
+  background: var(--kombos-white);
+  background-clip: content-box;
+}
+
+.kombos-hero-slider__dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  background-clip: content-box;
+}
+
+/* Responsive — tablet */
+@media (min-width: 768px) {
+  .kombos-hero-slider__arrow--prev {
+    left: 1rem;
+  }
+
+  .kombos-hero-slider__arrow--next {
+    right: 1rem;
+  }
+
+  .kombos-hero-slider__dots {
+    bottom: 0.75rem;
+    gap: 0;
+  }
+
+  .kombos-hero-slider__dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Responsive — desktop */
+@media (min-width: 1024px) {
+  .kombos-hero-slider__arrow--prev {
+    left: 2rem;
+  }
+
+  .kombos-hero-slider__arrow--next {
+    right: 2rem;
+  }
+
+  .kombos-hero-slider__dots {
+    bottom: 2rem;
+  }
+}

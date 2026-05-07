@@ -1,0 +1,45 @@
+/* ===== ProductDetailNameFavorite ===== */
+
+.kombos-pd-name__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+.kombos-pd-name__title {
+  flex: 1;
+  margin: 0;
+  color: var(--kombos-gray-900);
+}
+
+.kombos-pd-name__fav-btn {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--kombos-gray-700);
+  padding: 0;
+}
+
+.kombos-pd-name__fav-btn:hover {
+  color: var(--kombos-gray-900);
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-pd-name__row {
+    gap: 1.5rem;
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+
+}

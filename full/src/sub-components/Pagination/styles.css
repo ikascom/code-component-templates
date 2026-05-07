@@ -1,0 +1,88 @@
+/* ===== Pagination ===== */
+.kombos-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  max-width: 100%;
+}
+
+/* Left/right button groups (first+prev, next+last) */
+.kombos-pagination__nav-group {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/* Navigation buttons (first, prev, next, last) */
+.kombos-pagination__nav-btn {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--kombos-gray-50);
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--kombos-gray-900);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.kombos-pagination__nav-btn:hover:not(:disabled) {
+  border-color: var(--kombos-gray-300);
+  background: var(--kombos-gray-100);
+}
+
+.kombos-pagination__nav-btn:disabled {
+  cursor: default;
+  color: var(--kombos-gray-300);
+  background: var(--kombos-gray-50);
+}
+
+/* Page numbers container */
+.kombos-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Page number buttons — 32×32 */
+.kombos-pagination__page {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+  color: var(--kombos-gray-500);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.kombos-pagination__page:hover {
+  color: var(--kombos-gray-900);
+  background: var(--kombos-gray-50);
+}
+
+.kombos-pagination__page--active {
+  color: var(--kombos-white);
+  background: var(--kombos-gray-900);
+  pointer-events: none;
+}
+
+/* Dots separator */
+.kombos-pagination__dots {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--kombos-gray-400);
+}

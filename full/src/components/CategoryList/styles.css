@@ -1,0 +1,110 @@
+/* ===== Category List Section ===== */
+.kombos-category-list {
+  width: 100%;
+}
+
+.kombos-category-list__prev-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Top: Breadcrumb + Title */
+.kombos-category-list__top {
+  padding-top: 1rem;
+}
+
+.kombos-category-list__breadcrumb {
+  margin-bottom: 0;
+}
+
+/* Main layout */
+.kombos-category-list__main {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+/* Sidebar — hidden on mobile */
+.kombos-category-list__sidebar {
+  display: none;
+}
+
+/* Grid area */
+.kombos-category-list__grid-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.kombos-category-list__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.kombos-category-list__empty {
+  color: var(--kombos-gray-900);
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.kombos-category-list__pagination {
+  margin-top: 2rem;
+}
+
+.kombos-category-list__card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kombos-category-list__card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Sentinel for IntersectionObserver (infinite scroll) */
+.kombos-category-list__sentinel {
+  height: 1px;
+}
+
+/* ===== Tablet (>= 768px) ===== */
+@media (min-width: 768px) {
+  .kombos-category-list__grid {
+    gap: 1.5rem;
+  }
+}
+
+/* ===== Desktop (>= 1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-category-list__top {
+    padding-top: 1.5rem;
+  }
+
+  .kombos-category-list__main {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+  }
+
+  /* Show sidebar — sticky so it stays visible while scrolling */
+  .kombos-category-list__sidebar {
+    width: 15rem;
+    display: block;
+    position: sticky;
+    top: 0.75rem;
+    max-height: calc(100vh - 2.5rem);
+    overflow-y: auto;
+  }
+
+  /* Grid columns — default 4 on desktop */
+  .kombos-category-list__grid--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .kombos-category-list__grid--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

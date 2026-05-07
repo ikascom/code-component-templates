@@ -1,0 +1,105 @@
+/* ===== Product Slider Section ===== */
+.kombos-product-slider {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.kombos-product-slider__wrapper {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kombos-product-slider__title {
+  color: var(--kombos-gray-900);
+}
+
+/* Slider wrapper */
+.kombos-product-slider__slider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scrollable track */
+.kombos-product-slider__track {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.kombos-product-slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card sizing — mobile: 2 columns, desktop: driven by --columns */
+.kombos-product-slider__card {
+  flex: 0 0 calc((100% - 1rem) / 2);
+  min-width: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kombos-product-slider__card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Navigation arrows */
+.kombos-product-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--kombos-z-dropdown);
+}
+
+.kombos-product-slider__arrow--left {
+  left: 0.5rem;
+}
+
+.kombos-product-slider__arrow--right {
+  right: 0.5rem;
+}
+
+/* ===== Tablet (>=768px) ===== */
+@media (min-width: 768px) {
+  .kombos-product-slider__wrapper {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-product-slider__wrapper {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
+  }
+
+  .kombos-product-slider__track {
+    gap: 1.5rem;
+  }
+
+  .kombos-product-slider__card {
+    flex: 0 0 calc((100% - (var(--columns) - 1) * 1.5rem) / var(--columns));
+  }
+
+  .kombos-product-slider__arrow--left {
+    left: 1rem;
+  }
+
+  .kombos-product-slider__arrow--right {
+    right: 1rem;
+  }
+}

@@ -1,0 +1,20 @@
+/* ===== Filter Category List ===== */
+.kombos-filter-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kombos-filter-category-list__link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  color: var(--kombos-gray-700);
+  width: fit-content;
+}
+
+.kombos-filter-category-list__link:hover {
+  text-decoration: underline;
+}

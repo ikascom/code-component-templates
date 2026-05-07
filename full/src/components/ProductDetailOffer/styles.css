@@ -1,0 +1,211 @@
+/* ===== Product Detail Offer ===== */
+
+.kombos-pd-offer {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+/* Inline mode (compactView) */
+.kombos-pd-offer--inline {
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Header */
+.kombos-pd-offer__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-block: 0.75rem;
+  border-radius: 6px;
+}
+
+.kombos-pd-offer__title {
+  color: inherit;
+}
+
+.kombos-pd-offer__desc {
+  color: inherit;
+  opacity: 0.8;
+}
+
+/* Grid layout (standalone mode): cards + summary side by side */
+.kombos-pd-offer__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Cards area: 2-col grid with main product + offer cards */
+.kombos-pd-offer__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.kombos-pd-offer--inline .kombos-pd-offer__header {
+  padding: 0;
+}
+
+.kombos-pd-offer--inline .kombos-pd-offer__summary {
+  width: 100%;
+  max-width: none;
+}
+
+/* Offer list (inline mode) */
+.kombos-pd-offer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Main product card (standalone mode) — same style as OfferCard */
+.kombos-pd-offer__main-product {
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.kombos-pd-offer__main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.kombos-pd-offer__main-image {
+  width: 4rem;
+  flex-shrink: 0;
+  border-radius: 4px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  background: var(--kombos-gray-100);
+}
+
+.kombos-pd-offer__main-image--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kombos-gray-300);
+  font-size: 1.5rem;
+}
+
+.kombos-pd-offer__main-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.kombos-pd-offer__main-name {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-pd-offer__main-price {
+  color: var(--kombos-gray-900);
+}
+
+/* Summary panel */
+.kombos-pd-offer__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  background: var(--kombos-gray-50);
+}
+
+.kombos-pd-offer__summary-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--kombos-gray-600);
+}
+
+.kombos-pd-offer__summary-info-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  margin-top: 0.0625rem;
+}
+
+.kombos-pd-offer__total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kombos-pd-offer__total-label {
+  color: var(--kombos-gray-500);
+}
+
+.kombos-pd-offer__total-price {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-pd-offer__total-price--strike {
+  color: var(--kombos-gray-500);
+  text-decoration: line-through;
+}
+
+.kombos-pd-offer__discount-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kombos-pd-offer__discount-values {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kombos-pd-offer__btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .kombos-pd-offer__header {
+    padding-block: 1rem;
+  }
+
+  .kombos-pd-offer__cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kombos-pd-offer__main-content {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .kombos-pd-offer__main-image {
+    width: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .kombos-pd-offer {
+    margin-top: var(--desktop-mt);
+    margin-bottom: var(--desktop-mb);
+  }
+
+  .kombos-pd-offer__grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .kombos-pd-offer__summary {
+    min-width: 16rem;
+    max-width: 20rem;
+    justify-content: space-between;
+    align-self: stretch;
+  }
+}

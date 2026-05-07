@@ -1,0 +1,19 @@
+.kombos-option-checkbox__row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kombos-option-checkbox__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.kombos-option-checkbox__label {
+  color: var(--kombos-gray-700);
+}
+
+.kombos-option-checkbox__desc {
+  color: var(--kombos-gray-500);
+}

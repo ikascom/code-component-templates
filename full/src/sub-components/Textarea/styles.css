@@ -1,0 +1,82 @@
+/* ===== Textarea Sub-Component ===== */
+
+/* --- Base --- */
+.kombos-textarea {
+  display: flex;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  background: var(--kombos-white);
+  transition: border-color 0.15s ease;
+  width: 100%;
+}
+
+.kombos-textarea:hover {
+  border-color: var(--kombos-gray-300);
+}
+
+.kombos-textarea:focus-within {
+  border-color: var(--kombos-gray-900);
+}
+
+/* --- Sizes --- */
+.kombos-textarea--s {
+  padding: 0.5625rem 0.8125rem;
+}
+
+.kombos-textarea--xs {
+  padding: 0.4375rem 0.75rem;
+}
+
+/* --- Native textarea --- */
+.kombos-textarea__native {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--kombos-gray-900);
+  padding: 0;
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.kombos-textarea__native::placeholder {
+  color: var(--kombos-gray-400);
+}
+
+/* --- Status (standalone + inherited from FormItem) --- */
+.kombos-textarea[data-state="error"],
+[data-state="error"] .kombos-textarea {
+  border-color: var(--kombos-error);
+}
+
+.kombos-textarea[data-state="error"]:hover,
+.kombos-textarea[data-state="error"]:focus-within,
+[data-state="error"] .kombos-textarea:hover,
+[data-state="error"] .kombos-textarea:focus-within {
+  border-color: var(--kombos-error);
+}
+
+.kombos-textarea[data-state="success"],
+[data-state="success"] .kombos-textarea {
+  border-color: var(--kombos-success);
+}
+
+.kombos-textarea[data-state="success"]:hover,
+.kombos-textarea[data-state="success"]:focus-within,
+[data-state="success"] .kombos-textarea:hover,
+[data-state="success"] .kombos-textarea:focus-within {
+  border-color: var(--kombos-success);
+}
+
+/* --- Disabled state --- */
+.kombos-textarea--disabled {
+  background: var(--kombos-gray-50);
+  border-color: var(--kombos-gray-200);
+  pointer-events: none;
+}
+
+.kombos-textarea--disabled .kombos-textarea__native,
+.kombos-textarea--disabled .kombos-textarea__native::placeholder {
+  color: var(--kombos-gray-300);
+}

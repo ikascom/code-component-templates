@@ -1,0 +1,93 @@
+.kombos-order-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .kombos-order-detail-sidebar {
+    width: 22.25rem;
+    min-width: 22.25rem;
+  }
+}
+
+.kombos-order-detail-sidebar__divider {
+  height: 1px;
+  background: var(--kombos-gray-100);
+  width: 100%;
+}
+
+.kombos-order-detail-sidebar__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.kombos-order-detail-sidebar__section-title {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-order-detail-sidebar__address {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.kombos-order-detail-sidebar__address-line {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-order-detail-sidebar__payment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.kombos-order-detail-sidebar__payment-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.kombos-order-detail-sidebar__payment-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--kombos-gray-900);
+}
+
+.kombos-order-detail-sidebar__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.kombos-order-detail-sidebar__summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kombos-order-detail-sidebar__summary-label {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-order-detail-sidebar__summary-value {
+  color: var(--kombos-gray-900);
+  text-align: right;
+}
+
+.kombos-order-detail-sidebar__total-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+}
+
+.kombos-order-detail-sidebar__total-label .text-sm-medium:first-child {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-order-detail-sidebar__tax-note {
+  color: var(--kombos-gray-500);
+}

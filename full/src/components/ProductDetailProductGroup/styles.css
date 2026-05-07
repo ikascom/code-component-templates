@@ -1,0 +1,33 @@
+/* ===== ProductDetailProductGroup ===== */
+
+.kombos-pd-product-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+.kombos-pd-product-group__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.kombos-pd-product-group__label {
+  color: var(--kombos-gray-900);
+  margin-bottom: 0.375rem;
+}
+
+.kombos-pd-product-group__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-pd-product-group {
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+}

@@ -1,0 +1,68 @@
+/* CouponCode */
+.coupon-code {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coupon-code__toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--kombos-gray-900);
+  text-decoration: underline;
+  text-align: left;
+}
+
+.coupon-code__toggle:hover {
+  color: var(--kombos-gray-700);
+}
+
+.coupon-code__form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.coupon-code__form > :first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.coupon-code__form > :last-child {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.coupon-code__applied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.875rem;
+  background-color: var(--kombos-gray-50);
+  border-radius: 6px;
+  min-height: 2.75rem;
+}
+
+.coupon-code__value {
+  color: var(--kombos-gray-900);
+}
+
+.coupon-code__remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--kombos-gray-500);
+  text-decoration: underline;
+}
+
+.coupon-code__remove:hover {
+  color: var(--kombos-gray-700);
+}
+
+.coupon-code__error {
+  color: var(--kombos-error);
+  margin: 0;
+}

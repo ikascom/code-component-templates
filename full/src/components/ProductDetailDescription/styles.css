@@ -1,0 +1,21 @@
+/* ===== ProductDetailDescription ===== */
+
+.kombos-pd-desc {
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+  border-top: 1px solid var(--kombos-gray-200);
+}
+
+.kombos-pd-desc__body {
+  color: var(--kombos-gray-700);
+  max-height: 500px;
+  overflow: auto;
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-pd-desc {
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+}

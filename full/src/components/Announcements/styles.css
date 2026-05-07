@@ -1,0 +1,46 @@
+.kombos-announcements {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+}
+
+.kombos-announcements__slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.kombos-announcements__slider:active {
+  cursor: grabbing;
+}
+
+.kombos-announcements__track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.kombos-announcements__track > * > * > * {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .kombos-announcements {
+    padding: 0.75rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .kombos-announcements {
+    padding: 0.75rem 4.5rem;
+  }
+}

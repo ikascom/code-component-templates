@@ -1,0 +1,87 @@
+/* Swatch grid */
+.kombos-option-choice__swatch-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+/* Individual swatch item (button + price) */
+.kombos-option-choice__swatch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Swatch button — square like Badge */
+.kombos-option-choice__swatch-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  padding: 0.125rem;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--kombos-white);
+  position: relative;
+  transition: border-color 0.15s;
+}
+
+.kombos-option-choice__swatch-btn:hover:not(.kombos-option-choice__swatch-btn--selected) {
+  border-color: var(--kombos-gray-400);
+}
+
+.kombos-option-choice__swatch-btn--selected {
+  border-color: var(--kombos-gray-900);
+}
+
+/* Color fill */
+.kombos-option-choice__swatch-color {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Image inside swatch */
+.kombos-option-choice__swatch-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Eye icon overlay on image swatches */
+.kombos-option-choice__swatch-eye {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--kombos-white);
+}
+
+.kombos-option-choice__swatch-btn:hover .kombos-option-choice__swatch-eye {
+  opacity: 1;
+}
+
+/* Footer row: checkbox + price for image swatches */
+.kombos-option-choice__swatch-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Price below swatch */
+.kombos-option-choice__swatch-price {
+  color: var(--kombos-gray-500);
+  text-align: center;
+}

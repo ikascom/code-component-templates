@@ -1,0 +1,118 @@
+/* ===== BlogHome Section ===== */
+.kombos-blog-home {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.kombos-blog-home .kombos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header (title + description) */
+.kombos-blog-home__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.kombos-blog-home__title {
+  margin: 0;
+  color: var(--kombos-gray-900);
+}
+
+.kombos-blog-home__description {
+  margin: 0;
+  color: var(--kombos-gray-500);
+}
+
+/* Category navigation */
+.kombos-blog-home__categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.25rem;
+}
+
+.kombos-blog-home__categories::-webkit-scrollbar {
+  display: none;
+}
+
+.kombos-blog-home__cat-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 100px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease;
+  background: transparent;
+  color: var(--kombos-gray-700);
+  text-decoration: none;
+}
+
+.kombos-blog-home__cat-btn:hover {
+  border-color: var(--kombos-gray-300);
+}
+
+.kombos-blog-home__cat-btn--active {
+  background: var(--kombos-gray-900);
+  color: var(--kombos-white);
+  border-color: var(--kombos-gray-900);
+}
+
+.kombos-blog-home__cat-btn--active:hover {
+  background: var(--kombos-gray-800);
+  border-color: var(--kombos-gray-800);
+}
+
+/* Empty state */
+.kombos-blog-home__empty {
+  text-align: center;
+  color: var(--kombos-gray-900);
+  padding: 3rem 0;
+  margin: 0;
+}
+
+/* Blog grid */
+.kombos-blog-home__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Pagination spacing */
+.kombos-blog-home .kombos-pagination {
+  padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .kombos-blog-home {
+    padding: 2.5rem 0;
+  }
+
+  .kombos-blog-home__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .kombos-blog-home {
+    padding: 3rem 0;
+  }
+
+  .kombos-blog-home .kombos-container {
+    gap: 2.5rem;
+  }
+
+  .kombos-blog-home__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

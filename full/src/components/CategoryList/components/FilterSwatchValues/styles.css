@@ -1,0 +1,48 @@
+/* ===== Filter Swatch Values ===== */
+
+.kombos-filter-swatch-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kombos-filter-swatch-values__item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3125rem 0.6875rem;
+  border-radius: 6px;
+  border: 1px solid var(--kombos-gray-200);
+  background: var(--kombos-white);
+  cursor: pointer;
+  color: var(--kombos-gray-700);
+  transition: all 0.15s ease;
+}
+
+.kombos-filter-swatch-values__item:hover:not(.kombos-filter-swatch-values__item--active) {
+  border-color: var(--kombos-gray-300);
+}
+
+.kombos-filter-swatch-values__item--active {
+  background: var(--kombos-gray-900);
+  color: var(--kombos-white);
+  border-color: var(--kombos-gray-900);
+}
+
+.kombos-filter-swatch-values__img {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.kombos-filter-swatch-values__color {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid var(--kombos-gray-200);
+}
+
+.kombos-filter-swatch-values__item--active .kombos-filter-swatch-values__color {
+  border-color: var(--kombos-white);
+}

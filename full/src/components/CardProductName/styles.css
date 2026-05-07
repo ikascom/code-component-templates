@@ -1,0 +1,22 @@
+.kombos-card-product-name {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.kombos-card-product-name__link {
+  display: block;
+  color: var(--kombos-gray-900);
+  text-decoration: none;
+  max-width: 100%;
+}
+
+.kombos-card-product-name__link:hover {
+  text-decoration: underline;
+}
+
+.kombos-card-product-name__link--single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

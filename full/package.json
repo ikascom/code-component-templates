@@ -1,0 +1,23 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ikas-component dev",
+    "build": "ikas-component build",
+    "publish": "ikas-component publish",
+    "check": "ikas-component check"
+  },
+  "dependencies": {
+    "preact": "^10.19.3"
+  },
+  "devDependencies": {
+    "@ikas/component-cli": "^1.3.2",
+    "@ikas/bp-storefront": "^1.3.2",
+    "@ikas/code-components-mcp": "^1.3.2",
+    "@preact/preset-vite": "^2.10.3",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0"
+  }
+}

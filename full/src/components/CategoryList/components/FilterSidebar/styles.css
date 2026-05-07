@@ -1,0 +1,27 @@
+/* ===== Filter Sidebar ===== */
+.kombos-filter-sidebar {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.kombos-filter-sidebar__search {
+  padding-bottom: 0.25rem;
+}
+
+/* Clear */
+.kombos-filter-sidebar__clear {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--kombos-gray-500);
+  text-decoration: underline;
+  text-align: left;
+}
+
+.kombos-filter-sidebar__clear:hover {
+  color: var(--kombos-gray-700);
+}

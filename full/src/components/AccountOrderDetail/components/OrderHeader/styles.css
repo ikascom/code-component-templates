@@ -1,0 +1,46 @@
+.kombos-order-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--kombos-gray-100);
+  width: 100%;
+}
+
+.kombos-order-detail-header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.kombos-order-detail-header__row {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.kombos-order-detail-header__label {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-order-detail-header__copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--kombos-gray-500);
+  font-size: 1rem;
+  transition: color 0.15s ease;
+}
+
+.kombos-order-detail-header__copy:hover {
+  color: var(--kombos-gray-700);
+}
+
+.kombos-order-detail-header__copy:focus-visible {
+  outline: 2px solid var(--kombos-gray-900);
+  outline-offset: 2px;
+}

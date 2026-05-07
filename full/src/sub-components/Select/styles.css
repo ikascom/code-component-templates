@@ -1,0 +1,110 @@
+/* ===== Select ===== */
+.kombos-select-wrap {
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.kombos-select {
+  appearance: none;
+  width: 100%;
+  background: var(--kombos-white);
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  color: var(--kombos-gray-900);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.kombos-select:hover {
+  border-color: var(--kombos-gray-300);
+}
+
+/* Sizes — match Button padding + extra right space for icon */
+.kombos-select--xs {
+  padding: 0.4375rem 2rem 0.4375rem 0.9375rem;
+  min-height: 2.25rem;
+}
+
+.kombos-select--s {
+  padding: 0.5625rem 2.25rem 0.5625rem 1.1875rem;
+  min-height: 2.75rem;
+}
+
+.kombos-select--m {
+  padding: 0.6875rem 2.5rem 0.6875rem 1.4375rem;
+  min-height: 3.375rem;
+}
+
+/* Caret icon */
+.kombos-select__icon {
+  position: absolute;
+  right: 0.75rem;
+  pointer-events: none;
+  color: var(--kombos-gray-900);
+  font-size: 1rem;
+  transition: opacity 0.15s ease;
+}
+
+/* Clear button */
+.kombos-select__clear {
+  position: absolute;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  color: var(--kombos-gray-700);
+  background-color: var(--kombos-white);
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* On hover: show clear button, hide caret */
+.kombos-select-wrap:hover .kombos-select__clear {
+  opacity: 1;
+}
+
+.kombos-select-wrap:hover .kombos-select--clearable ~ .kombos-select__icon {
+  opacity: 0;
+}
+
+/* --- Status (standalone + inherited from FormItem) --- */
+[data-state="error"] .kombos-select {
+  border-color: var(--kombos-error);
+}
+
+[data-state="error"] .kombos-select:hover {
+  border-color: var(--kombos-error);
+}
+
+[data-state="success"] .kombos-select {
+  border-color: var(--kombos-success);
+}
+
+[data-state="success"] .kombos-select:hover {
+  border-color: var(--kombos-success);
+}
+
+/* --- Disabled state --- */
+.kombos-select:disabled {
+  background: var(--kombos-gray-50);
+  border-color: var(--kombos-gray-200);
+  color: var(--kombos-gray-300);
+  cursor: not-allowed;
+}
+
+.kombos-select:disabled:hover {
+  border-color: var(--kombos-gray-200);
+}
+
+.kombos-select:disabled ~ .kombos-select__icon {
+  color: var(--kombos-gray-300);
+}

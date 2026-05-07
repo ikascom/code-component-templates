@@ -1,0 +1,23 @@
+/* ── Address Modal (form-specific styles) ── */
+.kombos-address-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kombos-address-modal__row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .kombos-address-modal__row {
+    flex-direction: row;
+  }
+
+  .kombos-address-modal__row > * {
+    flex: 1;
+    min-width: 0;
+  }
+}

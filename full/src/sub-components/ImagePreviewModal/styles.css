@@ -1,0 +1,50 @@
+/* Image preview overlay */
+.kombos-image-preview {
+  position: fixed;
+  inset: 0;
+  z-index: var(--kombos-z-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.kombos-image-preview--open {
+  opacity: 1;
+}
+
+/* Close button */
+.kombos-image-preview__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--kombos-white);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--kombos-gray-900);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.15s;
+}
+
+.kombos-image-preview__close:hover {
+  background: var(--kombos-gray-50);
+}
+
+/* Preview image */
+.kombos-image-preview__img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 6px;
+  cursor: default;
+}

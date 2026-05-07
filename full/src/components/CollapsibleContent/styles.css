@@ -1,0 +1,11 @@
+/* ===== CollapsibleContent ===== */
+
+.kombos-collapsible-content {
+  border-top: 1px solid var(--kombos-gray-200);
+}
+
+.kombos-collapsible-content__body {
+  color: var(--kombos-gray-700);
+  max-height: 500px;
+  overflow: auto;
+}

@@ -1,0 +1,29 @@
+/* ── Skeleton Field ── */
+.kombos-skeleton-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.kombos-skeleton-field__label {
+  height: 1.125rem;
+  border-radius: 4px;
+}
+
+.kombos-skeleton-field__input {
+  width: 100%;
+  height: 2.75rem;
+  border-radius: 6px;
+}
+
+.kombos-skeleton-field__label,
+.kombos-skeleton-field__input {
+  background: linear-gradient(
+    90deg,
+    var(--kombos-gray-100) 25%,
+    var(--kombos-gray-50) 50%,
+    var(--kombos-gray-100) 75%
+  );
+  background-size: 200% 100%;
+  animation: kombos-shimmer 1.5s ease-in-out infinite;
+}

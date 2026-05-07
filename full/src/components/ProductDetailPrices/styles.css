@@ -1,0 +1,32 @@
+/* ===== ProductDetailPrices ===== */
+
+.kombos-pd-prices {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+.kombos-pd-prices__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.kombos-pd-prices__final {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-pd-prices__original {
+  color: var(--kombos-gray-500);
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-pd-prices {
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+}

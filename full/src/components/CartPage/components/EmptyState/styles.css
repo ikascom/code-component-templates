@@ -1,0 +1,18 @@
+/* EmptyState */
+.cart-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 5rem 0;
+}
+
+.cart-page__empty-icon {
+  font-size: 3rem;
+  color: var(--kombos-gray-300);
+}
+
+.cart-page__empty-text {
+  color: var(--kombos-gray-700);
+  margin: 0;
+}

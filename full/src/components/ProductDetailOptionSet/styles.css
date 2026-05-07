@@ -1,0 +1,30 @@
+.kombos-pd-optset {
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+@media (min-width: 1024px) {
+  .kombos-pd-optset {
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+}
+
+.kombos-pd-optset__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kombos-pd-optset__option {
+  display: flex;
+  flex-direction: column;
+}
+
+.kombos-pd-optset__children {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+}

@@ -1,0 +1,35 @@
+/* ── Account Info Section (Layout) ── */
+.kombos-account-info {
+  width: 100%;
+}
+
+.kombos-account-info__container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.kombos-account-info__content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Tablet (768px+) ── */
+@media (min-width: 768px) {
+  .kombos-account-info__container {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* ── Desktop (1024px+) ── */
+@media (min-width: 1024px) {
+  .kombos-account-info__container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: row;
+    gap: 7.75rem;
+  }
+}

@@ -1,0 +1,58 @@
+/* ===== Product Detail Section ===== */
+
+.kombos-pd {
+  width: 100%;
+}
+
+/* ---- Breadcrumb (mobile only, hidden on desktop) ---- */
+.kombos-pd__breadcrumb {
+  padding-top: 1rem;
+}
+
+/* ---- Layout ---- */
+.kombos-pd__layout {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+/* ---- Product Info ---- */
+.kombos-pd__info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-pd__container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .kombos-pd__breadcrumb {
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  .kombos-pd__layout {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 2rem;
+    padding-top: 0;
+  }
+
+  /* Gallery — sticky on desktop */
+  .kombos-pd__gallery {
+    position: sticky;
+    top: 0.75rem;
+    align-self: start;
+  }
+
+  /* Info — right side */
+  .kombos-pd__info {
+    min-width: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,38 @@
+/* Box grid */
+.kombos-option-choice__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kombos-option-choice__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  background: var(--kombos-white);
+  color: var(--kombos-gray-700);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.kombos-option-choice__box:hover {
+  border-color: var(--kombos-gray-400);
+}
+
+.kombos-option-choice__box--selected {
+  border-color: var(--kombos-gray-900);
+  background: var(--kombos-gray-900);
+  color: var(--kombos-white);
+}
+
+.kombos-option-choice__box-price {
+  color: var(--kombos-gray-500);
+}
+
+.kombos-option-choice__box--selected .kombos-option-choice__box-price {
+  color: var(--kombos-white);
+}

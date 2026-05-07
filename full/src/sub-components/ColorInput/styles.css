@@ -1,0 +1,53 @@
+.kombos-color-input__row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.kombos-color-input__picker {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  padding: 0.125rem;
+  cursor: pointer;
+  background: var(--kombos-white);
+}
+
+.kombos-color-input__picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.kombos-color-input__picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 4px;
+}
+
+.kombos-color-input__value {
+  color: var(--kombos-gray-500);
+}
+
+.kombos-color-input__clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: var(--kombos-gray-400);
+  font-size: 1rem;
+}
+
+.kombos-color-input__clear:hover {
+  color: var(--kombos-gray-700);
+}
+
+/* --- Status (standalone + inherited from FormItem) --- */
+[data-state="error"] .kombos-color-input__picker {
+  border-color: var(--kombos-error);
+}
+
+[data-state="success"] .kombos-color-input__picker {
+  border-color: var(--kombos-success);
+}

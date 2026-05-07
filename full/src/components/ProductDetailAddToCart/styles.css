@@ -1,0 +1,27 @@
+/* ===== ProductDetailAddToCart ===== */
+
+.kombos-pd-atc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: var(--mobile-mt);
+  margin-bottom: var(--mobile-mb);
+}
+
+.kombos-pd-atc__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.kombos-pd-atc__btn {
+  flex: 1;
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+  .kombos-pd-atc {
+    margin-top: var(--desktop-mt, var(--mobile-mt));
+    margin-bottom: var(--desktop-mb, var(--mobile-mb));
+  }
+}

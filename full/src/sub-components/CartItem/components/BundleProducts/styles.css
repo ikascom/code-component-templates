@@ -1,0 +1,30 @@
+/* Bundle Products */
+.kombos-cart-item__bundles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--kombos-gray-100);
+}
+
+.kombos-cart-item__bundles-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.kombos-cart-item__bundle-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--kombos-gray-500);
+  cursor: pointer;
+}
+
+.kombos-cart-item__bundle-edit-btn:hover {
+  color: var(--kombos-gray-700);
+}

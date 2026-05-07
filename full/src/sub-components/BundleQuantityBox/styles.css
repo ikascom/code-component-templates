@@ -1,0 +1,43 @@
+/* ===== BundleQuantityBox ===== */
+.kombos-bundle-qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  padding: 0.125rem;
+}
+
+.kombos-bundle-qty__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--kombos-gray-700);
+  font-size: 0.875rem;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.kombos-bundle-qty__btn:hover:not(:disabled) {
+  background-color: var(--kombos-gray-50);
+}
+
+.kombos-bundle-qty__btn:disabled {
+  color: var(--kombos-gray-300);
+  cursor: not-allowed;
+}
+
+.kombos-bundle-qty__value {
+  min-width: 1.5rem;
+  text-align: center;
+  color: var(--kombos-gray-900);
+}
+
+.kombos-bundle-qty__static {
+  color: var(--kombos-gray-700);
+}

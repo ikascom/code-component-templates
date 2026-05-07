@@ -1,0 +1,27 @@
+/* ===== Filter Box Values ===== */
+
+.kombos-filter-box-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kombos-filter-box-values__item {
+  padding: 0.3125rem 0.6875rem;
+  border-radius: 6px;
+  border: 1px solid var(--kombos-gray-200);
+  background: var(--kombos-white);
+  color: var(--kombos-gray-700);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.kombos-filter-box-values__item:hover:not(.kombos-filter-box-values__item--active) {
+  border-color: var(--kombos-gray-300);
+}
+
+.kombos-filter-box-values__item--active {
+  background: var(--kombos-gray-900);
+  color: var(--kombos-white);
+  border-color: var(--kombos-gray-900);
+}

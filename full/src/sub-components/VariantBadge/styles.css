@@ -1,0 +1,47 @@
+/* ===== Variant Badge Layout ===== */
+
+/* ---- Layout ---- */
+.kombos-variant-badge__groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.kombos-variant-badge__groups--l {
+  gap: 1.5rem;
+}
+
+.kombos-variant-badge__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.kombos-variant-badge__label {
+  color: var(--kombos-gray-900);
+  margin-bottom: 0.375rem;
+}
+
+.kombos-variant-badge__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.kombos-variant-badge__row--l {
+  gap: 0.5rem;
+}
+
+.kombos-variant-badge__row--scrollable {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.kombos-variant-badge__row--scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.kombos-variant-badge__row--scrollable .kombos-badge {
+  flex-shrink: 0;
+}

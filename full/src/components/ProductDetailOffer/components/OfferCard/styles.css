@@ -1,0 +1,146 @@
+/* ===== Offer Card ===== */
+
+.kombos-offer-card {
+  position: relative;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+}
+
+.kombos-offer-card--selected {
+  border-color: var(--kombos-gray-900);
+}
+
+.kombos-offer-card--accepted {
+  padding-bottom: 0.75rem;
+}
+
+.kombos-offer-card--out-of-stock {
+  opacity: 0.5;
+}
+
+.kombos-offer-card__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.kombos-offer-card__image {
+  width: 4rem;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 4px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  background: var(--kombos-gray-100);
+}
+
+.kombos-offer-card__image--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kombos-gray-300);
+  font-size: 1.5rem;
+}
+
+.kombos-offer-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.kombos-offer-card__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.kombos-offer-card__name {
+  display: block;
+  color: var(--kombos-gray-900);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.kombos-offer-card__name:hover {
+  text-decoration: underline;
+}
+
+.kombos-offer-card__variants {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+}
+
+.kombos-offer-card__variant-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.kombos-offer-card__variant-label {
+  color: var(--kombos-gray-500);
+}
+
+.kombos-offer-card__prices {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.375rem;
+}
+
+.kombos-offer-card__original-price {
+  color: var(--kombos-gray-500);
+}
+
+.kombos-offer-card__price {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-offer-card__out-of-stock {
+  color: var(--kombos-gray-500);
+}
+
+.kombos-offer-card__toggle {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* Added to cart banner */
+.kombos-offer-card__banner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.5rem;
+  background: var(--kombos-gray-900);
+  color: var(--kombos-white);
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.kombos-offer-card__banner-icon {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .kombos-offer-card__content {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .kombos-offer-card__image {
+    width: 5rem;
+  }
+}

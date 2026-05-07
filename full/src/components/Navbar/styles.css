@@ -1,0 +1,254 @@
+/* ===== Navbar Component ===== */
+.kombos-navbar {
+  width: 100%;
+  border-bottom: 1px solid var(--kombos-gray-200);
+}
+
+.kombos-navbar--sticky {
+  position: sticky;
+  top: 0;
+  z-index: var(--kombos-z-header);
+}
+
+.kombos-navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 0.75rem;
+  position: relative;
+  justify-content: space-between;
+  min-height: calc(var(--logo-h-mobile, 3rem) + 1.5rem);
+}
+
+/* Logo */
+.kombos-navbar__logo {
+  flex-shrink: 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: var(--logo-h-mobile, 3rem);
+  overflow: hidden;
+}
+
+.kombos-navbar__logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem 0;
+}
+
+/* Navigation */
+.kombos-navbar__nav {
+  flex: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* NavItem sub-component uses kombos-header__* classes — keep those styles here */
+.kombos-header__nav-item {
+  position: relative;
+}
+
+.kombos-header__nav-link {
+  color: var(--kombos-gray-700);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.kombos-header__nav-link:hover {
+  opacity: 0.7;
+}
+
+.kombos-header__chevron {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.kombos-header__nav-item:hover .kombos-header__chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.kombos-header__dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1.125rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--kombos-white);
+  border: 1px solid var(--kombos-gray-100);
+  border-radius: 6px;
+  padding: 0.375rem 0;
+  width: 13rem;
+  box-shadow: 0 2px 12px 0.4px rgba(0, 0, 0, 0.06);
+  z-index: var(--kombos-z-dropdown);
+  flex-direction: column;
+}
+
+/* Invisible bridge: covers the 18px gap between nav link and dropdown */
+.kombos-header__dropdown::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: -0.75rem;
+  right: -0.75rem;
+  height: 1.125rem;
+}
+
+.kombos-header__nav-item:hover > .kombos-header__dropdown {
+  display: flex;
+}
+
+/* Nested dropdown (2nd level) */
+.kombos-header__dropdown--nested {
+  top: -0.375rem;
+  left: calc(100% + 0.75rem);
+  transform: none;
+}
+
+/* Bridge: covers the 12px gap between 1st and 2nd level dropdowns */
+.kombos-header__dropdown--nested::before {
+  content: "";
+  position: absolute;
+  top: -0.75rem;
+  bottom: -0.75rem;
+  right: 100%;
+  left: auto;
+  width: 0.75rem;
+  height: auto;
+}
+
+.kombos-header__dropdown-item {
+  position: relative;
+}
+
+.kombos-header__dropdown-item:hover > .kombos-header__dropdown--nested {
+  display: flex;
+}
+
+.kombos-header__dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--kombos-gray-900);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.15s ease;
+}
+
+.kombos-header__dropdown-link:hover {
+  background-color: var(--kombos-gray-50);
+}
+
+.kombos-header__caret-right {
+  flex-shrink: 0;
+  color: var(--kombos-gray-900);
+}
+
+/* Action Icons */
+.kombos-navbar__actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.kombos-navbar__icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  transition: opacity 0.2s ease;
+  font-size: 1.25rem;
+}
+
+.kombos-navbar__icon-btn:hover {
+  opacity: 0.6;
+}
+
+.kombos-navbar__badge {
+  position: absolute;
+  top: -0.375rem;
+  right: -0.5rem;
+  background: var(--kombos-badge-bg);
+  color: var(--kombos-white);
+  font-size: 0.625rem;
+  font-weight: 600;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.25rem;
+}
+
+/* Hamburger (mobile only — visible by default) */
+.kombos-navbar__hamburger {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--kombos-gray-900);
+  transition: opacity 0.2s ease;
+  font-size: 1.375rem;
+}
+
+.kombos-navbar__hamburger:hover {
+  opacity: 0.6;
+}
+
+/* ===== Responsive — Desktop ===== */
+@media (min-width: 1024px) {
+  .kombos-navbar__inner {
+    gap: 2rem;
+    position: static;
+    justify-content: initial;
+    min-height: calc(var(--logo-h-desktop, 3.75rem) + 1.5rem);
+  }
+
+  .kombos-navbar__hamburger {
+    display: none;
+  }
+
+  .kombos-navbar__nav {
+    display: flex;
+  }
+
+  .kombos-navbar__nav--no-logo {
+    justify-content: flex-start;
+  }
+
+  .kombos-navbar__logo {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    height: var(--logo-h-desktop, 3.75rem);
+  }
+
+  .kombos-navbar__actions {
+    gap: 1.25rem;
+  }
+}

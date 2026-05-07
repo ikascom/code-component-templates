@@ -1,0 +1,40 @@
+.kombos-star-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.kombos-star-rating--sm {
+  font-size: 1rem;
+}
+
+.kombos-star-rating--md {
+  font-size: 1.25rem;
+}
+
+.kombos-star-rating__star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kombos-gray-300);
+  line-height: 0;
+}
+
+.kombos-star-rating__star--filled {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-star-rating--interactive .kombos-star-rating__star {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kombos-gray-900);
+  line-height: 0;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.kombos-star-rating--interactive .kombos-star-rating__star:hover {
+  color: var(--kombos-gray-900);
+}

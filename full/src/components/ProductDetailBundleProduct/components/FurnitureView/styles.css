@@ -1,0 +1,22 @@
+.kombos-bundle-table {
+  border: 1px solid var(--kombos-bundle-table-border, var(--kombos-gray-900));
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.kombos-bundle-table__header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--kombos-gray-900);
+  color: var(--kombos-white);
+}
+
+.kombos-bundle-table__title {
+  color: inherit;
+}
+
+.kombos-bundle-table__table {
+  width: 100%;
+  border-collapse: collapse;
+}

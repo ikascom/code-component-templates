@@ -1,0 +1,20 @@
+/* ── Confirm Modal ── */
+.confirm-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.confirm-modal__message {
+  color: var(--kombos-gray-700);
+}
+
+.confirm-modal__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.confirm-modal__btn {
+  flex: 1;
+}

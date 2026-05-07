@@ -1,0 +1,34 @@
+/* Checklist (multi-select) */
+.kombos-option-choice__checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid var(--kombos-gray-200);
+  border-radius: 6px;
+  padding: 0.5rem;
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+.kombos-option-choice__checklist--error {
+  border-color: var(--kombos-error);
+}
+
+.kombos-option-choice__checklist-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.kombos-option-choice__checklist-row:hover {
+  background-color: var(--kombos-gray-50);
+}
+
+.kombos-option-choice__checklist-price {
+  color: var(--kombos-gray-500);
+  margin-left: auto;
+}

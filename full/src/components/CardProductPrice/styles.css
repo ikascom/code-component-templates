@@ -1,0 +1,13 @@
+.kombos-card-product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.kombos-card-product-price__current {
+  color: var(--kombos-gray-900);
+}
+
+.kombos-card-product-price__old {
+  color: var(--kombos-gray-500);
+}
