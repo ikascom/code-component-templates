@@ -19,6 +19,10 @@ const STATUS_COLORS: Record<IkasOrderPackageStatus, string> = {
   REFUND_REQUESTED: "var(--kombos-info)",
   REFUND_REQUEST_ACCEPTED: "var(--kombos-info)",
   PARTIALLY_REFUNDED: "var(--kombos-info)",
+  RETURN_PARCEL_WAITING: "var(--kombos-info)",
+  RETURN_IN_TRANSIT: "var(--kombos-info)",
+  RETURN_DELIVERED: "var(--kombos-success)",
+  RETURN_REJECTED: "var(--kombos-error)",
 };
 
 export function getStatusColor(order: IkasOrder): string | undefined {
