@@ -1,0 +1,43 @@
+// This file is auto-generated — do not edit manually.
+export interface Props {
+  backgroundColor?: string;
+  backLinkText?: string;
+  backLinkUrl?: string;
+  pageTitlePrefix?: string;
+  orderNumberLabel?: string;
+  orderDateLabel?: string;
+  orderStatusLabel?: string;
+  lineItemsSectionTitle?: string;
+  quantityLabel?: string;
+  summarySectionTitle?: string;
+  subtotalLabel?: string;
+  shippingLabel?: string;
+  discountLabel?: string;
+  taxLabel?: string;
+  totalLabel?: string;
+  freeShippingText?: string;
+  shippingAddressTitle?: string;
+  billingAddressTitle?: string;
+  sameAddressText?: string;
+  paymentMethodTitle?: string;
+  trackingTitle?: string;
+  trackingNumberLabel?: string;
+  trackingLinkText?: string;
+  noTrackingText?: string;
+  sidebarNavAriaLabel?: string;
+  installmentLabel?: string;
+  returnSectionTitle?: string;
+  returnIntroText?: string;
+  returnStartButtonText?: string;
+  returnCancelButtonText?: string;
+  returnSubmitButtonText?: string;
+  returnSubmittingButtonText?: string;
+  returnSuccessMessage?: string;
+  returnErrorMessage?: string;
+  returnNoSelectionMessage?: string;
+  returnQuantityLabel?: string;
+  returnIncreaseAriaLabel?: string;
+  returnDecreaseAriaLabel?: string;
+  refundedItemsSectionTitle?: string;
+  refundedItemStatusText?: string;
+}

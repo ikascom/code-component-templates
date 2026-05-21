@@ -1,0 +1,187 @@
+.login-section {
+  width: 100%;
+  min-height: calc(100vh - var(--header-height, 0px));
+  padding: var(--space-md) 0 var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .login-section {
+    padding: var(--space-lg) 0 var(--space-3xl);
+  }
+}
+
+.login-section__inner {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.login-section__heading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--color-text-primary);
+  text-wrap: balance;
+}
+
+.login-section__subtext {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  text-wrap: pretty;
+}
+
+.login-section__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.login-section__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-section__label {
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.login-section__input {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  outline: none;
+  transition:
+    border-color 200ms cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.login-section__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.login-section__input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+.login-section__input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.login-section__input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-section__forgot-link {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 4px;
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.login-section__forgot-link:hover {
+  color: var(--color-accent);
+}
+
+.login-section__error {
+  margin: 0;
+  padding: var(--space-xs) var(--space-sm);
+  border-left: 3px solid var(--color-error);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  line-height: 1.5;
+  color: var(--color-error);
+}
+
+.login-section__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 44px;
+  margin-top: var(--space-xs);
+  padding: 10px 24px;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  font-family: var(--font-label);
+  font-size: var(--text-small);
+  font-weight: 500;
+  cursor: pointer;
+  will-change: transform;
+  transition:
+    background-color 200ms cubic-bezier(0.2, 0, 0, 1),
+    transform 120ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 1024px) {
+  .login-section__submit {
+    padding: 12px 28px;
+  }
+}
+
+.login-section__submit:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.login-section__submit:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+
+.login-section__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-section__register-prompt {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.login-section__register-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.login-section__register-link:hover {
+  text-decoration: underline;
+}

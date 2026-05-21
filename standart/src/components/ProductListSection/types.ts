@@ -1,0 +1,54 @@
+// This file is auto-generated — do not edit manually.
+import type { IkasProductList } from "@ikas/bp-storefront";
+import type { FilterLayout, FilterPosition, PaginationType, ProductListColumns, ProductListColumnsTablet, SavingsBadgeStyle, SliderAspectRatio } from "../../global-types";
+
+export interface Props {
+  productList: IkasProductList;
+  backgroundColor?: string;
+  textColor?: string;
+  columnsDesktop?: ProductListColumns;
+  columnsTablet?: ProductListColumnsTablet;
+  showFilterSidebar?: boolean;
+  filterPosition?: FilterPosition;
+  paginationType?: PaginationType;
+  cardAspectRatio?: SliderAspectRatio;
+  showProductName?: boolean;
+  showPrice?: boolean;
+  showVariantCount?: boolean;
+  accentColor?: string;
+  filterTitle?: string;
+  sortLabel?: string;
+  resultCountLabel?: string;
+  clearAllLabel?: string;
+  loadMoreLabel?: string;
+  emptyStateTitle?: string;
+  emptyStateDescription?: string;
+  variantCountSuffix?: string;
+  imageAltPrefix?: string;
+  applyFilterLabel?: string;
+  showAllLabel?: string;
+  filterButtonLabel?: string;
+  sortButtonLabel?: string;
+  closeLabel?: string;
+  enableHoverImage?: boolean;
+  saleLabel?: string;
+  soldOutLabel?: string;
+  offLabel?: string;
+  savingsBadgeStyle?: SavingsBadgeStyle;
+  showAddToCart?: boolean;
+  addToCartLabel?: string;
+  addingToCartLabel?: string;
+  viewOptionsLabel?: string;
+  productCountSuffix?: string;
+  categoriesLabel?: string;
+  activeFiltersAriaLabel?: string;
+  removeFilterAriaLabel?: string;
+  paginationAriaLabel?: string;
+  prevPageAriaLabel?: string;
+  nextPageAriaLabel?: string;
+  minPriceAriaPrefix?: string;
+  maxPriceAriaPrefix?: string;
+  filterLayout?: FilterLayout;
+  showRating?: boolean;
+  reviewCountLabel?: string;
+}

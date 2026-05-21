@@ -1,0 +1,194 @@
+/*
+ * Global styles for your ikas code components project.
+ *
+ * Scoping: at build time every rule here is wrapped in a per-project scope
+ * (`:where([data-cc-scope~="<projectId>"])`) so styles from one project cannot
+ * leak into another project's components or the host page.
+ *
+ * What works:
+ *   - Class / tag / attribute selectors on elements you render (`.card`, `img`, `[data-x]`).
+ *   - `:root { --var: value }` — variables are rewritten onto the component wrapper
+ *     and inherit down its subtree. Use this for design tokens.
+ *   - `@media`, `@supports`, `@container`, `@layer` — walked recursively.
+ *   - `@keyframes`, `@font-face` — left untouched.
+ *
+ * What does NOT work (code components only style elements they own):
+ *   - Top-level `body { ... }` / `html { ... }` rules — dropped.
+ *   - Descendant selectors starting with `body` / `html` (e.g. `body .x`, `html.dark .y`) —
+ *     emitted but never match, because the component wrapper is INSIDE body, not
+ *     the other way around. Use a class on your own wrapper instead
+ *     (e.g. add `dark` via JS and write `.dark .x`).
+ *   - Document-wide resets, scrollbar tweaks, page backgrounds — belong to the theme.
+ *
+ * Loading order (all scoped to this project):
+ *   1. Global CSS (this file) — lowest specificity
+ *   2. Shared chunk CSS — multi-scope (.cc_a .sel, .cc_b .sel)
+ *   3. Component CSS — single scope (.cc_id .sel) — highest specificity
+ *
+ * Component-scoped styles naturally override these globals.
+ */
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvUDQ.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/dmsans/v15/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAkJxhTmf3ZGMZpg.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ─── Colors ────────────────────────────────────────────── */
+  --color-bg:             #FAF8F5;
+  --color-surface:        #FFFFFF;
+  --color-surface-alt:    #F2EDE8;
+  --color-border:         #E5DDD5;
+  --color-text-primary:   #1C1917;
+  --color-text-secondary: #6B6560;
+  --color-text-muted:     #A89E97;
+  --color-accent:         #C9A882;
+  --color-accent-dark:    #9C7B5A;
+  --color-accent-light:   #F7E9D6;
+  --color-error:          #B91C1C;
+  --color-success:        #15803D;
+  --color-overlay-warm:   #5B2709;
+
+  /* ─── Typography ────────────────────────────────────────── */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body:    "DM Sans", system-ui, sans-serif;
+  --font-label:   "DM Sans", system-ui, sans-serif;
+
+  --text-hero:    clamp(48px, 7vw, 96px);
+  --text-h1:      clamp(36px, 5vw, 64px);
+  --text-h2:      clamp(28px, 3.5vw, 44px);
+  --text-h3:      clamp(20px, 2.5vw, 28px);
+  --text-body-lg: 18px;
+  --text-body:    16px;
+  --text-small:   14px;
+  --text-label:   12px;
+
+  /* ─── Spacing ───────────────────────────────────────────── */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  64px;
+  --space-2xl: 96px;
+  --space-3xl: 128px;
+}
+
+/* ─── Base reset ────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Account sidebar (shared sub-component) ────────────
+ * Lives in global so any account section that mounts the
+ * sidebar gets its layout immediately — no per-section
+ * inlining, no late-paint flash when the section CSS chunk
+ * arrives after JS on a fresh route load.
+ */
+
+.account-sidebar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .account-sidebar {
+    display: block;
+  }
+}
+
+.account-sidebar__nav {
+  position: sticky;
+  top: calc(var(--header-height, 0px) + var(--space-md));
+}
+
+.account-sidebar__heading {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.account-sidebar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.account-sidebar__link {
+  display: block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.account-sidebar__link:hover,
+.account-sidebar__link:focus-visible {
+  color: var(--color-text-primary);
+  outline: none;
+}
+
+.account-sidebar__link--active {
+  color: var(--color-accent);
+  font-weight: 500;
+  background: var(--color-accent-light);
+}
+
+/* ─── Hero Slider auto-mode media flow ──────────────────────
+ * In auto-height mode the slider track is a grid stack and slot
+ * height comes from the active child's intrinsic media. These
+ * cross-component overrides live here (instead of per-component
+ * scoped CSS) so they can target hero-slide / image-slide nodes
+ * rendered inside the HeroSlider scope.
+ */
+
+.hero-slider--height-auto .hero-slide,
+.hero-slider--height-auto .image-slide {
+  height: auto;
+  min-height: auto;
+  display: block;
+}
+
+.hero-slider--height-auto .hero-slide-bg {
+  position: relative;
+  inset: auto;
+}
+
+.hero-slider--height-auto .hero-slide-media,
+.hero-slider--height-auto .image-slide-media {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-slider--height-auto .hero-slide-content-wrap {
+  position: absolute;
+  inset: 0;
+}

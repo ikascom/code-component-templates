@@ -1,0 +1,125 @@
+/* ═══════════════════════════════════════════════════════════════
+   Announcement Bar
+   ═══════════════════════════════════════════════════════════════ */
+
+.announcement-bar {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color 400ms ease-out, color 400ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-bar { transition: none; }
+}
+
+@media (min-width: 1024px) {
+  .announcement-bar { height: 40px; }
+}
+
+.announcement-bar-text {
+  flex: 1 1 auto;
+  text-align: center;
+  padding: 0 var(--space-lg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation-duration: 400ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.announcement-bar-text--slide-next {
+  animation-name: announcement-slide-in-next;
+}
+
+.announcement-bar-text--slide-prev {
+  animation-name: announcement-slide-in-prev;
+}
+
+@keyframes announcement-slide-in-next {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes announcement-slide-in-prev {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.announcement-bar-link {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 150ms ease;
+}
+
+.announcement-bar-link:hover { opacity: 0.75; }
+
+.announcement-bar-link:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-bar-link { transition: none; }
+  .announcement-bar-text--slide-next,
+  .announcement-bar-text--slide-prev {
+    animation-name: announcement-fade;
+  }
+  @keyframes announcement-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* ─── Arrows (desktop only) ─────────────────────────────────── */
+
+.announcement-bar-arrow {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .announcement-bar-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0 var(--space-sm);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.6;
+    transition: opacity 150ms ease;
+  }
+
+  .announcement-bar-arrow:hover,
+  .announcement-bar-arrow:focus-visible { opacity: 1; }
+
+  .announcement-bar-arrow:focus-visible {
+    outline: 1px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  .announcement-bar-arrow--prev { left: 0; }
+  .announcement-bar-arrow--next { right: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-bar-arrow { transition: none; }
+}

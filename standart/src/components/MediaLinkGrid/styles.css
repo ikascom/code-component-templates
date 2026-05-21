@@ -1,0 +1,274 @@
+/* MediaLinkGrid — editorial media grid section with padded container. */
+
+.media-link-grid {
+  width: 100%;
+  background-color: var(--color-bg, #FAF8F5);
+  padding: var(--space-md, 24px) clamp(16px, 3vw, 32px);
+}
+
+@media (min-width: 768px) {
+  .media-link-grid {
+    padding: var(--space-lg, 40px) clamp(24px, 3vw, 40px);
+  }
+}
+
+.media-link-grid__grid {
+  display: grid;
+  gap: var(--space-xs, 8px);
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+}
+
+/* ─── Mobile (base, < 768px) ─────────────────────────────────────
+ * All layouts collapse to a single column, each card at 4/3 aspect.
+ */
+.media-link-grid__cell {
+  aspect-ratio: 4 / 3;
+}
+
+/* ─── Tablet (≥ 768px) ───────────────────────────────────────── */
+@media (min-width: 768px) {
+  /* bento-6 (6 cards): 2 cols × 3 rows on tablet */
+  .media-link-grid__grid--bento-6 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(260px, 1fr);
+  }
+
+  .media-link-grid__grid--bento-6 .media-link-grid__cell {
+    aspect-ratio: auto;
+  }
+
+  /* grid-6: 2 cols × 3 rows on tablet */
+  .media-link-grid__grid--grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(260px, 1fr);
+  }
+
+  .media-link-grid__grid--grid-6 .media-link-grid__cell {
+    aspect-ratio: auto;
+  }
+
+  /* grid-4: stays 2 × 2 */
+  .media-link-grid__grid--grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, minmax(280px, 1fr));
+  }
+
+  .media-link-grid__grid--grid-4 .media-link-grid__cell {
+    aspect-ratio: auto;
+  }
+
+  /* featured-3 tablet: large on top spanning 2 cols, 2 small side-by-side below */
+  .media-link-grid__grid--featured-3 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, minmax(240px, 1fr));
+  }
+
+  .media-link-grid__grid--featured-3 .media-link-grid__cell {
+    aspect-ratio: auto;
+  }
+
+  .media-link-grid__grid--featured-3 .media-link-grid__cell--1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .media-link-grid__grid--featured-3 .media-link-grid__cell--2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .media-link-grid__grid--featured-3 .media-link-grid__cell--3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+}
+
+/* ─── Desktop (≥ 1024px) ─────────────────────────────────────── */
+@media (min-width: 1024px) {
+  /* ── bento-6: 6 cards in 4 cols × 2 rows, asymmetric ──
+   *   Row 1: [large (cols 1-2)] [small col 3] [small col 4]
+   *   Row 2: [small col 1] [small col 2] [large (cols 3-4)]
+   */
+  .media-link-grid__grid--bento-6 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(320px, 1fr));
+  }
+
+  .media-link-grid__grid--bento-6 .media-link-grid__cell--1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  .media-link-grid__grid--bento-6 .media-link-grid__cell--2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+  .media-link-grid__grid--bento-6 .media-link-grid__cell--3 {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+  }
+  .media-link-grid__grid--bento-6 .media-link-grid__cell--4 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .media-link-grid__grid--bento-6 .media-link-grid__cell--5 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  .media-link-grid__grid--bento-6 .media-link-grid__cell--6 {
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+  }
+
+  /* ── grid-4: uniform 2×2 ── */
+  .media-link-grid__grid--grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, minmax(320px, 1fr));
+  }
+
+  /* ── grid-6: uniform 3×2 ── */
+  .media-link-grid__grid--grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(320px, 1fr));
+  }
+
+  /* ── featured-3: 4 cols × 1 row — 1 large + 2 narrow ── */
+  .media-link-grid__grid--featured-3 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(440px, 1fr);
+  }
+
+  .media-link-grid__grid--featured-3 .media-link-grid__cell--1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  .media-link-grid__grid--featured-3 .media-link-grid__cell--2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+  .media-link-grid__grid--featured-3 .media-link-grid__cell--3 {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+  }
+
+  /* ── Larger title font on wide cells (bento large + featured-3 large) ── */
+  .media-link-grid__grid--bento-6 .media-link-grid__cell--1 .media-link-card__title,
+  .media-link-grid__grid--bento-6 .media-link-grid__cell--6 .media-link-card__title,
+  .media-link-grid__grid--featured-3 .media-link-grid__cell--1 .media-link-card__title {
+    font-size: var(--text-h2, clamp(28px, 3.5vw, 44px));
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * Inlined MediaLinkCard styles (the build does not auto-bundle
+ * sub-component CSS — keep this in sync with
+ * src/sub-components/MediaLinkCard/styles.css)
+ * ─────────────────────────────────────────────────────────── */
+
+.media-link-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: var(--color-text-primary, #1C1917);
+  text-decoration: none;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: media-link-card-reveal 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: var(--media-link-card-delay, 0ms);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.media-link-card:active {
+  transform: scale(0.96);
+}
+
+.media-link-card:focus-visible {
+  outline: 2px solid var(--color-accent, #C9A882);
+  outline-offset: 2px;
+}
+
+.media-link-card__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media-link-card__image,
+.media-link-card__placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.media-link-card__placeholder {
+  background: linear-gradient(135deg, #2a2725 0%, #1c1917 100%);
+}
+
+.media-link-card__image {
+  transition: transform 400ms ease;
+}
+
+.media-link-card:hover .media-link-card__image,
+.media-link-card:focus-visible .media-link-card__image {
+  transform: scale(1.04);
+}
+
+.media-link-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--color-overlay-warm) 20%, transparent);
+  pointer-events: none;
+}
+
+.media-link-card__content {
+  position: absolute;
+  bottom: var(--space-md, 24px);
+  left: var(--space-md, 24px);
+  right: var(--space-md, 24px);
+  z-index: 1;
+}
+
+.media-link-card__title {
+  margin: 0;
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  font-size: var(--text-h3, clamp(20px, 2.5vw, 28px));
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+@keyframes media-link-card-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-link-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+  .media-link-card:active {
+    transform: none;
+  }
+  .media-link-card__image {
+    transition: none;
+  }
+  .media-link-card:hover .media-link-card__image,
+  .media-link-card:focus-visible .media-link-card__image {
+    transform: none;
+  }
+}

@@ -1,0 +1,57 @@
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-lg, 40px);
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #ffffff;
+  z-index: 3;
+}
+
+.scroll-indicator:focus-visible {
+  outline: 2px solid var(--color-accent-light, #f7e9d6);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+.scroll-indicator-track {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: border-color 200ms ease, background-color 200ms ease;
+  animation: scroll-indicator-bounce 1800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.scroll-indicator:hover .scroll-indicator-track {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.scroll-indicator-icon {
+  display: block;
+}
+
+@keyframes scroll-indicator-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.85; }
+  50%      { transform: translateY(6px); opacity: 1; }
+}
+
+@media (min-width: 1024px) {
+  .scroll-indicator { display: inline-flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator-track { animation: none; }
+}

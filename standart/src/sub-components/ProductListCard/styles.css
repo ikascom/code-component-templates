@@ -1,0 +1,210 @@
+.pl-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: inherit;
+}
+
+.pl-card-media {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--color-surface-alt);
+}
+
+.pl-card.is-portrait .pl-card-media {
+  aspect-ratio: 3 / 4;
+}
+
+.pl-card.is-square .pl-card-media {
+  aspect-ratio: 1 / 1;
+}
+
+.pl-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pl-card-image--empty {
+  background: linear-gradient(135deg, var(--color-surface-alt), var(--color-border));
+}
+
+.pl-card.has-hover-image .pl-card-image--primary,
+.pl-card-image--hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pl-card-image--hover {
+  opacity: 0;
+  transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .pl-card.has-hover-image:hover .pl-card-image--hover {
+    opacity: 1;
+  }
+}
+
+.pl-card-badge {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.pl-card-badge--sale {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-dark);
+}
+
+.pl-card-badge--sold-out {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+}
+
+.pl-card-cart-btn {
+  position: absolute;
+  left: var(--space-sm);
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+  font-family: var(--font-label);
+  font-size: var(--text-small);
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 250ms ease, transform 250ms ease, background-color 200ms ease;
+}
+
+.pl-card-cart-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0;
+}
+
+.pl-card-cart-btn:hover:not(:disabled) {
+  background-color: var(--list-accent, var(--color-accent));
+}
+
+@media (hover: hover) {
+  .pl-card:hover .pl-card-cart-btn:not(:disabled) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: none) {
+  .pl-card-cart-btn:not(:disabled) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-card-cart-btn {
+    transition: none;
+    transform: none;
+  }
+}
+
+.pl-card-savings {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 2px;
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.pl-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 2px;
+}
+
+.pl-card-variant-count {
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.pl-card-name {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--list-text-color, var(--color-text-primary));
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pl-card-price-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.pl-card-price {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--list-text-color, var(--color-text-primary));
+  font-variant-numeric: tabular-nums;
+}
+
+.pl-card-price--original {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pl-card-image {
+    transition: transform 400ms ease-out;
+  }
+
+  .pl-card:hover .pl-card-image {
+    transform: scale(1.04);
+  }
+}

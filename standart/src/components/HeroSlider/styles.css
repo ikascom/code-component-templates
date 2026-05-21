@@ -1,0 +1,229 @@
+/* ═══════════════════════════════════════════════════════════════
+   Hero Slider — full-bleed carousel of Hero Slide components
+   ═══════════════════════════════════════════════════════════════ */
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  min-height: var(--hero-slider-section-height, 100vh);
+  overflow: hidden;
+  isolation: isolate;
+  color: #ffffff;
+  outline: none;
+}
+
+.hero-slider:focus-visible {
+  outline: 2px solid var(--color-accent-light, #ead9c6);
+  outline-offset: -4px;
+}
+
+.hero-slider--height-auto { min-height: auto; }
+.hero-slider--height-80vh { min-height: 80vh; }
+.hero-slider--height-100vh { min-height: 100vh; }
+
+.hero-slider--tuck-under {
+  margin-top: calc(-1 * var(--header-height, 0px));
+}
+
+/* ─── Track + slots ──────────────────────────────────────── */
+
+.hero-slider-track {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slider-slot {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 600ms ease, visibility 0s linear 600ms;
+  pointer-events: none;
+}
+
+/* Auto mode: track in normal flow, slots stack in same grid cell.
+   The cell sizes to the tallest slide's intrinsic media height. */
+.hero-slider--height-auto .hero-slider-track {
+  position: relative;
+  inset: auto;
+  display: grid;
+  grid-template-areas: "stack";
+}
+
+.hero-slider--height-auto .hero-slider-slot {
+  position: relative;
+  inset: auto;
+  grid-area: stack;
+}
+
+.hero-slider-slot.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 600ms ease, visibility 0s linear 0s;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slider-slot,
+  .hero-slider-slot.is-active {
+    transition: none;
+  }
+}
+
+/* ─── Arrows ─────────────────────────────────────────────── */
+
+.hero-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 200ms ease, border-color 200ms ease, opacity 200ms ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-slider-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-slider-arrow:focus-visible {
+  outline: 2px solid var(--color-accent-light, #ead9c6);
+  outline-offset: 3px;
+}
+
+.hero-slider-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hero-slider-arrow--prev { left: clamp(8px, 2vw, 24px); }
+.hero-slider-arrow--next { right: clamp(8px, 2vw, 24px); }
+
+@media (min-width: 1024px) {
+  .hero-slider-arrow {
+    width: 52px;
+    height: 52px;
+  }
+  .hero-slider-arrow--prev { left: clamp(16px, 3vw, 40px); }
+  .hero-slider-arrow--next { right: clamp(16px, 3vw, 40px); }
+}
+
+/* ─── Dots ───────────────────────────────────────────────── */
+
+.hero-slider-dots {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(20px, 4vh, 40px);
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-slider-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 200ms ease, width 200ms ease;
+}
+
+.hero-slider-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.hero-slider-dot:focus-visible {
+  outline: 2px solid var(--color-accent-light, #ead9c6);
+  outline-offset: 3px;
+}
+
+.hero-slider-dot.is-active {
+  background: #ffffff;
+  width: 24px;
+}
+
+/* When dots are present, lift the scroll indicator a bit so they don't collide */
+.hero-slider:has(.hero-slider-dots) .scroll-indicator {
+  bottom: clamp(72px, 10vh, 110px);
+}
+
+/* ─── Scroll indicator (reuses ScrollIndicator sub-component) ─── */
+
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-lg, 40px);
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #ffffff;
+  z-index: 3;
+}
+
+.scroll-indicator:focus-visible {
+  outline: 2px solid var(--color-accent-light, #ead9c6);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+.scroll-indicator-track {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: border-color 200ms ease, background-color 200ms ease;
+  animation: hero-slider-scroll-bounce 1800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.scroll-indicator:hover .scroll-indicator-track {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.scroll-indicator-icon { display: block; }
+
+@keyframes hero-slider-scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.85; }
+  50%      { transform: translateY(6px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator-track { animation: none; }
+}
+
+@media (min-width: 1024px) {
+  .scroll-indicator { display: inline-flex; }
+}

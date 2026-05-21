@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.ikas-dev-state.json
+.claude/settings.local.json
+asd
