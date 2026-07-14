@@ -97,9 +97,6 @@ Group text props under a "Texts" propGroup when the component has 5+ props.
 ## Sections vs Components
 - Sections = page-level containers (Header, Hero, Product Grid, Footer)
   Set "type": "section" via CLI. Use <section> root element. Props interface: Props.
-  **Sections MUST always include a `backgroundColor` COLOR prop** (default: `#ffffff`).
-  Apply via inline style: `style={backgroundColor ? { backgroundColor } : undefined}`
-  Consider also adding `textColor` COLOR props for text elements directly on the section background.
 - Components = child elements inside sections (buttons, cards, badges)
   Defaults to "component". Use <div> root element. Props interface: Props.
 
