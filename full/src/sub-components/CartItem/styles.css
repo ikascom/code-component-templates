@@ -168,17 +168,3 @@
   flex-shrink: 0;
 }
 
-/* Auto-created (campaign gift) line: badge + read-only quantity */
-.kombos-cart-item__gift-badge {
-  display: inline-flex;
-  align-self: flex-start;
-  padding: 0.125rem 0.5rem;
-  border-radius: 999px;
-  background: var(--kombos-gray-100);
-  color: var(--kombos-gray-500);
-}
-
-.kombos-cart-item__qty-static {
-  color: var(--kombos-gray-500);
-}
-

@@ -14,8 +14,6 @@ import {
   getOrderLineItemFormattedOverridenPriceWithQuantity,
   hasOrderLineItemDiscount,
   getOrderLineItemOverridenPriceWithQuantity,
-  cartStore,
-  isOrderLineItemAutoCreated,
 } from "@ikas/bp-storefront";
 import { resolveAspectRatio, resolveObjectFit } from "../../utils/media";
 import { cx } from "../../utils/cx";
@@ -27,7 +25,6 @@ interface CartItemProps {
   variant?: "sidebar" | "page";
   aspectRatio?: AspectRatio;
   objectFit?: ObjectFit;
-  giftLabel?: string;
 }
 
 const CartItem = observer(function CartItem({
@@ -36,24 +33,8 @@ const CartItem = observer(function CartItem({
   variant = "sidebar",
   aspectRatio,
   objectFit,
-  giftLabel = "Gift",
 }: CartItemProps) {
   const isPage = variant === "page";
-
-  // Lines a campaign added automatically (e.g. a "buy 1 get 1" gift) cannot be
-  // edited or removed on their own, so render them read-only with a badge.
-  const isAutoCreated =
-    !!cartStore.cart && isOrderLineItemAutoCreated(cartStore.cart, item);
-  const giftBadge = isAutoCreated ? (
-    <span className="kombos-cart-item__gift-badge text-xs-medium">
-      {giftLabel}
-    </span>
-  ) : null;
-  const staticQuantity = (
-    <span className="kombos-cart-item__qty-static text-sm-medium">
-      ×{item.quantity}
-    </span>
-  );
 
   const mediaStyle: Record<string, string> = {
     aspectRatio: resolveAspectRatio(aspectRatio),
@@ -122,7 +103,6 @@ const CartItem = observer(function CartItem({
               <a href={href} className={nameClass}>
                 {item.variant?.name}
               </a>
-              {giftBadge}
               {variantValues.length > 0 && (
                 <p className="kombos-cart-item__variant-text text-sm-regular">
                   {variantValues
@@ -133,22 +113,19 @@ const CartItem = observer(function CartItem({
                 </p>
               )}
             </div>
-            {!isAutoCreated && (
-              <button
-                className="kombos-cart-item__remove"
-                onClick={() => onRemove(item)}
-                aria-label="Remove"
-              >
-                <TrashSVG />
-              </button>
-            )}
+            <button
+              className="kombos-cart-item__remove"
+              onClick={() => onRemove(item)}
+              aria-label="Remove"
+            >
+              <TrashSVG />
+            </button>
           </div>
         ) : (
           <>
             <a href={href} className={nameClass}>
               {item.variant?.name}
             </a>
-            {giftBadge}
 
             {variantValues.length > 0 && (
               <div className="kombos-cart-item__variants">
@@ -174,15 +151,11 @@ const CartItem = observer(function CartItem({
 
         {isPage ? (
           <div className="kombos-cart-item__bottom">
-            {isAutoCreated ? (
-              staticQuantity
-            ) : (
-              <QuantitySelector
-                size="sm"
-                value={item.quantity}
-                onChange={(qty) => changeItemQuantity(item, qty)}
-              />
-            )}
+            <QuantitySelector
+              size="sm"
+              value={item.quantity}
+              onChange={(qty) => changeItemQuantity(item, qty)}
+            />
             <div className="kombos-cart-item__prices">
               {hasDiscount && (
                 <span className="kombos-cart-item__original-price text-sm-regular-strike">
@@ -220,24 +193,18 @@ const CartItem = observer(function CartItem({
             </div>
 
             <div className="kombos-cart-item__actions">
-              {isAutoCreated ? (
-                staticQuantity
-              ) : (
-                <>
-                  <QuantitySelector
-                    size="sm"
-                    value={item.quantity}
-                    onChange={(qty) => changeItemQuantity(item, qty)}
-                  />
-                  <button
-                    className="kombos-cart-item__remove"
-                    onClick={() => onRemove(item)}
-                    aria-label="Remove"
-                  >
-                    <TrashSVG />
-                  </button>
-                </>
-              )}
+              <QuantitySelector
+                size="sm"
+                value={item.quantity}
+                onChange={(qty) => changeItemQuantity(item, qty)}
+              />
+              <button
+                className="kombos-cart-item__remove"
+                onClick={() => onRemove(item)}
+                aria-label="Remove"
+              >
+                <TrashSVG />
+              </button>
             </div>
           </>
         )}

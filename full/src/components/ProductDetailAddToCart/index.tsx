@@ -10,14 +10,13 @@ import {
   IkasBundleSettings,
   IkasStorefrontConfig,
 } from "@ikas/bp-storefront";
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import { Props } from "./types";
 import Button from "../../sub-components/Button";
 import QuantitySelector from "../../sub-components/QuantitySelector";
 import PayWithIkas from "./components/PayWithIkas";
 import { isBundleOutOfStock } from "../../utils/bundle";
 import { validateOptionSet } from "../../utils/optionSet";
-import { getProductCartLimits } from "../../utils/cartLimits";
 import { showToast } from "../../utils/toast";
 
 export function ProductDetailAddToCart({
@@ -37,12 +36,6 @@ export function ProductDetailAddToCart({
 }: Props) {
   const [quantity, setQuantity] = useState(1);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
-
-  // Seed the quantity to the product's minimum-per-cart when the product changes.
-  useEffect(() => {
-    if (!product) return;
-    setQuantity(getProductCartLimits(product).min);
-  }, [product?.id]);
 
   if (!product) return null;
 
@@ -65,8 +58,6 @@ export function ProductDetailAddToCart({
     : !hasProductStock(product) || !hasProductVariantStock(selectedVariant);
 
   const isDisabled = isOutOfStock || isAddingToCart;
-
-  const { min: minQuantity, max: maxQuantity } = getProductCartLimits(product);
 
   const payWithIkasUrl = IkasStorefrontConfig.getPayWithIkasUrl();
   const routing = IkasStorefrontConfig.getCurrentRouting();
@@ -128,12 +119,7 @@ export function ProductDetailAddToCart({
     >
       <div className="kombos-pd-atc__actions">
         {!hideQuantityInput && !isOutOfStock && (
-          <QuantitySelector
-            value={quantity}
-            onChange={setQuantity}
-            min={minQuantity}
-            max={maxQuantity}
-          />
+          <QuantitySelector value={quantity} onChange={setQuantity} />
         )}
         <Button
           variant="primary"
