@@ -21,7 +21,20 @@
             "{{PROJECT_ID}}-navbar",
             "{{PROJECT_ID}}-announcements",
             "{{PROJECT_ID}}-cookie-bar"
-          ]
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "{{PROJECT_ID}}-announcements"
+              },
+              {
+                "codeComponentId": "{{PROJECT_ID}}-navbar"
+              },
+              {
+                "codeComponentId": "{{PROJECT_ID}}-cookie-bar"
+              }
+            ]
+          }
         }
       ],
       "propGroups": []
@@ -75,9 +88,7 @@
           "displayName": "Slides",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": [
-            "{{PROJECT_ID}}-hero-slide"
-          ]
+          "filteredComponentIds": ["{{PROJECT_ID}}-hero-slide"]
         }
       ],
       "propGroups": [
@@ -144,9 +155,7 @@
           "displayName": "Categories",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": [
-            "{{PROJECT_ID}}-category-image-item"
-          ]
+          "filteredComponentIds": ["{{PROJECT_ID}}-category-image-item"]
         }
       ],
       "propGroups": [
@@ -240,9 +249,7 @@
           "displayName": "Social Media Icons",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": [
-            "{{PROJECT_ID}}-social-media-icon"
-          ]
+          "filteredComponentIds": ["{{PROJECT_ID}}-social-media-icon"]
         }
       ],
       "propGroups": [
@@ -1090,7 +1097,26 @@
             "{{PROJECT_ID}}-account-addresses",
             "{{PROJECT_ID}}-account-favorites",
             "{{PROJECT_ID}}-account-order-detail"
-          ]
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "{{PROJECT_ID}}-account-info-content"
+              },
+              {
+                "codeComponentId": "{{PROJECT_ID}}-account-orders"
+              },
+              {
+                "codeComponentId": "{{PROJECT_ID}}-account-addresses"
+              },
+              {
+                "codeComponentId": "{{PROJECT_ID}}-account-favorites"
+              },
+              {
+                "codeComponentId": "{{PROJECT_ID}}-account-order-detail"
+              }
+            ]
+          }
         }
       ],
       "propGroups": [
@@ -1654,9 +1680,7 @@
           "displayName": "Announcements",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": [
-            "{{PROJECT_ID}}-announcement"
-          ]
+          "filteredComponentIds": ["{{PROJECT_ID}}-announcement"]
         },
         {
           "name": "autoPlay",
@@ -2448,9 +2472,7 @@
           "displayName": "Specifications",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": [
-            "{{PROJECT_ID}}-feature-item"
-          ]
+          "filteredComponentIds": ["{{PROJECT_ID}}-feature-item"]
         }
       ]
     },
@@ -3192,9 +3214,7 @@
           "displayName": "Specifications",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": [
-            "{{PROJECT_ID}}-product-detail-feature-item"
-          ]
+          "filteredComponentIds": ["{{PROJECT_ID}}-product-detail-feature-item"]
         }
       ],
       "propGroups": [
@@ -3281,9 +3301,7 @@
           "displayName": "Components",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": [
-            "{{PROJECT_ID}}-collapsible-content"
-          ]
+          "filteredComponentIds": ["{{PROJECT_ID}}-collapsible-content"]
         }
       ],
       "propGroups": [

@@ -11,7 +11,7 @@ export function Footer(props: Props) {
   const {
     logo,
     description,
-    copyrightText = "© 2026 ikas Store. All Rights Reserved",
+    copyrightText = "<p>© 2026 ikas Store. All Rights Reserved.</p>",
     linkColor,
     linkHoverColor,
     contactTitle = "Contact Information",
@@ -29,7 +29,7 @@ export function Footer(props: Props) {
     <footer
       className="kombos-footer"
       style={{
-...(linkColor ? { "--footer-link-color": linkColor } : {}),
+        ...(linkColor ? { "--footer-link-color": linkColor } : {}),
         ...(linkHoverColor
           ? { "--footer-link-hover-color": linkHoverColor }
           : {}),
