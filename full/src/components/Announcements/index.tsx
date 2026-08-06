@@ -9,7 +9,7 @@ export function Announcements(props: Props) {
     bgColor,
     textColor,
     items,
-    autoPlay = true,
+    autoPlay = false,
     autoPlayInterval = 5000,
   } = props;
   const [current, setCurrent] = useState(0);

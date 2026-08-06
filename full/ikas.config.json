@@ -25,13 +25,13 @@
           "defaultValue": {
             "components": [
               {
-                "codeComponentId": "{{PROJECT_ID}}-announcements"
+                "codeComponentId": "nb34u3yu-announcements"
               },
               {
-                "codeComponentId": "{{PROJECT_ID}}-navbar"
+                "codeComponentId": "nb34u3yu-navbar"
               },
               {
-                "codeComponentId": "{{PROJECT_ID}}-cookie-bar"
+                "codeComponentId": "nb34u3yu-cookie-bar"
               }
             ]
           }
@@ -59,7 +59,8 @@
           "displayName": "Autoplay",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "settings"
+          "groupId": "settings",
+          "defaultValue": false
         },
         {
           "name": "autoplayDelay",
@@ -74,21 +75,35 @@
           "displayName": "Full Width",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "settings"
+          "groupId": "settings",
+          "defaultValue": false
         },
         {
           "name": "showArrows",
           "displayName": "Show Arrows",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "settings"
+          "groupId": "settings",
+          "defaultValue": false
         },
         {
           "name": "components",
           "displayName": "Slides",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": ["{{PROJECT_ID}}-hero-slide"]
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-hero-slide"
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-hero-slide"
+              },
+              {
+                "codeComponentId": "nb34u3yu-hero-slide"
+              }
+            ]
+          }
         }
       ],
       "propGroups": [
@@ -124,7 +139,8 @@
           "displayName": "Title Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "content"
+          "groupId": "content",
+          "defaultValue": "#14141a"
         },
         {
           "name": "backgroundColor",
@@ -148,14 +164,30 @@
           "type": "ENUM",
           "required": false,
           "groupId": "appearance",
-          "enumTypeId": "Tkt3wfuJ5F"
+          "enumTypeId": "Tkt3wfuJ5F",
+          "defaultValue": "One"
         },
         {
           "name": "components",
           "displayName": "Categories",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": ["{{PROJECT_ID}}-category-image-item"]
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-category-image-item"
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-category-image-item"
+              },
+              {
+                "codeComponentId": "nb34u3yu-category-image-item"
+              },
+              {
+                "codeComponentId": "nb34u3yu-category-image-item"
+              }
+            ]
+          }
         }
       ],
       "propGroups": [
@@ -213,14 +245,16 @@
           "displayName": "Link Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "#2e2e33"
         },
         {
           "name": "linkHoverColor",
           "displayName": "Link Hover Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "#14141a"
         },
         {
           "name": "contactTitle",
@@ -249,7 +283,22 @@
           "displayName": "Social Media Icons",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": ["{{PROJECT_ID}}-social-media-icon"]
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-social-media-icon"
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-social-media-icon"
+              },
+              {
+                "codeComponentId": "nb34u3yu-social-media-icon"
+              },
+              {
+                "codeComponentId": "nb34u3yu-social-media-icon"
+              }
+            ]
+          }
         }
       ],
       "propGroups": [
@@ -369,7 +418,8 @@
           "displayName": "Google Login",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "google"
+          "groupId": "google",
+          "defaultValue": false
         },
         {
           "name": "googleButtonText",
@@ -384,7 +434,8 @@
           "displayName": "Facebook Login",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "facebook"
+          "groupId": "facebook",
+          "defaultValue": false
         },
         {
           "name": "facebookButtonText",
@@ -590,7 +641,8 @@
           "displayName": "Google Login",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "google"
+          "groupId": "google",
+          "defaultValue": false
         },
         {
           "name": "googleButtonText",
@@ -605,7 +657,8 @@
           "displayName": "Facebook Login",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "facebook"
+          "groupId": "facebook",
+          "defaultValue": false
         },
         {
           "name": "facebookButtonText",
@@ -978,7 +1031,8 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "Tkt3wfuJ5F",
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "Four"
         },
         {
           "name": "aspectRatio",
@@ -986,7 +1040,8 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "s3OODUmZpJ",
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "Square"
         },
         {
           "name": "objectFit",
@@ -994,14 +1049,16 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "GrylMqHxui",
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "Cover"
         },
         {
           "name": "hideAddToCartButton",
           "displayName": "Hide Add to Cart Button",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": false
         },
         {
           "name": "components",
@@ -1018,7 +1075,20 @@
             "{{PROJECT_ID}}-card-product-price",
             "{{PROJECT_ID}}-card-product-variants",
             "{{PROJECT_ID}}-card-product-name"
-          ]
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-card-product-name"
+              },
+              {
+                "codeComponentId": "nb34u3yu-card-product-variants"
+              },
+              {
+                "codeComponentId": "nb34u3yu-card-product-price"
+              }
+            ]
+          }
         }
       ],
       "propGroups": [
@@ -1101,19 +1171,19 @@
           "defaultValue": {
             "components": [
               {
-                "codeComponentId": "{{PROJECT_ID}}-account-info-content"
+                "codeComponentId": "nb34u3yu-account-info-content"
               },
               {
-                "codeComponentId": "{{PROJECT_ID}}-account-orders"
+                "codeComponentId": "nb34u3yu-account-orders"
               },
               {
-                "codeComponentId": "{{PROJECT_ID}}-account-addresses"
+                "codeComponentId": "nb34u3yu-account-addresses"
               },
               {
-                "codeComponentId": "{{PROJECT_ID}}-account-favorites"
+                "codeComponentId": "nb34u3yu-account-favorites"
               },
               {
-                "codeComponentId": "{{PROJECT_ID}}-account-order-detail"
+                "codeComponentId": "nb34u3yu-account-order-detail"
               }
             ]
           }
@@ -1240,14 +1310,16 @@
           "displayName": "Show Filters",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "filters"
+          "groupId": "filters",
+          "defaultValue": false
         },
         {
           "name": "showSearch",
           "displayName": "Show Search",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "filters"
+          "groupId": "filters",
+          "defaultValue": false
         },
         {
           "name": "aspectRatio",
@@ -1255,7 +1327,8 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "s3OODUmZpJ",
-          "groupId": "image-settings"
+          "groupId": "image-settings",
+          "defaultValue": "Square"
         },
         {
           "name": "objectFit",
@@ -1263,14 +1336,16 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "GrylMqHxui",
-          "groupId": "image-settings"
+          "groupId": "image-settings",
+          "defaultValue": "Cover"
         },
         {
           "name": "isInfinity",
           "displayName": "Infinite Scroll",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "pagination"
+          "groupId": "pagination",
+          "defaultValue": false
         },
         {
           "name": "columnText",
@@ -1293,7 +1368,8 @@
           "displayName": "Hide Add to Cart Button",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "card-settings"
+          "groupId": "card-settings",
+          "defaultValue": false
         },
         {
           "name": "components",
@@ -1310,21 +1386,36 @@
             "{{PROJECT_ID}}-card-product-price",
             "{{PROJECT_ID}}-card-product-variants",
             "{{PROJECT_ID}}-card-product-name"
-          ]
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-card-product-name"
+              },
+              {
+                "codeComponentId": "nb34u3yu-card-product-variants"
+              },
+              {
+                "codeComponentId": "nb34u3yu-card-product-price"
+              }
+            ]
+          }
         },
         {
           "name": "hideBreadcrumb",
           "displayName": "Hide Breadcrumb",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": false
         },
         {
           "name": "isBrandPage",
           "displayName": "Is This a Brand Page?",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "data"
+          "groupId": "data",
+          "defaultValue": false
         }
       ],
       "propGroups": [
@@ -1386,7 +1477,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "image-settings",
-          "enumTypeId": "s3OODUmZpJ"
+          "enumTypeId": "s3OODUmZpJ",
+          "defaultValue": "Square"
         },
         {
           "name": "objectFit",
@@ -1394,7 +1486,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "image-settings",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         },
         {
           "name": "components",
@@ -1414,7 +1507,47 @@
             "{{PROJECT_ID}}-product-detail-bundle-product",
             "{{PROJECT_ID}}-product-detail-option-set",
             "{{PROJECT_ID}}-product-detail-offer"
-          ]
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-product-detail-name-favorite"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-sku"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-prices"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-product-group"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-bundle-product"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-variant"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-option-set"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-add-to-cart"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-back-in-stock"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-offer"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-features"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-description"
+              }
+            ]
+          }
         },
         {
           "name": "bottomComponents",
@@ -1424,7 +1557,17 @@
           "filteredComponentIds": [
             "{{PROJECT_ID}}-product-detail-bundle-furniture",
             "{{PROJECT_ID}}-product-detail-offer"
-          ]
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-product-detail-bundle-furniture"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-offer"
+              }
+            ]
+          }
         },
         {
           "name": "homepageText",
@@ -1642,7 +1785,20 @@
             "{{PROJECT_ID}}-card-product-price",
             "{{PROJECT_ID}}-card-product-variants",
             "{{PROJECT_ID}}-card-product-name"
-          ]
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-card-product-name"
+              },
+              {
+                "codeComponentId": "nb34u3yu-card-product-variants"
+              },
+              {
+                "codeComponentId": "nb34u3yu-card-product-price"
+              }
+            ]
+          }
         }
       ],
       "propGroups": [
@@ -1680,7 +1836,16 @@
           "displayName": "Announcements",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": ["{{PROJECT_ID}}-announcement"]
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-announcement"
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-announcement"
+              }
+            ]
+          }
         },
         {
           "name": "autoPlay",
@@ -1746,7 +1911,11 @@
           "type": "TYPE",
           "required": false,
           "typeId": "@ikas/bp-storefront-models-HeightStyleType",
-          "groupId": "logo-settings"
+          "groupId": "logo-settings",
+          "defaultValue": {
+            "value": 60,
+            "unit": "px"
+          }
         },
         {
           "name": "logoSizeMobile",
@@ -1754,7 +1923,11 @@
           "type": "TYPE",
           "required": false,
           "typeId": "@ikas/bp-storefront-models-HeightStyleType",
-          "groupId": "logo-settings"
+          "groupId": "logo-settings",
+          "defaultValue": {
+            "value": 48,
+            "unit": "px"
+          }
         },
         {
           "name": "navigationLinks",
@@ -1768,7 +1941,8 @@
           "displayName": "Link Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "navigation"
+          "groupId": "navigation",
+          "defaultValue": "#2e2e33"
         },
         {
           "name": "coloredLinks",
@@ -1782,7 +1956,8 @@
           "displayName": "Link Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "colored-links"
+          "groupId": "colored-links",
+          "defaultValue": "#2e2e33"
         },
         {
           "name": "cartTitle",
@@ -1868,7 +2043,8 @@
           "displayName": "Hide Add to Cart Button",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "search-card-settings"
+          "groupId": "search-card-settings",
+          "defaultValue": false
         },
         {
           "name": "searchPlaceholder",
@@ -1957,7 +2133,20 @@
             "{{PROJECT_ID}}-card-product-price",
             "{{PROJECT_ID}}-card-product-variants",
             "{{PROJECT_ID}}-card-product-name"
-          ]
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-card-product-name"
+              },
+              {
+                "codeComponentId": "nb34u3yu-card-product-variants"
+              },
+              {
+                "codeComponentId": "nb34u3yu-card-product-price"
+              }
+            ]
+          }
         },
         {
           "name": "imageAspectRatio",
@@ -1965,7 +2154,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "search-image",
-          "enumTypeId": "s3OODUmZpJ"
+          "enumTypeId": "s3OODUmZpJ",
+          "defaultValue": "Square"
         },
         {
           "name": "imageObjectFit",
@@ -1973,7 +2163,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "search-image",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         },
         {
           "name": "viewCartButtonText",
@@ -1989,7 +2180,8 @@
           "type": "BOOLEAN",
           "required": false,
           "description": "When enabled, the navbar stays fixed at the top of the page and remains visible while scrolling",
-          "groupId": "settings"
+          "groupId": "settings",
+          "defaultValue": false
         },
         {
           "name": "backgroundColor",
@@ -2110,7 +2302,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "desktop",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         },
         {
           "name": "title",
@@ -2125,28 +2318,32 @@
           "type": "ENUM",
           "required": false,
           "groupId": "desktop",
-          "enumTypeId": "08UWYbbs0P"
+          "enumTypeId": "08UWYbbs0P",
+          "defaultValue": "Middle"
         },
         {
           "name": "textColor",
           "displayName": "Text Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "desktop"
+          "groupId": "desktop",
+          "defaultValue": "#FFFFFF"
         },
         {
           "name": "overlay",
           "displayName": "Overlay",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "desktop"
+          "groupId": "desktop",
+          "defaultValue": false
         },
         {
           "name": "roundedCorners",
           "displayName": "Rounded Corners",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "desktop"
+          "groupId": "desktop",
+          "defaultValue": false
         },
         {
           "name": "mobileImage",
@@ -2169,7 +2366,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "mobile",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         },
         {
           "name": "mobileTitle",
@@ -2184,28 +2382,32 @@
           "type": "ENUM",
           "required": false,
           "groupId": "mobile",
-          "enumTypeId": "08UWYbbs0P"
+          "enumTypeId": "08UWYbbs0P",
+          "defaultValue": "Top"
         },
         {
           "name": "mobileTextColor",
           "displayName": "Text Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "mobile"
+          "groupId": "mobile",
+          "defaultValue": "#FFFFFF"
         },
         {
           "name": "mobileOverlay",
           "displayName": "Overlay",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "mobile"
+          "groupId": "mobile",
+          "defaultValue": false
         },
         {
           "name": "mobileRoundedCorners",
           "displayName": "Rounded Corners",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "mobile"
+          "groupId": "mobile",
+          "defaultValue": false
         },
         {
           "name": "link",
@@ -2227,28 +2429,32 @@
           "displayName": "Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "desktopButton"
+          "groupId": "desktopButton",
+          "defaultValue": "#14141a"
         },
         {
           "name": "buttonBgColor",
           "displayName": "Background Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "desktopButton"
+          "groupId": "desktopButton",
+          "defaultValue": "#ffffff"
         },
         {
           "name": "buttonHoverColor",
           "displayName": "Color (Hover)",
           "type": "COLOR",
           "required": false,
-          "groupId": "desktopButton"
+          "groupId": "desktopButton",
+          "defaultValue": "#14141a"
         },
         {
           "name": "buttonHoverBgColor",
           "displayName": "Background Color (Hover)",
           "type": "COLOR",
           "required": false,
-          "groupId": "desktopButton"
+          "groupId": "desktopButton",
+          "defaultValue": "#fafafa"
         },
         {
           "name": "mobileLink",
@@ -2270,28 +2476,32 @@
           "displayName": "Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "mobileButton"
+          "groupId": "mobileButton",
+          "defaultValue": "#14141a"
         },
         {
           "name": "mobileButtonBgColor",
           "displayName": "Background Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "mobileButton"
+          "groupId": "mobileButton",
+          "defaultValue": "#ffffff"
         },
         {
           "name": "mobileButtonHoverColor",
           "displayName": "Color (Hover)",
           "type": "COLOR",
           "required": false,
-          "groupId": "mobileButton"
+          "groupId": "mobileButton",
+          "defaultValue": "#14141a"
         },
         {
           "name": "mobileButtonHoverBgColor",
           "displayName": "Background Color (Hover)",
           "type": "COLOR",
           "required": false,
-          "groupId": "mobileButton"
+          "groupId": "mobileButton",
+          "defaultValue": "#fafafa"
         }
       ],
       "propGroups": [
@@ -2346,7 +2556,8 @@
           "displayName": "Dark Overlay",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "desktop"
+          "groupId": "desktop",
+          "defaultValue": false
         },
         {
           "name": "aspectRatio",
@@ -2362,7 +2573,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "desktop",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         },
         {
           "name": "mobileImage",
@@ -2383,7 +2595,8 @@
           "displayName": "Dark Overlay",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "mobile"
+          "groupId": "mobile",
+          "defaultValue": false
         },
         {
           "name": "mobileAspectRatio",
@@ -2399,7 +2612,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "mobile",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         }
       ],
       "propGroups": [
@@ -2472,7 +2686,22 @@
           "displayName": "Specifications",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": ["{{PROJECT_ID}}-feature-item"]
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-feature-item"
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-feature-item"
+              },
+              {
+                "codeComponentId": "nb34u3yu-feature-item"
+              },
+              {
+                "codeComponentId": "nb34u3yu-feature-item"
+              }
+            ]
+          }
         }
       ]
     },
@@ -2492,7 +2721,8 @@
           "name": "singleLineName",
           "displayName": "Single Row First Name",
           "type": "BOOLEAN",
-          "required": false
+          "required": false,
+          "defaultValue": false
         }
       ]
     },
@@ -2542,7 +2772,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -2550,7 +2784,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -2558,7 +2796,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -2566,13 +2808,18 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "hideFavoriteButton",
           "displayName": "Hide Favorite Button",
           "type": "BOOLEAN",
-          "required": false
+          "required": false,
+          "defaultValue": false
         }
       ],
       "propGroups": [
@@ -2621,7 +2868,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -2629,7 +2880,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -2637,7 +2892,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -2645,7 +2904,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         }
       ],
       "propGroups": [
@@ -2691,7 +2954,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -2699,7 +2966,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -2707,7 +2978,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -2715,7 +2990,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         }
       ],
       "propGroups": [
@@ -2756,7 +3035,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -2764,7 +3047,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -2772,7 +3059,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -2780,7 +3071,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         }
       ],
       "propGroups": [
@@ -2821,7 +3116,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -2829,7 +3128,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -2837,7 +3140,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -2845,14 +3152,19 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "useVariantImages",
           "displayName": "Image Variant",
           "type": "BOOLEAN",
           "required": false,
-          "description": "Use product images for color variant."
+          "description": "Use product images for color variant.",
+          "defaultValue": false
         }
       ],
       "propGroups": [
@@ -2917,7 +3229,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -2925,7 +3241,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -2933,7 +3253,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -2941,14 +3265,19 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "hideQuantityInput",
           "displayName": "Hide Quantity Selector",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "settings"
+          "groupId": "settings",
+          "defaultValue": false
         },
         {
           "name": "errorMessage",
@@ -3119,7 +3448,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -3127,7 +3460,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -3135,7 +3472,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -3143,7 +3484,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         }
       ],
       "propGroups": [
@@ -3183,7 +3528,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -3191,7 +3540,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -3199,7 +3552,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -3207,14 +3564,33 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "components",
           "displayName": "Specifications",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": ["{{PROJECT_ID}}-product-detail-feature-item"]
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-product-detail-feature-item"
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-product-detail-feature-item"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-feature-item"
+              },
+              {
+                "codeComponentId": "nb34u3yu-product-detail-feature-item"
+              }
+            ]
+          }
         }
       ],
       "propGroups": [
@@ -3255,7 +3631,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -3263,7 +3643,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -3271,7 +3655,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -3279,7 +3667,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "title",
@@ -3294,14 +3686,27 @@
           "displayName": "Description Open by Default",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "settings"
+          "groupId": "settings",
+          "defaultValue": false
         },
         {
           "name": "components",
           "displayName": "Components",
           "type": "COMPONENT_LIST",
           "required": false,
-          "filteredComponentIds": ["{{PROJECT_ID}}-collapsible-content"]
+          "filteredComponentIds": [
+            "{{PROJECT_ID}}-collapsible-content"
+          ],
+          "defaultValue": {
+            "components": [
+              {
+                "codeComponentId": "nb34u3yu-collapsible-content"
+              },
+              {
+                "codeComponentId": "nb34u3yu-collapsible-content"
+              }
+            ]
+          }
         }
       ],
       "propGroups": [
@@ -3352,7 +3757,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -3360,7 +3769,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -3368,7 +3781,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -3376,21 +3793,27 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "isBundleFurniture",
           "displayName": "Furniture Bundle Mode",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "settings"
+          "groupId": "settings",
+          "defaultValue": false
         },
         {
           "name": "bundleProductWithoutLink",
           "displayName": "Disable Product Link",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "settings"
+          "groupId": "settings",
+          "defaultValue": false
         },
         {
           "name": "quantityLabel",
@@ -3422,7 +3845,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "appearance",
-          "enumTypeId": "s3OODUmZpJ"
+          "enumTypeId": "s3OODUmZpJ",
+          "defaultValue": "Square"
         },
         {
           "name": "objectFit",
@@ -3430,7 +3854,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "appearance",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         }
       ],
       "propGroups": [
@@ -3545,7 +3970,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -3553,7 +3982,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -3561,7 +3994,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -3569,7 +4006,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "aspectRatio",
@@ -3577,7 +4018,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "appearance",
-          "enumTypeId": "s3OODUmZpJ"
+          "enumTypeId": "s3OODUmZpJ",
+          "defaultValue": "Square"
         },
         {
           "name": "objectFit",
@@ -3585,7 +4027,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "appearance",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         }
       ],
       "propGroups": [
@@ -3700,7 +4143,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -3708,7 +4155,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -3716,7 +4167,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -3724,7 +4179,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "minLabelText",
@@ -3923,7 +4382,8 @@
           "displayName": "Auto Select Offers",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "layout"
+          "groupId": "layout",
+          "defaultValue": false
         },
         {
           "name": "addToCartTogetherText",
@@ -3979,7 +4439,8 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "s3OODUmZpJ",
-          "groupId": "image"
+          "groupId": "image",
+          "defaultValue": "Square"
         },
         {
           "name": "imageObjectFit",
@@ -3987,7 +4448,8 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "GrylMqHxui",
-          "groupId": "image"
+          "groupId": "image",
+          "defaultValue": "Cover"
         },
         {
           "name": "addedToCartBannerText",
@@ -4002,7 +4464,8 @@
           "displayName": "Compact View",
           "type": "BOOLEAN",
           "required": false,
-          "groupId": "layout"
+          "groupId": "layout",
+          "defaultValue": false
         },
         {
           "name": "mobileMarginTop",
@@ -4010,7 +4473,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "mobileMarginBottom",
@@ -4018,7 +4485,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "mobile",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginTop",
@@ -4026,7 +4497,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginTopStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "desktopMarginBottom",
@@ -4034,7 +4509,11 @@
           "type": "TYPE",
           "required": false,
           "groupId": "desktop",
-          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType"
+          "typeId": "@ikas/bp-storefront-models-MarginBottomStyleType",
+          "defaultValue": {
+            "value": 0,
+            "unit": "px"
+          }
         },
         {
           "name": "errorMessage",
@@ -4535,7 +5014,8 @@
           "name": "defaultOpen",
           "displayName": "Open by Default",
           "type": "BOOLEAN",
-          "required": false
+          "required": false,
+          "defaultValue": false
         }
       ]
     },
@@ -4583,7 +5063,8 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "s3OODUmZpJ",
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "Square"
         },
         {
           "name": "objectFit",
@@ -4591,7 +5072,8 @@
           "type": "ENUM",
           "required": false,
           "enumTypeId": "GrylMqHxui",
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "Cover"
         }
       ],
       "propGroups": [
@@ -4673,7 +5155,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "image-settings",
-          "enumTypeId": "s3OODUmZpJ"
+          "enumTypeId": "s3OODUmZpJ",
+          "defaultValue": "Square"
         },
         {
           "name": "objectFit",
@@ -4681,7 +5164,8 @@
           "type": "ENUM",
           "required": false,
           "groupId": "image-settings",
-          "enumTypeId": "GrylMqHxui"
+          "enumTypeId": "GrylMqHxui",
+          "defaultValue": "Cover"
         },
         {
           "name": "description",
@@ -5097,21 +5581,24 @@
           "displayName": "Background Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "rgba(0, 0, 0, 0.7)"
         },
         {
           "name": "textColor",
           "displayName": "Text Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "#ffffff"
         },
         {
           "name": "buttonTextColor",
           "displayName": "Button Text Color",
           "type": "COLOR",
           "required": false,
-          "groupId": "appearance"
+          "groupId": "appearance",
+          "defaultValue": "#ffffff"
         }
       ],
       "propGroups": [
