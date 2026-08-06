@@ -9,15 +9,16 @@ import {
   cartStore,
   waitForCartStoreInit,
 } from "@ikas/bp-storefront";
-import { runInAction } from "mobx";
 import { adjustBundleProductQuantity } from "../utils/bundle";
 
+// No mobx action wrapper needed: adjustments go through the public
+// setBundleProductQuantity API (plain mutation, same as the SDK's own usage
+// examples), and keeping the theme free of direct mobx imports lets the
+// scaffold install cleanly under pnpm's strict node_modules layout.
 function adjustBundleQuantities(products: IkasBundleProduct[]) {
-  runInAction(() => {
-    for (const bp of products) {
-      adjustBundleProductQuantity(bp);
-    }
-  });
+  for (const bp of products) {
+    adjustBundleProductQuantity(bp);
+  }
 }
 
 export function useBundleProducts(product: IkasProduct | null | undefined) {
