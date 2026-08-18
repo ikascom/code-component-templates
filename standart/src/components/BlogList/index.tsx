@@ -6,6 +6,7 @@ import {
   getBlogListNextPage,
   hasBlogListNextPage,
   getIkasBlogCategoryHref,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import { Props } from "./types";
 import BlogCard from "../../sub-components/BlogCard";
@@ -199,7 +200,7 @@ const BlogListInner = observer(function BlogListInner({
             {isCategoryPage ? (
               <a
                 class="blog-list-cat-btn"
-                href="/blog"
+                href={withRoutePrefix("/blog")}
               >
                 {allCategoryLabel}
               </a>

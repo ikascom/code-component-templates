@@ -6,6 +6,7 @@ import {
   removeProductFromFavorites,
   Router,
   IkasProduct,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import FavoriteProductCard from "../../sub-components/FavoriteProductCard";
 import { Props } from "./types";
@@ -111,7 +112,7 @@ export function FavoriteProducts({
 
   const handleLoginClick = (e: Event) => {
     e.preventDefault();
-    Router.navigateToPage("LOGIN", undefined, { redirect: "/account/favorite-products" });
+    Router.navigateToPage("LOGIN", undefined, { redirect: withRoutePrefix("/account/favorite-products") });
   };
 
   const visibleCount = products.length;
@@ -158,7 +159,7 @@ export function FavoriteProducts({
             </p>
             <a
               class="favorite-products__guest-cta"
-              href="/account/login"
+              href={withRoutePrefix("/account/login")}
               onClick={handleLoginClick}
             >
               {loginCtaLabel}

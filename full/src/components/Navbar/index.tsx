@@ -8,6 +8,7 @@ import {
   getFormattedHeightSize,
   Router,
   createMediaSrcset,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import { Props } from "./types";
 import CartSidebar from "./components/CartSidebar";
@@ -104,10 +105,10 @@ export function Navbar(props: Props) {
         {logo && (
           <a
             className="kombos-navbar__logo"
-            href="/"
+            href={withRoutePrefix("/")}
             onClick={(e) => {
               e.preventDefault();
-              Router.navigate("/");
+              Router.navigateToPage("INDEX");
             }}
             style={{
               "--logo-h-desktop": logoSizeDesktop,
@@ -145,7 +146,7 @@ export function Navbar(props: Props) {
           {/* Search */}
           <a
             className="kombos-navbar__icon-btn"
-            href="/search"
+            href={withRoutePrefix("/search")}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -159,7 +160,7 @@ export function Navbar(props: Props) {
           {/* Account */}
           <a
             className="kombos-navbar__icon-btn"
-            href={isLoggedIn ? "/account" : "/login"}
+            href={withRoutePrefix(isLoggedIn ? "/account" : "/account/login")}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -173,7 +174,7 @@ export function Navbar(props: Props) {
           {/* Cart */}
           <a
             className="kombos-navbar__icon-btn kombos-navbar__cart-trigger"
-            href="/cart"
+            href={withRoutePrefix("/cart")}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();

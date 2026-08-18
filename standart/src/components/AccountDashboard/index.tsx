@@ -9,6 +9,7 @@ import {
   logout,
   Router,
   IkasOrder,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import ProfileEditModal from "../../sub-components/ProfileEditModal";
 import { Props } from "./types";
@@ -223,7 +224,7 @@ export function AccountDashboard({
             >
               <a
                 class="account-dashboard__card"
-                href="/account/addresses"
+                href={withRoutePrefix("/account/addresses")}
               >
                 <h2 class="account-dashboard__card-title">
                   {addressesCardTitle}
@@ -247,7 +248,7 @@ export function AccountDashboard({
             >
               <a
                 class="account-dashboard__card"
-                href="/account/favorite-products"
+                href={withRoutePrefix("/account/favorite-products")}
               >
                 <h2 class="account-dashboard__card-title">
                   {favoritesCardTitle}

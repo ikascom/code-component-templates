@@ -16,6 +16,7 @@ import {
   isAddToCartEnabled,
   isFavoriteIkasProduct,
   Router,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import type { IkasImage } from "@ikas/bp-storefront";
 import ProductGallery from "../../sub-components/ProductGallery";
@@ -178,7 +179,7 @@ export function ProductDetail({
           <nav class="pdp-breadcrumb" aria-label={breadcrumbAriaLabel}>
             {showHomepageInBreadcrumb && (
               <span class="pdp-breadcrumb-item">
-                <a class="pdp-breadcrumb-link" href="/">{breadcrumbHomeText}</a>
+                <a class="pdp-breadcrumb-link" href={withRoutePrefix("/")}>{breadcrumbHomeText}</a>
                 <span class="pdp-breadcrumb-sep" aria-hidden="true">/</span>
               </span>
             )}

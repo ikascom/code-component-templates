@@ -12,7 +12,7 @@ export default function EmptyState({
   continueShoppingText,
 }: Props) {
   const handleContinueShopping = () => {
-    Router.navigate("/");
+    Router.navigateToPage("INDEX");
   };
 
   return (

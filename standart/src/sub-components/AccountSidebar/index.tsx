@@ -1,4 +1,5 @@
 import { observer } from "@ikas/component-utils";
+import { withRoutePrefix } from "@ikas/bp-storefront";
 
 export type AccountSidebarKey =
   | "profile"
@@ -12,6 +13,9 @@ interface SidebarLink {
   href: string;
 }
 
+// Paths only — the routing prefix is added per render below, not here. This module is shared
+// across requests on the server, so a value computed at import time would serve the first
+// visitor's language to everyone after them.
 const LINKS: SidebarLink[] = [
   { key: "profile", label: "Profilim", href: "/account" },
   { key: "orders", label: "Siparişlerim", href: "/account/orders" },
@@ -44,7 +48,7 @@ const AccountSidebar = observer(function AccountSidebar({
                     "account-sidebar__link" +
                     (isActive ? " account-sidebar__link--active" : "")
                   }
-                  href={link.href}
+                  href={withRoutePrefix(link.href)}
                   aria-current={isActive ? "page" : undefined}
                 >
                   {link.label}

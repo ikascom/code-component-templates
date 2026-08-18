@@ -4,6 +4,7 @@ import {
   createMediaSrcset,
   getFormattedFontSize,
   Router,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import { Props } from "./types";
 import {
@@ -113,15 +114,19 @@ export function HeroSliderItem({
     mobileRoundedCorners && "kombos-hero-slider-item--mobile-rounded",
   );
 
-  const handleDesktopClick = () => {
-    if (!link) return;
-    Router.navigate(link.href || "/", false, link.openInNewTab ?? false);
+  // `target.href` already carries the routing prefix — it comes from a LINK prop the storefront
+  // resolves per request. Only the fallback is a literal, so only it needs prefixing.
+  const navigateToLink = (target: typeof link) => {
+    if (!target) return;
+    Router.navigate(
+      target.href || withRoutePrefix("/"),
+      false,
+      target.openInNewTab ?? false,
+    );
   };
 
-  const handleMobileClick = () => {
-    if (!mobLink) return;
-    Router.navigate(mobLink.href || "/", false, mobLink.openInNewTab ?? false);
-  };
+  const handleDesktopClick = () => navigateToLink(link);
+  const handleMobileClick = () => navigateToLink(mobLink);
 
   const formattedDesktopFontSize = getFormattedFontSize(buttonFontSize);
   const formattedMobileFontSize = getFormattedFontSize(mobBtnFontSize);

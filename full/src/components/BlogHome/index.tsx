@@ -6,6 +6,7 @@ import {
   hasBlogListPrevPage,
   hasBlogListNextPage,
   getIkasBlogCategoryHref,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import { observer } from "@ikas/component-utils";
 import { cx } from "../../utils/cx";
@@ -47,7 +48,7 @@ export function BlogHome({
         {categories.length > 0 && (
           <div className="kombos-blog-home__categories">
             <a
-              href="/blog"
+              href={withRoutePrefix("/blog")}
               className={cx(
                 "kombos-blog-home__cat-btn",
                 "text-sm-medium",

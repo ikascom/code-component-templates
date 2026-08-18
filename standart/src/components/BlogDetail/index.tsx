@@ -4,6 +4,7 @@ import {
   getIkasBlogHref,
   getDefaultSrc,
   createMediaSrcset,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import { Props } from "./types";
 import BlogCard from "../../sub-components/BlogCard";
@@ -113,13 +114,13 @@ export function BlogDetail(props: Props) {
   const whatsappHref = `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`;
 
   const breadcrumbItems = [
-    { label: breadcrumbHomeLabel, href: "/" },
-    { label: breadcrumbBlogLabel, href: breadcrumbBlogUrl },
+    { label: breadcrumbHomeLabel, href: withRoutePrefix("/") },
+    { label: breadcrumbBlogLabel, href: withRoutePrefix(breadcrumbBlogUrl) },
   ];
   if (categoryName) {
     breadcrumbItems.push({
       label: categoryName,
-      href: category ? `/blog?category=${category.id}` : "",
+      href: category ? withRoutePrefix(`/blog?category=${category.id}`) : "",
     });
   }
 

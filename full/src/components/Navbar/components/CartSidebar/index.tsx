@@ -19,6 +19,7 @@ import {
   getCheckoutUrlFromCartStore,
   IkasOrderLineItem,
   Router,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import type { AspectRatio, ObjectFit } from "../../../../global-types";
 import CartItem from "../../../../sub-components/CartItem";
@@ -164,7 +165,7 @@ const CartSidebar = observer(function CartSidebar({
             </div>
             <div className="kombos-cart-sidebar__footer-buttons">
               <a
-                href="/cart"
+                href={withRoutePrefix("/cart")}
                 className="kombos-cart-sidebar__view-cart-link"
                 onClick={(e: Event) => {
                   e.preventDefault();

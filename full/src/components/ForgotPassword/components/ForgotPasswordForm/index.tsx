@@ -49,7 +49,7 @@ const ForgotPasswordForm = observer(function ForgotPasswordForm({
           variant="primary"
           size="s"
           className="forgot-password__submit-btn"
-          onClick={() => Router.navigate("/")}
+          onClick={() => Router.navigateToPage("INDEX")}
         >
           {successButtonText}
         </Button>

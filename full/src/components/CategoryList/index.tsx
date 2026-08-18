@@ -21,6 +21,7 @@ import {
   searchProductList,
   getProductOptionSet,
   IkasComponentRenderer,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import { Props } from "./types";
 import ProductCard from "../../sub-components/ProductCard";
@@ -170,7 +171,7 @@ export function CategoryList(props: Props) {
     const path = getCategoryPath(category);
     if (path.length === 0) return [];
     return [
-      { label: homepageText, href: "/" } as BreadcrumbItem,
+      { label: homepageText, href: withRoutePrefix("/") } as BreadcrumbItem,
       ...path.map(
         (cat: any) =>
           ({

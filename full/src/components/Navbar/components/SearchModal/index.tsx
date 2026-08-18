@@ -12,6 +12,7 @@ import {
   createMediaSrcset,
   getProductOptionSet,
   IkasComponentRenderer,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import type { IkasProduct } from "@ikas/bp-storefront";
 import { cx } from "../../../../utils/cx";
@@ -199,7 +200,7 @@ const SearchModal = observer(function SearchModal({
           <div className="kombos-search__logo-area">
             {logo && (
               <a
-                href="/"
+                href={withRoutePrefix("/")}
                 className="kombos-search__logo"
                 style={{
                   "--search-logo-h-desktop": logoSizeDesktop,

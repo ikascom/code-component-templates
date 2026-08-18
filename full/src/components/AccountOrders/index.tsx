@@ -80,7 +80,7 @@ export function AccountOrders({
           <Button
             variant="primary"
             size="s"
-            onClick={() => Router.navigate("/")}
+            onClick={() => Router.navigateToPage("INDEX")}
           >
             {shopButtonText}
           </Button>

@@ -2,6 +2,7 @@ import {
   getIkasBlogFormattedDate,
   getIkasBlogCategoryHref,
   getDefaultSrc,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 
 import { Props } from "./types";
@@ -31,8 +32,8 @@ export function BlogPost({
   const writerName = getFullName(blogPost.writer?.firstName, blogPost.writer?.lastName);
 
   const breadcrumbItems: BreadcrumbItem[] = [
-    { label: homeText, href: "/" },
-    { label: blogText, href: "/blog" },
+    { label: homeText, href: withRoutePrefix("/") },
+    { label: blogText, href: withRoutePrefix("/blog") },
   ];
   if (categoryName && categoryHref) {
     breadcrumbItems.push({ label: categoryName, href: categoryHref });

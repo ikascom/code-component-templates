@@ -6,6 +6,7 @@ import {
   IkasImage,
   isNotEmpty,
   IkasComponentRenderer,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import { Props } from "./types";
 import Breadcrumb from "../../sub-components/Breadcrumb";
@@ -42,7 +43,10 @@ export function ProductDetail(props: Props) {
       <div className="kombos-container kombos-pd__container">
         <Breadcrumb
           items={[
-            { label: homepageText, href: "/" } as BreadcrumbItem,
+            {
+              label: homepageText,
+              href: withRoutePrefix("/"),
+            } as BreadcrumbItem,
             ...(isNotEmpty(categoryPath)
               ? categoryPath.map(
                   (pathItem: any) =>

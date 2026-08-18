@@ -5,6 +5,7 @@ import {
   Router,
   getDefaultSrc,
   createMediaSrcset,
+  withRoutePrefix,
 } from "@ikas/bp-storefront";
 import { Props } from "./types";
 import NavDropdown from "../../sub-components/NavDropdown";
@@ -369,7 +370,7 @@ export function Header({
                 </ul>
               </nav>
 
-              <a href="/" class="header-logo header-logo--center" aria-label={logoLinkAriaLabel}>
+              <a href={withRoutePrefix("/")} class="header-logo header-logo--center" aria-label={logoLinkAriaLabel}>
                 {logoEl}
               </a>
 
@@ -384,7 +385,7 @@ export function Header({
             </>
           ) : (
             <>
-              <a href="/" class="header-logo" aria-label={logoLinkAriaLabel}>
+              <a href={withRoutePrefix("/")} class="header-logo" aria-label={logoLinkAriaLabel}>
                 {logoEl}
               </a>
               <nav class="header-nav" aria-label={mainNavAriaLabel}>
