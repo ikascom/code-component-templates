@@ -8,9 +8,10 @@ export interface CartQuantityLimits {
 /**
  * Resolve the per-cart quantity limits for a product from its active sales
  * channel. Falls back to a minimum of 1 and no maximum when the channel or its
- * limits are not set. `addItemToCart` clamps to the same limits internally, so
- * applying these in the stepper keeps the UI honest instead of letting the
- * quantity snap silently.
+ * limits are not set. `addItemToCart` clamps to the same limits internally only
+ * when it creates a NEW cart line — incrementing an existing line goes through
+ * `changeItemQuantity`, which never clamps — so enforcing these in the stepper
+ * is the only guard that covers both paths.
  */
 export function getProductCartLimits(product: IkasProduct): CartQuantityLimits {
   const channel = product.salesChannels?.find(

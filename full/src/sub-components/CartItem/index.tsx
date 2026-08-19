@@ -1,4 +1,5 @@
 import { observer } from "@ikas/component-utils";
+import { useEffect, useState } from "preact/hooks";
 import { TrashSVG, NoProductSVG } from "../icons";
 import QuantitySelector from "../QuantitySelector";
 import BundleProducts from "./components/BundleProducts";
@@ -19,6 +20,11 @@ import {
 } from "@ikas/bp-storefront";
 import { resolveAspectRatio, resolveObjectFit } from "../../utils/media";
 import { cx } from "../../utils/cx";
+import {
+  ensureCartLineLimits,
+  getCartLineLimits,
+  subscribeCartLineLimits,
+} from "../../utils/cartLineLimits";
 import type { AspectRatio, ObjectFit } from "../../global-types";
 
 interface CartItemProps {
@@ -39,6 +45,23 @@ const CartItem = observer(function CartItem({
   giftLabel = "Gift",
 }: CartItemProps) {
   const isPage = variant === "page";
+
+  // The line's IkasOrderLineVariant carries no salesChannels, so the per-cart
+  // quantity limits come from a batched product fetch shared across all lines.
+  const productId = item.variant?.productId ?? null;
+  const [, setLimitsVersion] = useState(0);
+  useEffect(() => {
+    // Subscribe BEFORE registering the id: a batch already in flight can
+    // resolve between render and this effect, and its emit must not be missed.
+    const unsubscribe = subscribeCartLineLimits(() => setLimitsVersion((v) => v + 1));
+    if (productId) {
+      ensureCartLineLimits([productId]);
+      // Re-check once for a result that landed before the subscription armed.
+      if (getCartLineLimits(productId)) setLimitsVersion((v) => v + 1);
+    }
+    return unsubscribe;
+  }, [productId]);
+  const limits = getCartLineLimits(productId);
 
   // Lines a campaign added automatically (e.g. a "buy 1 get 1" gift) cannot be
   // edited or removed on their own, so render them read-only with a badge.
@@ -180,6 +203,8 @@ const CartItem = observer(function CartItem({
               <QuantitySelector
                 size="sm"
                 value={item.quantity}
+                min={limits?.min ?? 1}
+                max={limits?.max}
                 onChange={(qty) => changeItemQuantity(item, qty)}
               />
             )}
@@ -227,6 +252,8 @@ const CartItem = observer(function CartItem({
                   <QuantitySelector
                     size="sm"
                     value={item.quantity}
+                    min={limits?.min ?? 1}
+                    max={limits?.max}
                     onChange={(qty) => changeItemQuantity(item, qty)}
                   />
                   <button
