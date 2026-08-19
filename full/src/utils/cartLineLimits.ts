@@ -1,3 +1,4 @@
+import { useEffect, useState } from "preact/hooks";
 import { baseStore, bs_searchProductsById } from "@ikas/bp-storefront";
 import { CartQuantityLimits, getProductCartLimits } from "./cartLimits";
 
@@ -28,7 +29,6 @@ async function flush() {
   flushTimer = null;
   const batch = pendingProductIds;
   pendingProductIds = [];
-  if (!batch.length) return;
 
   // bs_searchProductsById never throws — API/network failures resolve with
   // isSuccess: false — so the retry unmark must live on the result check.
@@ -49,20 +49,14 @@ async function flush() {
 }
 
 /**
- * Register cart-line productIds for limit resolution. Ids already requested
+ * Register a cart line's productId for limit resolution. Ids already requested
  * are skipped; new ids are collected and fetched in a single batched request
  * on the next tick, so per-line calls do not fan out into per-line requests.
  */
-export function ensureCartLineLimits(productIds: (string | null | undefined)[]) {
-  const missing = productIds.filter(
-    (id): id is string => !!id && !requestedProductIds.has(id),
-  );
-  if (!missing.length) return;
-
-  for (const id of missing) {
-    requestedProductIds.add(id);
-    pendingProductIds.push(id);
-  }
+export function ensureCartLineLimits(productId: string) {
+  if (requestedProductIds.has(productId)) return;
+  requestedProductIds.add(productId);
+  pendingProductIds.push(productId);
   if (!flushTimer) flushTimer = setTimeout(flush, 0);
 }
 
@@ -79,4 +73,28 @@ export function subscribeCartLineLimits(listener: () => void) {
   return () => {
     listeners.delete(listener);
   };
+}
+
+/**
+ * Hook: resolved limits for one cart line's product — undefined until the
+ * batched fetch lands. Encapsulates the subscription protocol so components
+ * cannot get the ordering wrong.
+ */
+export function useCartLineLimits(
+  productId: string | null | undefined,
+): CartQuantityLimits | undefined {
+  const [, setVersion] = useState(0);
+  const limits = getCartLineLimits(productId);
+  useEffect(() => {
+    if (!productId) return;
+    // Subscribe BEFORE registering the id: a batch already in flight can
+    // resolve between render and this effect, and its emit must not be missed.
+    const unsubscribe = subscribeCartLineLimits(() => setVersion((v) => v + 1));
+    ensureCartLineLimits(productId);
+    // Re-check once for a result that landed before the subscription armed —
+    // skipped when the arming render already saw it (no redundant re-render).
+    if (!limits && getCartLineLimits(productId)) setVersion((v) => v + 1);
+    return unsubscribe;
+  }, [productId]);
+  return limits;
 }
