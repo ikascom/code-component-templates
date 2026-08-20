@@ -8,7 +8,7 @@ ikas Code Components ile geliştirilmiş, referans olarak kullanılan bir storef
 ikas theme dev
 ```
 
-ikas editörünü açın ve **Dev Components** panelinden çalışan dev sunucusuna bağlanın.
+ikas Studio'yu açın ve **Code Components** panelindeki **Connect** butonuyla çalışan dev sunucusuna bağlanın.
 
 ## Core Sections
 

@@ -9,16 +9,26 @@ An ikas code components project.
    npm install
    ```
 
-2. Start the development server:
+2. Install the ikas CLI and link this project to your store's editor (copy the exact
+   `ikas theme init` command from the Code Components panel in ikas Studio):
    ```bash
-   npm run dev
+   npm install ikas -g
+   ikas theme init -e <your editor URL>
    ```
 
-3. Open the ikas editor and connect to the dev server from the Dev Components panel.
+3. Start the development server:
+   ```bash
+   ikas theme dev
+   ```
+   This starts the local dev server, opens a tunnel, and registers it with your store
+   so ikas Studio can connect. (Running `npm run dev` alone starts a local server the
+   editor cannot reach — always use `ikas theme dev`.)
+
+4. In ikas Studio, open the Code Components panel and click Connect.
 
 ## Commands
 
-- `npm run dev` - Start development server with live editor updates
+- `ikas theme dev` - Start development server with live editor updates
 - `npm run build` - Build components for production
 - `npm run add` - Add a new component to the project
 
