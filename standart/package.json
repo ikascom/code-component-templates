@@ -13,9 +13,9 @@
     "preact": "^10.19.3"
   },
   "devDependencies": {
-    "@ikas/component-cli": "^1.4.0-beta.181",
-    "@ikas/bp-storefront": "^1.4.0-beta.181",
-    "@ikas/code-components-mcp": "^1.4.0-beta.181",
+    "@ikas/component-cli": "^1.4.0-beta.182",
+    "@ikas/bp-storefront": "^1.4.0-beta.182",
+    "@ikas/code-components-mcp": "^1.4.0-beta.182",
     "@preact/preset-vite": "^2.10.3",
     "typescript": "^5.3.3",
     "vite": "^5.0.0"
