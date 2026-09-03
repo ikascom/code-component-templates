@@ -405,9 +405,12 @@ export default MySection;
 ```tsx
 // Only use observer() on extracted SUB-COMPONENTS that independently read MobX stores:
 import { observer } from "@ikas/component-utils";
+import { cartStore, getIkasOrderTotalItemCount } from "@ikas/bp-storefront";
 
 const CartBadge = observer(function CartBadge() {
-  const count = cartStore.order?.orderLineItems?.length ?? 0;
+  // cartStore.cart (IkasCart, null until loaded) — there is no cartStore.order.
+  // Sum quantities; .length would count distinct lines, not items.
+  const count = cartStore.cart ? getIkasOrderTotalItemCount(cartStore.cart) : 0;
   return <span>{count}</span>;
 });
 ```
