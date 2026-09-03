@@ -12,6 +12,7 @@ import {
   isAddToCartEnabled,
   addSelectedtedVariantToCart,
   getProductHref,
+  Router,
   getDefaultSrc,
   createMediaSrcset,
 } from "@ikas/bp-storefront";
@@ -43,7 +44,9 @@ const FavoriteProductCard = observer(function FavoriteProductCard({
   onRemove,
   onAddedToCart,
 }: Props) {
-  const [cartState, setCartState] = useState<"idle" | "adding" | "added">("idle");
+  const [cartState, setCartState] = useState<"idle" | "adding" | "added">(
+    "idle",
+  );
   if (!product) return null;
 
   const variant = getSelectedProductVariant(product);
@@ -74,7 +77,7 @@ const FavoriteProductCard = observer(function FavoriteProductCard({
     e.preventDefault();
     e.stopPropagation();
     if (hasMultipleVariants) {
-      window.location.href = href;
+      Router.navigate(href);
       return;
     }
     if (!canAdd || cartState !== "idle" || isSoldOut) return;
@@ -160,7 +163,8 @@ const FavoriteProductCard = observer(function FavoriteProductCard({
           type="button"
           class="fav-card__cart-btn"
           disabled={
-            !hasMultipleVariants && (!canAdd || isSoldOut || cartState !== "idle")
+            !hasMultipleVariants &&
+            (!canAdd || isSoldOut || cartState !== "idle")
           }
           aria-busy={cartState === "adding" ? "true" : undefined}
           onClick={handleCart}

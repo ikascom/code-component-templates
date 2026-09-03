@@ -13,6 +13,7 @@ import {
   isAddToCartEnabled,
   addSelectedtedVariantToCart,
   getProductHref,
+  Router,
   getDefaultSrc,
 } from "@ikas/bp-storefront";
 import type { SliderAspectRatio, SavingsBadgeStyle } from "../../global-types";
@@ -138,7 +139,7 @@ const ProductListCard = observer(function ProductListCard({
     e.preventDefault();
     e.stopPropagation();
     if (hasMultipleVariants) {
-      window.location.href = href;
+      Router.navigate(href);
       return;
     }
     if (!canAdd || isAdding) return;
