@@ -63,18 +63,18 @@
 }
 
 .pr-stars--summary .pr-star {
-  --pr-star-size: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .pr-stars--card .pr-star {
-  --pr-star-size: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .pr-star {
   position: relative;
   display: inline-block;
-  width: var(--pr-star-size);
-  height: var(--pr-star-size);
   line-height: 0;
 }
 
@@ -93,8 +93,6 @@
 
 .pr-star-fg {
   display: block;
-  width: var(--pr-star-size);
-  height: 100%;
   fill: #f5b301;
 }
 
