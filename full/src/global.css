@@ -10,7 +10,9 @@
  *   - `:root { --var: value }` — variables are rewritten onto the component wrapper
  *     and inherit down its subtree. Use this for design tokens.
  *   - `@media`, `@supports`, `@container`, `@layer` — walked recursively.
- *   - `@keyframes`, `@font-face` — left untouched.
+ *   - `@keyframes`, `@font-face`, `@counter-style` — kept, but their NAMES get a
+ *     `cc_<projectId>_` prefix; references in component CSS (font-family / animation /
+ *     list-style) and font names inside custom properties are rewritten to match.
  *
  * What does NOT work (code components only style elements they own):
  *   - Top-level `body { ... }` / `html { ... }` rules — dropped.
