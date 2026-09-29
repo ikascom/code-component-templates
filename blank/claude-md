@@ -56,8 +56,8 @@ These commands update `ikas.config.json`, `types.ts`, `global-types.ts`, AND `sr
 | `npx ikas-component config update-prop-group --component "Name" --id colors [--name "..."] [--description "..."]` | Update a prop group |
 | `npx ikas-component config remove-prop-group --component "Name" --id colors` | Remove a prop group |
 | `npx ikas-component config list` | List all components and their props |
-| `npx ikas-component config add-enum --name "Size" --options '[{"name":"Small","value":"s"}]'` | Create a custom ENUM type (returns `enumTypeId`) |
-| `npx ikas-component config update-enum --id <enumId> --name "..." [--options '[...]']` | Update enum name/options |
+| `npx ikas-component config add-enum --name "Size" --options '{"Small":"s","Medium":"m"}'` | Create a custom ENUM type (returns `enumTypeId`) |
+| `npx ikas-component config update-enum --id <enumId> --name "..." [--options '{"Label":"value"}']` | Update enum name/options |
 | `npx ikas-component config remove-enum --id <enumId>` | Remove enum (fails if any prop still references it) |
 | `npx ikas-component config list-enums` | List all custom enums |
 | `npx ikas-component check --json` | Type-check all components, output errors as JSON |
@@ -77,7 +77,7 @@ These commands update `ikas.config.json`, `types.ts`, `global-types.ts`, AND `sr
 ### Custom ENUM lifecycle
 
 - **Create:** `add-enum` → `add-prop --type ENUM --enumTypeId <id>`. The enum must exist before the prop is created.
-- **Rename options:** `update-enum --id <id> --options '[...]'`. `types.ts` regenerates automatically.
+- **Rename options:** `update-enum --id <id> --options '{"Label":"value"}'`. `types.ts` regenerates automatically.
 - **Remove:** remove (or repoint) every prop that references the enum **first**, then `remove-enum`. `remove-enum` blocks with an error while any prop still references the id.
 - `global-types.ts` is regenerated unconditionally on `add-enum` / `update-enum` / `remove-enum` / `remove-prop` — never hand-edit it.
 - Template snippets from `get_section_template` use `{{ENUM_ID:<EnumName>}}` placeholders (e.g. `{{ENUM_ID:AspectRatio}}`). Create the matching `add-enum` first, then substitute the returned id.
