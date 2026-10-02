@@ -14,6 +14,8 @@ Never guess function signatures or type shapes — the MCP server is the source 
 Use `npx ikas-component config add-component --props '[...]'` or `npx ikas-component config add-prop` to manage components and props.
 These commands update `ikas.config.json`, `types.ts`, `global-types.ts`, AND `src/components/index.ts` (including the component export) automatically.
 
+**`projectId` and every component `id` in `ikas.config.json` are generated once and never change.** Do not rename them, and never copy an id shown by the editor or returned by an MCP tool into `ikas.config.json`. On a theme that installed this project as a design asset the editor reports published ids with a different prefix — that is expected, not something to fix. A component id that does not start with this project's `projectId` makes `ikas-component dev` / `publish` fail.
+
 **The CLI does NOT edit your component source.** `remove-prop` and `remove-enum` update `ikas.config.json` and the generated `types.ts` / `global-types.ts` only — `index.tsx`, sub-components, and `styles.css` are untouched. After removing a prop or enum, grep the source for the old identifier and clean up dead references yourself before building.
 
 ## MCP Tools (12 tools)

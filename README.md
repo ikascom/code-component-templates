@@ -28,6 +28,7 @@ Files in templates use these renames at scaffold time:
 | `gitignore` | `.gitignore` |
 | `mcp.json` | `.mcp.json` |
 | `claude-md` | `CLAUDE.md` |
+| `agents-md` | `AGENTS.md` |
 | `cursorrules` | `.cursorrules` |
 
 Placeholders like `{{PROJECT_ID}}`, `{{PROJECT_NAME}}`, `{{EXAMPLE_COMPONENT_ID}}` are replaced by the scaffolder.

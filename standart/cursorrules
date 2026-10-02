@@ -9,6 +9,8 @@ You are building **Preact + TypeScript components for an e-commerce storefront**
 Use `npx ikas-component config add-component --props '[...]'` or `npx ikas-component config add-prop` to manage props.
 These commands update BOTH `ikas.config.json` AND `types.ts` automatically.
 
+**`projectId` and every component `id` in `ikas.config.json` are generated once and never change.** Do not rename them, and never copy an id shown by the editor or returned by an MCP tool into `ikas.config.json`. On a theme that installed this project as a design asset the editor reports published ids with a different prefix — that is expected, not something to fix. A component id that does not start with this project's `projectId` makes `ikas-component dev` / `publish` fail.
+
 **The CLI does NOT edit your component source.** `remove-prop` and `remove-enum` update `ikas.config.json` and the generated `types.ts` / `global-types.ts` only — `index.tsx`, sub-components, and `styles.css` are untouched. After removing a prop or enum, grep the source for the old identifier and clean up dead references yourself before building.
 
 ## MCP Tools (12 tools)
