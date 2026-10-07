@@ -83,7 +83,7 @@ These commands update `ikas.config.json`, `types.ts`, and `global-types.ts` auto
   Pattern: `export function MySection({ title }: Props) { ... }` + `export default MySection;`
   Only use observer() on sub-components.
 - Null safety: storefront models can be null — always check before accessing
-- Mutations: addItemToCart() etc. mutate MobX observables in-place — no return capture needed
+- Mutations: addItemToCart(variant, product, qty) etc. mutate MobX observables in-place — check result.success for validation errors
 - COMPONENT & COMPONENT_LIST props: slot-based child components rendered via `<IkasComponentRenderer>`
   `import { IkasComponentRenderer } from "@ikas/bp-storefront"`
   `<IkasComponentRenderer components={myList as any[]} parentProps={props} />`

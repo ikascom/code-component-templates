@@ -448,8 +448,10 @@ const price = product.selectedVariant?.price?.formattedPrice ?? "";
 
 ```tsx
 // Functions like addItemToCart() mutate the model in-place (MobX observable)
-// No need to capture return value — root components re-render automatically via autorun()
-await addItemToCart({ product });
+// Root components re-render automatically via autorun(); check the result for validation errors
+// Signature: addItemToCart(variant, product, quantity) — variant first, then product
+const result = await addItemToCart(variant, product, 1);
+if (!result.success) console.warn(result.validationError);
 ```
 
 ### CSS Scoping

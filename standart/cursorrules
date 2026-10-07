@@ -81,7 +81,7 @@ These commands update BOTH `ikas.config.json` AND `types.ts` automatically.
   Pattern: `export function MySection({ title }: Props) { ... }` + `export default MySection;`
   Only use observer() on extracted sub-components that independently read MobX stores.
 - Null safety: storefront models can be null — always check before accessing
-- Mutations: addItemToCart() etc. mutate MobX observables in-place — no return capture needed
+- Mutations: addItemToCart(variant, product, qty) etc. mutate MobX observables in-place — check result.success for validation errors
 - CSS: write plain class names — auto-scoped with .cc\_{componentId} at build time
 - Events: use onInput (not onChange) for text inputs (Preact behavior)
 - Imports: `import { addItemToCart, IkasProduct } from "@ikas/bp-storefront"`
