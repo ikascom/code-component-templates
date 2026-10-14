@@ -60,7 +60,7 @@ congara/
 ├── src/
 │   ├── components/        # ikas.config.json'a kayıtlı section ve component'lar
 │   ├── sub-components/    # Section'ların içinde kullanılan yardımcı bileşenler
-│   ├── global.css         # Scope dışı global stiller
+│   ├── global.css         # Proje kapsamlı global stiller (@font-face/@keyframes adları öneklenir)
 │   └── global-types.ts    # Otomatik üretilen ortak enum tipleri
 ├── ikas.config.json       # Bileşen kayıtları (CLI tarafından yönetilir)
 └── CLAUDE.md              # AI yardımcı kuralları
