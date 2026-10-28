@@ -54,6 +54,7 @@ function StarRow({
               <svg
                 class="pr-star-fg"
                 viewBox="0 0 24 24"
+                width="auto"
                 height="100%"
                 preserveAspectRatio="xMinYMid meet"
               >
