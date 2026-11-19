@@ -27,7 +27,6 @@ export function CartPage({
   continueShoppingText = "Start Shopping",
 }: Props) {
   const cart = cartStore.cart;
-  const isLoading = cartStore.isCartLoading;
   const cartHasItems = hasCart(cartStore);
   const lineItems = (cart?.orderLineItems ?? []).filter(
     (item) => !item?.deleted,
@@ -38,7 +37,12 @@ export function CartPage({
     await removeItem(item);
   };
 
-  if (isLoading) {
+  // Gate the loader on the initial load, not on isCartLoading. The server renders before the cart
+  // is loaded, so isCartInitialLoadFinished is false there and on the first client render alike:
+  // both show the loader and hydration adopts it. Keyed on isCartLoading instead, the server would
+  // render the empty state (not loading, no cart yet), so a full cart would flash "empty" first.
+  // Later refreshes (e.g. after a loyalty change) also keep the items on screen.
+  if (!cartStore.isCartInitialLoadFinished) {
     return <PageLoader />;
   }
 
